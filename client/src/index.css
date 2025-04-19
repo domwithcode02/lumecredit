@@ -3,11 +3,52 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans text-slate-900 bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-medium tracking-tight;
   }
 }
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6;
+  }
+  
+  .section-subtitle {
+    @apply text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-12;
+  }
+  
+  .feature-card {
+    @apply bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow;
+  }
+  
+  .feature-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-xl mb-4;
+  }
+
+  .btn-primary {
+    @apply bg-[#4A90E2] hover:bg-blue-600 text-white font-medium rounded-lg px-6 py-3 shadow-sm transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-[#F5C518] hover:bg-yellow-500 text-slate-900 font-medium rounded-lg px-6 py-3 shadow-sm transition-all;
+  }
+  
+  .highlight-badge {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-medium;
+  }
+}
+
+/* Remove duplicate layer */
