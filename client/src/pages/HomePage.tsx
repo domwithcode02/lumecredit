@@ -9,7 +9,12 @@ import Footer from "@/components/Footer";
 import { useQuery } from "@tanstack/react-query";
 
 export default function HomePage() {
-  const { data: spotsData, refetch } = useQuery({
+  interface SpotsData {
+    spotsRemaining: number;
+    totalSpots: number;
+  }
+
+  const { data: spotsData, refetch } = useQuery<SpotsData>({
     queryKey: ["/api/spots-remaining"],
     refetchOnWindowFocus: false,
     staleTime: 60000, // 1 minute
@@ -23,8 +28,29 @@ export default function HomePage() {
     }
   };
 
+  // Set smooth scrolling for the entire page
+  useEffect(() => {
+    // Handle anchor link clicks for smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e: Event) => {
+        e.preventDefault();
+        
+        const element = e.currentTarget as HTMLAnchorElement;
+        const targetId = element.getAttribute('href')?.substring(1);
+        if (targetId) {
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFA] font-['Inter',sans-serif] text-[#333]">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header spotsRemaining={spotsData?.spotsRemaining || 0} totalSpots={spotsData?.totalSpots || 250} />
       
       <main className="flex-grow">
