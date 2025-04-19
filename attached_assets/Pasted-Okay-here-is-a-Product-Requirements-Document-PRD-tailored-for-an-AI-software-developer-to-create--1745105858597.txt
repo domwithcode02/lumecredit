@@ -1,0 +1,207 @@
+Okay, here is a Product Requirements Document (PRD) tailored for an AI software developer to create the initial landing page for Lume Credit's limited-time offer.
+
+Product Requirements Document: Lume Credit - Limited Time Offer Landing Page
+
+1. Introduction
+
+Product: Lume Credit - Limited Time Offer (LTO) Landing Page
+
+Purpose: This document outlines the requirements for a simple web application (landing page) for Lume Credit. The primary goal of this initial page is not to provide credit-building services directly, but to capture contact information (primarily emails) from users interested in a specific, limited-time promotional offer.
+
+Target Audience (Internal): AI Software Developer
+
+Target Audience (End User): Individuals interested in improving their credit score who are potentially early adopters attracted by a high-value, one-time offer.
+
+2. Goals
+
+Primary Goal: Collect and securely store contact information (Name, Email) from interested users.
+
+Target Metric: Achieve 250 unique user sign-ups through the landing page form.
+
+Secondary Goal: Validate user interest in the Lume Credit concept and the specific lifetime offer.
+
+Constraint: This offer is limited to the first 250 sign-ups. The mechanism for enforcing this limit (e.g., manual monitoring, simple counter) should be considered.
+
+3. The Offer
+
+Offer: Lifetime subscription to a future bundle of two Lume Credit credit line subscriptions.
+
+Price: $200 (One-time payment).
+
+Availability: Limited to the first 250 users who express interest via this landing page.
+
+Note: Payment processing is out of scope for this initial landing page. Users are expressing interest now; payment collection will happen later.
+
+4. Functional Requirements
+
+FR1: Landing Page Display
+
+The application must render a single web page accessible via a URL.
+
+The page must clearly display the Lume Credit brand name/logo (Placeholder acceptable initially).
+
+The page must prominently feature the details of the Limited Time Offer:
+
+Headline highlighting the lifetime deal.
+
+Description of the future bundled credit line subscriptions (briefly explain the value).
+
+Clear statement of the $200 one-time price for lifetime access.
+
+Emphasis on the limited availability (e.g., "Only 250 spots available!", "Exclusive early access").
+
+The page must include a clear Call To Action (CTA), such as "Get Early Access" or "Reserve Your Spot".
+
+FR2: Contact Information Form
+
+The page must contain a form to collect user information.
+
+Required Fields:
+
+Full Name (Text input)
+
+Email Address (Email input type)
+
+Optional Fields: (Consider if needed, but keep it simple for higher conversion)
+
+Phone Number (Tel input type) - Specify if required or optional. For now, assume optional.
+
+The form must have basic client-side validation (e.g., check for non-empty required fields, valid email format).
+
+The form must have server-side validation for the same fields.
+
+FR3: Data Submission & Storage
+
+Upon clicking the submit button associated with the form:
+
+The collected data (Name, Email, optional Phone) must be securely transmitted to the backend.
+
+The backend must store this information reliably (e.g., in a database). Data must be easily exportable or accessible for future use.
+
+FR4: Post-Submission Confirmation
+
+After successful form submission, the user must be shown a confirmation message on the page (e.g., "Thank you for your interest! We'll contact you soon with details on how to secure your lifetime deal.")
+
+The form should be cleared or hidden after successful submission to prevent duplicate entries from the same session.
+
+FR5: Email Confirmation (Optional but Recommended)
+
+Upon successful form submission, send an automated confirmation email to the user's provided email address using the Resend.com service.
+
+Email content: Confirm their interest, briefly reiterate the offer, and state that further instructions (including payment) will follow.
+
+Requires integration with Resend.com API (API key management needed).
+
+FR6: Sign-up Counter (Optional - Nice to Have)
+
+Display a counter indicating how many spots out of 250 have been claimed or are remaining. This can be a simple display updated periodically or upon page load. Requires logic to fetch the current count from the database.
+
+5. Non-Functional Requirements
+
+NFR1: Usability: Simple, clean interface. Easy to understand the offer and fill out the form.
+
+NFR2: Performance: The landing page should load quickly (< 3 seconds).
+
+NFR3: Security:
+
+Use HTTPS.
+
+Protect against basic form spam (e.g., honeypot field, simple CAPTCHA - specify if needed).
+
+Ensure secure storage of collected personal data.
+
+NFR4: Responsiveness: The page must render correctly and be usable on common desktop and mobile browser sizes.
+
+NFR5: Reliability: The form submission process must be reliable. Data capture should not fail under normal load.
+
+NFR6: Maintainability: Code should be clean and well-organized for potential future expansion (though this specific page might be temporary).
+
+6. Data Management
+
+Data Collected: Full Name (String), Email Address (String, Validated Format), Phone Number (String, Optional).
+
+Storage: A simple, secure database is sufficient. Structure needs to allow easy retrieval/export of the collected list.
+
+Data Usage: Collected data will be used to contact interested users about finalizing the $200 lifetime subscription purchase and for future marketing communications related to Lume Credit. Ensure compliance with data privacy regulations (e.g., GDPR, CCPA if applicable - though for 250 users, complexity might be low initially, basic privacy notice recommended).
+
+7. Integrations
+
+Resend.com: Required for sending transactional confirmation emails (if FR5 is implemented) and potentially for future bulk email campaigns to the collected list. Secure handling of the Resend API key is necessary.
+
+8. Design & UX Considerations
+
+Focus on clarity, trust, and urgency.
+
+Minimalist design to keep focus on the offer and the form.
+
+Use a placeholder logo/branding if final assets are not ready.
+
+Ensure clear visual hierarchy: Headline -> Offer Details -> CTA -> Form.
+
+9. Out of Scope for this PRD
+
+User accounts/login system.
+
+Payment processing integration.
+
+The actual credit-building features or subscriptions.
+
+Admin dashboard for managing users (manual database check/export is sufficient for this phase).
+
+Complex analytics integration (basic page view tracking is okay if desired).
+
+A/B Testing functionality.
+
+Automated enforcement of the 250 user limit (manual monitoring/disabling the form is acceptable).
+
+10. Success Metrics
+
+Number of successful form submissions (Target: 250).
+
+Conversion Rate (Submissions / Unique Visitors) - if basic analytics are implemented.
+
+Bounce Rate.
+
+11. Open Questions
+
+Final copy for headlines, descriptions, and CTAs? (Use sensible defaults for now).
+
+Specific branding guidelines or assets (logo)? (Use placeholders).
+
+Is a phone number required or optional? (Assumed optional).
+
+Is a simple spam protection mechanism (e.g., CAPTCHA) required? (Recommended).
+
+How will the 250 limit be tracked and enforced? (Assume manual stop initially unless counter (FR6) is implemented).
+
+Prompt for AI Software Developer:
+
+"Please develop a simple web application based on the requirements outlined in the PRD above for the 'Lume Credit - Limited Time Offer Landing Page'.
+
+Key Objectives:
+
+Create a single-page responsive web application.
+
+Display information about a limited-time offer ($200 lifetime deal for 250 users).
+
+Implement a form to collect Full Name and Email (Phone optional).
+
+Securely store the submitted data in a backend database.
+
+Display a success message upon form submission.
+
+(Optional but preferred) Integrate with Resend.com (using provided API key) to send a basic confirmation email upon successful submission.
+
+(Optional Nice-to-have) Implement a simple counter display for remaining spots.
+
+Constraints:
+
+Focus solely on the requirements specified. Features listed as 'Out of Scope' should not be built.
+
+The choice of specific programming languages, frameworks, or databases (the tech stack) is flexible, but prioritize simplicity, security, and rapid deployment for this specific landing page goal.
+
+Ensure data storage is secure and easily accessible/exportable for later use.
+
+Provide placeholder content where final text/assets are not specified.
+
+Please outline the proposed architecture (Frontend, Backend, Database) and confirm your understanding of the core requirements before proceeding with code generation."
