@@ -17,7 +17,11 @@ export class MemStorage implements IStorage {
 
   async createSubscriber(subscriberData: InsertSubscriber & { timestamp: string }): Promise<Subscriber> {
     const id = this.currentId++;
-    const subscriber: Subscriber = { ...subscriberData, id };
+    const subscriber: Subscriber = { 
+      ...subscriberData, 
+      id,
+      phone: subscriberData.phone ?? null // Ensure phone is string | null, not undefined
+    };
     this.subscribers.set(id, subscriber);
     return subscriber;
   }
