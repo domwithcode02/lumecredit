@@ -129,32 +129,48 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
         </div>
 
         {/* Price Box */}
-        <div className="bg-[#003366] rounded-2xl overflow-hidden shadow-lg">
+        <div className="bg-gradient-to-r from-[#002244] to-[#003366] rounded-2xl overflow-hidden shadow-2xl border border-[#003366]/40">
           <div className="grid md:grid-cols-12 gap-0">
             <div className="md:col-span-8 p-8 md:p-12">
-              <div className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 mb-5">
+              <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-3 py-1 mb-5">
                 <Clock className="h-3.5 w-3.5 text-[#F5C518] mr-2" />
-                <span className="text-sm font-medium text-white">Limited Time Offer</span>
+                <span className="text-sm font-bold text-[#F5C518]">WHY THIS DEAL IS EXCEPTIONAL</span>
               </div>
             
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Only <span className="text-[#F5C518]">{spotsRemaining}</span> spots left at this price
+              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 flex items-center">
+                <span className="mr-2 tracking-tight">Only</span> 
+                <span className="bg-[#F5C518] text-[#003366] px-2 py-1 rounded-md">{spotsRemaining}</span> 
+                <span className="ml-2 tracking-tight">founding memberships left</span>
               </h3>
               
-              <p className="text-white/80 mb-8 max-w-2xl text-lg">
-                Once all 250 spots are filled, the price will increase to our standard rate of $697/year. 
-                Lock in your <span className="font-semibold text-[#F5C518]">lifetime access</span> now for just $200 total.
+              <div className="flex gap-6 mb-6">
+                <div className="flex flex-col items-center bg-white/5 rounded-lg p-3 min-w-[100px]">
+                  <span className="text-3xl font-bold text-white">200<sup className="text-lg">$</sup></span>
+                  <span className="text-white/70 text-sm">one time</span>
+                </div>
+                <div className="flex items-center text-white">
+                  <span className="text-3xl font-bold">vs</span>
+                </div>
+                <div className="flex flex-col items-center bg-white/5 rounded-lg p-3 min-w-[100px]">
+                  <span className="text-2xl font-bold text-white/60 line-through">697<sup className="text-lg">$</sup></span>
+                  <span className="text-white/50 text-sm">per year</span>
+                </div>
+              </div>
+              
+              <p className="text-white/80 mb-8 max-w-2xl text-lg border-l-4 border-[#F5C518] pl-4">
+                After the first 250 members, the price will <span className="font-bold text-white">permanently increase</span>. 
+                Lock in your <span className="font-bold text-[#F5C518]">lifetime access</span> now and <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">never pay again</span>.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
                 <Button 
                   onClick={scrollToForm}
-                  className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold text-base px-6 py-3 h-auto"
+                  className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base px-8 py-4 h-auto rounded-xl shadow-md shadow-[#F5C518]/20 animate-pulse"
                 >
-                  Reserve Your Spot Now
+                  SECURE YOUR SPOT NOW
                 </Button>
                 
-                <div className="inline-flex items-center">
+                <div className="flex items-center">
                   <div className="h-3 w-3 bg-[#F5C518] rounded-full animate-pulse mr-3"></div>
                   <span className="text-white/80 font-medium">
                     <span className="text-[#F5C518] font-semibold">{spotsRemaining}</span> of 250 spots remaining
@@ -163,40 +179,42 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               </div>
             </div>
             
-            <div className="md:col-span-4 bg-[#00254d] p-8 md:p-12 relative">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%2050%2050%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M0%200h50v50H0z%22%2F%3E%3Cpath%20d%3D%22M38%2040H22v6h-8v-6H0V20h8v-6h8v6h16v20z%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E')] bg-50 opacity-20"></div>
+            <div className="md:col-span-4 bg-[#001a33] p-8 md:p-12 relative">
+              <div className="absolute top-0 right-0 w-20 h-20">
+                <div className="absolute transform rotate-45 bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-6 right-[-20px] top-[15px] shadow-md">
+                  LIFETIME
+                </div>
               </div>
               
               <div className="relative h-full flex flex-col justify-center">
-                <div className="text-white mb-3">
-                  <div className="text-4xl font-bold">$200</div>
-                  <div className="text-sm opacity-80">One-time payment</div>
+                <div className="text-white mb-5">
+                  <div className="text-4xl font-extrabold">$200</div>
+                  <div className="text-[#F5C518] text-sm font-bold mt-1">LIFETIME ACCESS</div>
                 </div>
                 
-                <div className="mb-4 mt-2">
+                <div className="mb-5 py-2 px-3 bg-[#F5C518]/10 rounded-lg border border-[#F5C518]/20">
                   <div className="flex items-center">
-                    <span className="text-white/50 line-through mr-3">$697/year</span>
-                    <span className="bg-[#F5C518] text-[#003366] text-xs font-bold px-2 py-0.5 rounded">Save $3,285+</span>
+                    <span className="text-[#F5C518] font-extrabold mr-2">SAVE:</span>
+                    <span className="text-white font-bold">$3,285+</span>
                   </div>
                 </div>
                 
-                <div className="text-white/90 text-sm space-y-2">
-                  <p className="flex items-center">
-                    <Check size={16} className="text-[#F5C518] mr-2 shrink-0" />
-                    <span>FlexCredit™ Revolving Tradeline</span>
+                <div className="text-white text-sm space-y-3">
+                  <p className="flex items-start">
+                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                    <span><span className="font-bold">FlexCredit™</span> Revolving Tradeline</span>
                   </p>
-                  <p className="flex items-center">
-                    <Check size={16} className="text-[#F5C518] mr-2 shrink-0" />
-                    <span>FlexLife™ Credit Monitoring</span>
+                  <p className="flex items-start">
+                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                    <span><span className="font-bold">FlexLife™</span> Credit Monitoring</span>
                   </p>
-                  <p className="flex items-center">
-                    <Check size={16} className="text-[#F5C518] mr-2 shrink-0" />
-                    <span>Lifetime access - never pay again!</span>
+                  <p className="flex items-start">
+                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                    <span><span className="font-bold">Zero</span> recurring fees</span>
                   </p>
-                  <p className="flex items-center">
-                    <Check size={16} className="text-[#F5C518] mr-2 shrink-0" />
-                    <span>VIP customer support</span>
+                  <p className="flex items-start">
+                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                    <span><span className="font-bold">VIP</span> customer support</span>
                   </p>
                 </div>
               </div>
