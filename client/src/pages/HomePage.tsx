@@ -56,9 +56,9 @@ export default function HomePage() {
       
       <main className="flex-grow">
         <HeroSection onButtonClick={scrollToForm} />
-        <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
         <HowItWorksSection />
         <TradelinesSection />
+        <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
         <VisaCardSection />
         <FormSection id="reserve-form" onSuccess={refetch} />
       </main>
