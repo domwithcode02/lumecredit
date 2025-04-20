@@ -1,6 +1,5 @@
 import SpotCounter from "@/components/SpotCounter";
 import { Button } from "@/components/ui/button";
-import lumeLogoPath from "@assets/ChatGPT Image Mar 30, 2025, 11_27_13 PM.png";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -16,21 +15,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-6 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-3 shadow-sm">
       <div className="container-custom flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo Text Placeholder */}
         <div className="flex items-center">
-          <div className="h-36 w-auto">
-            <img 
-              src={lumeLogoPath} 
-              alt="LumeCredit Logo" 
-              className="h-full w-auto object-contain"
-              style={{ 
-                filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.5))',
-                maxHeight: '100%',
-                maxWidth: 'none'
-              }}
-            />
+          <div className="text-2xl md:text-3xl font-bold bg-clip-text bg-gradient-to-r from-[#003366] to-[#000000]">
+            <span className="relative">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#F5C518] to-[#F5C518]/80">Lume</span>
+              <span className="relative z-10 text-black">Credit</span>
+              <span className="absolute -inset-1 bg-opacity-30 filter blur-sm bg-[#F5C518] z-0"></span>
+            </span>
           </div>
         </div>
         
