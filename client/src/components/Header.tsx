@@ -41,6 +41,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           <a href="#tradelines" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Tradelines
           </a>
+          <a href="#visa-card" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+            Visa Card
+          </a>
         </div>
         
         {/* Actions */}
