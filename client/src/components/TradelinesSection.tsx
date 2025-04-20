@@ -1,4 +1,6 @@
-import { CreditCard, Calculator, Home } from "lucide-react";
+import { Home } from "lucide-react";
+import { GiMuscleUp } from "react-icons/gi";
+import { FaHammer } from "react-icons/fa";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function TradelinesSection() {
@@ -22,7 +24,7 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <CreditCard className="h-6 w-6 text-[#003366]" />
+                <GiMuscleUp className="h-6 w-6 text-[#003366]" />
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving Tradeline</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
@@ -51,11 +53,11 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <Calculator className="h-6 w-6 text-[#003366]" />
+                <FaHammer className="h-6 w-6 text-[#003366]" />
               </div>
-              <CardTitle className="text-xl font-bold">SteadyBuild Installment Tradeline</CardTitle>
+              <CardTitle className="text-xl font-bold">SteadyBuild Tradeline</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
-                Perfect for diversifying your credit mix
+                Installment loans for diversifying your credit mix
               </CardDescription>
             </CardHeader>
             <CardContent>
