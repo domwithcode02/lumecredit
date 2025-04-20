@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import flexingIcon from "@assets/flexing_icon_outline.png";
 
 export default function TradelinesSection() {
   return (
@@ -21,11 +22,7 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Flexed bicep outline based on the provided image */}
-                  <path d="M6.5 18.5c3-0.5 5-2 6-3.5 1.5-2 2-5.5 4-7.5 1-1 3-1.5 4-0.5 0.5 0.5 0.5 1.5-0.5 2-1 0.5-2 0.5-2.5 1-0.5 0.5-0.5 1.5 0 2 0.5 0.5 1.5 0 2-0.5" />
-                  <path d="M18.5 12c-1 1.5-3 3.5-5 4.5-3 1.5-7.5 2-9.5-1-1-1.5-1-4 2.5-5" />
-                </svg>
+                <img src={flexingIcon} alt="Flexing arm" className="w-8 h-8" style={{ filter: 'invert(13%) sepia(74%) saturate(2397%) hue-rotate(198deg) brightness(92%) contrast(105%)' }} />
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
