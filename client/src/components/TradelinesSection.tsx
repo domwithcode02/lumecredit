@@ -22,20 +22,9 @@ export default function TradelinesSection() {
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Body */}
-                  <circle cx="12" cy="8" r="2.5" />
-                  <path d="M12 10.5v3" />
-                  <path d="M10 18v-3c0-.5.5-1 1-1h2c.5 0 1 .5 1 1v3" />
-                  
-                  {/* Arms flexing */}
-                  <path d="M7.5 10.5c-.8 0-1.5.7-1.5 1.5v1" />
-                  <path d="M7.5 10.5c.5-1 1.5-1 2 0" />
-                  <path d="M16.5 10.5c.8 0 1.5.7 1.5 1.5v1" />
-                  <path d="M16.5 10.5c-.5-1-1.5-1-2 0" />
-                  
-                  {/* Biceps */}
-                  <path d="M8 13c-1 0-1.5 1-1 1.5.5.5 1.5 0 1.5-1" />
-                  <path d="M16 13c1 0 1.5 1 1 1.5-.5.5-1.5 0-1.5-1" />
+                  {/* Flexed bicep outline based on the provided image */}
+                  <path d="M6.5 18.5c3-0.5 5-2 6-3.5 1.5-2 2-5.5 4-7.5 1-1 3-1.5 4-0.5 0.5 0.5 0.5 1.5-0.5 2-1 0.5-2 0.5-2.5 1-0.5 0.5-0.5 1.5 0 2 0.5 0.5 1.5 0 2-0.5" />
+                  <path d="M18.5 12c-1 1.5-3 3.5-5 4.5-3 1.5-7.5 2-9.5-1-1-1.5-1-4 2.5-5" />
                 </svg>
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
