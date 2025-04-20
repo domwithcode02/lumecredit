@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import flexingIcon from "@assets/flexing_icon_outline.png";
+import flexingIcon from "@assets/flexing_icon_transparent_outline.png";
 
 export default function TradelinesSection() {
   return (
@@ -22,7 +22,7 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <img src={flexingIcon} alt="Flexing arm" className="w-8 h-8" style={{ filter: 'invert(13%) sepia(74%) saturate(2397%) hue-rotate(198deg) brightness(92%) contrast(105%)' }} />
+                <img src={flexingIcon} alt="Flexing arm" width="24" height="24" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(74%) saturate(2397%) hue-rotate(198deg) brightness(92%) contrast(105%)' }} />
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
