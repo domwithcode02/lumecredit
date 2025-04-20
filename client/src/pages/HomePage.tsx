@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import UrgencySection from "@/components/UrgencySection";
 import FormSection from "@/components/FormSection";
-import TrustSignalsSection from "@/components/TrustSignalsSection";
 import Footer from "@/components/Footer";
 import { useQuery } from "@tanstack/react-query";
 
@@ -58,7 +57,6 @@ export default function HomePage() {
         <BenefitsSection />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
         <FormSection id="reserve-form" onSuccess={refetch} />
-        <TrustSignalsSection />
       </main>
       
       <Footer />

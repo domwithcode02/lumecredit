@@ -16,16 +16,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   };
 
   return (
-    <header className="bg-white border-b border-slate-100 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-4 shadow-sm">
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="h-20 w-auto">
+          <div className="h-24 w-auto">
             <img 
               src={lumeLogoPath} 
               alt="LumeCredit Logo" 
               className="h-full w-auto object-contain"
-              style={{ filter: 'drop-shadow(0 0 3px rgba(255, 215, 0, 0.4))' }}
+              style={{ filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.5))' }}
             />
           </div>
         </div>
@@ -37,9 +37,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           </a>
           <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Features
-          </a>
-          <a href="#testimonials" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
-            Testimonials
           </a>
         </div>
         
