@@ -22,7 +22,10 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <img src={flexingIcon} alt="Flexing arm" width="24" height="24" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(74%) saturate(2397%) hue-rotate(198deg) brightness(92%) contrast(105%)' }} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M8 18.5C9.5 18.2 11.5 17 12.5 15.5C13.5 14 14 11 15.5 9.5C16.5 8.5 18 8 18.5 8.5C19 9 19 10 18 10.5C17 11 16 11 15.5 11.5C15 12 15 12.8 15.5 13C16 13.2 16.5 13 17 12.5" />
+                  <path d="M18 14C17 15.5 15 17 13 18C10 19.5 7 19.5 6 18C5 16.5 5 15 7 14" />
+                </svg>
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
