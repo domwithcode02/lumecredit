@@ -6,7 +6,7 @@ export default function TradelinesSection() {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center rounded-full bg-[#003366]/10 px-3 py-1 mb-4">
-            <span className="text-sm font-medium text-[#003366]">Our Products</span>
+            <span className="text-sm font-medium text-[#003366]">Our Future Products</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Premium Tradelines for Your Credit Success
@@ -21,9 +21,8 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 4L17 4 18 7 15 7 14 4 12 4 9 14 12 14 13 11 16 11 15 14 18 14 21 4z" />
-                  <path d="M4 4L7 4 6 7 9 7 10 4 12 4 15 14 12 14 11 11 8 11 9 14 6 14 3 4z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 20L9 17M20 4L15 7M20 4L19 8M20 4L16 5M15 7L14 11M15 7L11 8M14 11L9 17M14 11L10 13M9 17C5 18.5 2 18 4 12" />
                 </svg>
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
