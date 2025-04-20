@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
-import lumeLogoPath from "@assets/ChatGPT Image Mar 30, 2025, 11_27_13 PM.png";
+import lumeLogoSvg from "../assets/lume-logo.svg";
 
 export default function Footer() {
   return (
@@ -7,12 +7,14 @@ export default function Footer() {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-1">
-            <div className="mb-5 h-20 w-auto">
+            <div className="mb-5 h-16 w-auto">
               <img 
-                src={lumeLogoPath} 
+                src={lumeLogoSvg} 
                 alt="LumeCredit Logo" 
-                className="h-full w-auto object-contain"
-                style={{ filter: 'brightness(1.2) drop-shadow(0 0 4px rgba(255, 215, 0, 0.3))' }}
+                className="h-full w-auto"
+                style={{ 
+                  filter: 'brightness(1.2) drop-shadow(0 0 4px rgba(255, 215, 0, 0.3))'
+                }}
               />
             </div>
             <p className="text-slate-400 mb-6">Illuminate your credit journey. Building brighter credit futures for everyone.</p>
