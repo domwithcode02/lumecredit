@@ -38,35 +38,50 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </Button>
             </div>
             
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
-              <div className="flex items-center text-sm text-slate-600">
-                <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>FlexCredit™: Revolving Tradeline</span>
+            {/* Limited Time Offer Benefits */}
+            <div className="mb-6">
+              <h3 className="text-lg font-bold text-[#003366] mb-3">Limited-Time Deal Includes:</h3>
+              <div className="flex flex-wrap gap-x-8 gap-y-3">
+                <div className="flex items-center text-sm text-slate-600">
+                  <Check size={16} className="text-[#000000] mr-2" />
+                  <span>FlexCredit™: Revolving Tradeline</span>
+                </div>
+                <div className="flex items-center text-sm text-slate-600">
+                  <Check size={16} className="text-[#000000] mr-2" />
+                  <span>FlexLife™: Lifetime Credit Monitoring</span>
+                </div>
               </div>
-              <div className="flex items-center text-sm text-slate-600">
-                <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>SteadyBuild™: Installment Tradeline</span>
-              </div>
-              <div className="flex items-center text-sm text-slate-600">
-                <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>HomeTrack™: Rent Reporting</span>
-              </div>
-              <div className="flex items-center text-sm text-slate-600">
-                <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>Free Checking Account</span>
-              </div>
-              <div className="flex items-center text-sm text-slate-600">
-                <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>LumeCredit Visa® Card Access</span>
+            </div>
+            
+            {/* Upcoming Products */}
+            <div>
+              <h3 className="text-md font-medium text-slate-600 mb-2">Future Program Access:</h3>
+              <div className="flex flex-wrap gap-x-8 gap-y-2 opacity-75">
+                <div className="flex items-center text-sm text-slate-600">
+                  <Check size={16} className="text-[#003366] mr-2" />
+                  <span>SteadyBuild™: Installment Tradeline</span>
+                </div>
+                <div className="flex items-center text-sm text-slate-600">
+                  <Check size={16} className="text-[#003366] mr-2" />
+                  <span>HomeTrack™: Rent Reporting</span>
+                </div>
+                <div className="flex items-center text-sm text-slate-600">
+                  <Check size={16} className="text-[#003366] mr-2" />
+                  <span>Free Checking Account</span>
+                </div>
+                <div className="flex items-center text-sm text-slate-600">
+                  <Check size={16} className="text-[#003366] mr-2" />
+                  <span>LumeCredit Visa® Card Access</span>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="relative hidden lg:block">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-blue-50 to-[#F5C51820] w-[550px] h-[550px] rounded-full -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[550px] h-[550px] rounded-full -z-10"></div>
             
             <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">
-              <div className="absolute -top-4 -right-4 bg-white text-[#4A90E2] font-bold rounded-full py-2 px-4 shadow-lg transform rotate-12 z-10 border-2 border-[#F5C518]">
+              <div className="absolute -top-8 -right-8 bg-white text-[#003366] font-bold rounded-full py-2 px-4 shadow-lg transform rotate-12 z-10 border-2 border-[#F5C518]">
                 760+ Credit Score!
               </div>
               
@@ -77,7 +92,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-4 max-w-[80%] shadow-xl border border-[#4A90E2]/20">
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-4 max-w-[80%] shadow-xl border border-[#F5C518]/30">
                   <p className="font-medium text-center">
                     "Drive your credit score higher with LumeCredit!"
                   </p>
