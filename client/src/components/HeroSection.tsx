@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onButtonClick }: HeroSectionProps) {
   return (
-    <section className="bg-white pt-24 pb-6 sm:pt-24 sm:pb-8 overflow-hidden">
+    <section className="bg-white pt-32 pb-6 sm:pt-32 sm:pb-8 overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>

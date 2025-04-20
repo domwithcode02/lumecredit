@@ -22,7 +22,11 @@ export default function TradelinesSection() {
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 20L9 17M20 4L15 7M20 4L19 8M20 4L16 5M15 7L14 11M15 7L11 8M14 11L9 17M14 11L10 13M9 17C5 18.5 2 18 4 12" />
+                  <path d="M7 11L9 9" />
+                  <path d="M9.5 6C8.8 6.5 8 7.5 9 8.5C10 9.5 11 8.7 11.5 8" />
+                  <path d="M14.5 6.5L16.5 8.5L15 11L12 8L11 13" />
+                  <path d="M13 13L15 16L13 19" />
+                  <path d="M11 16L13 13L7 11L6 15" />
                 </svg>
               </div>
               <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
