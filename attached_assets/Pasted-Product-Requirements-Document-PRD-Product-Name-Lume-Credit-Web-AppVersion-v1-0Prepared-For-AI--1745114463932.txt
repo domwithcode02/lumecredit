@@ -1,0 +1,161 @@
+Product Requirements Document (PRD)
+
+Product Name: Lume Credit Web AppVersion: v1.0Prepared For: AI Software DeveloperPrepared By: LumeCredit Founding Team
+
+🔍 Overview
+
+Lume Credit is a credit-building fintech platform designed to provide powerful financial tools for underserved communities, students, immigrants, and second-chance credit users. This PRD outlines the requirements for the initial launch of a web-based application that features a limited access offer for early adopters: the first 250 customers only.
+
+After the 250th user signs up, the application will automatically lock out new registrations. Upon successful signup, users will receive automated transactional and welcome emails sent via resend.com.
+
+The landing page must be fun, vibrant, and straightforward — reflecting LumeCredit's youthful brand (i.e. "Credit Bro") while still delivering professional clarity.
+
+⚖️ Goals
+
+Launch a web app to onboard 250 users under a limited-time offer
+
+Capture user emails and basic data securely
+
+Deliver a branded welcome email via resend.com
+
+Lock out registration once quota is reached
+
+Make the UI fast, attractive, and intuitive
+
+📉 Target Audience
+
+Gen Z / Millennials
+
+First-time credit builders
+
+Immigrants & underbanked users
+
+Users seeking a simple and trustworthy credit solution
+
+🌐 Core Features
+
+1. Landing Page
+
+Headline Message: "You Gotta Have Credit, Bro."
+
+Countdown bar or dynamic visual: Displaying "Only X Spots Left!"
+
+Call-to-Action Button: "Join the First 250 Now"
+
+Benefits Preview:
+
+FlexCredit™: Revolving Tradeline
+
+SteadyBuild™: Installment Tradeline
+
+HomeTrack™: Rent Reporting
+
+Free Checking Account
+
+LumeCredit Visa® Card Access
+
+2. User Signup Form
+
+First Name
+
+Last Name
+
+Email
+
+Mobile (optional)
+
+Password (min. 8 chars)
+
+Checkbox: Agree to terms/privacy
+
+3. Signup Flow Behavior
+
+Validate form data
+
+Add user to secure database
+
+Increment counter toward 250-cap
+
+Redirect user to success confirmation page
+
+Trigger email via resend.com
+
+4. Email via resend.com
+
+Send welcome/confirmation email with:
+
+User name
+
+Summary of their selected plan
+
+Links to explore the app or join community waitlist
+
+Branded and responsive HTML email design
+
+5. Lockout System
+
+When 250 successful signups have occurred:
+
+Disable signup form
+
+Show message: "Launch Round Full. Join Waitlist."
+
+Optional: Capture waitlist emails post-cap
+
+⚖️ Success Metrics
+
+100% user flow completion from landing to email confirmation
+
+<2 second load time
+
+250 user signups within initial launch window
+
+100% email delivery and open rate via resend.com
+
+🔖 Integrations
+
+resend.com for transactional email automation (API documentation available)
+
+[Optional in later phases: Plaid/Finicity, Galileo, Stripe, Firebase, etc.]
+
+🛍️ Admin Panel (Optional Phase 2)
+
+View total signups
+
+Export email list
+
+Manually open/close access
+
+🔹 Non-Functional Requirements
+
+Mobile responsive design
+
+Secure password hashing
+
+SEO-friendly page metadata
+
+ADA accessible
+
+🎭 Visual & Branding Requirements
+
+Brand Colors: Black, Gold, White, Deep Navy
+
+Fonts: Bold, modern sans-serif
+
+Vibe: Bold, clean, friendly, confident
+
+Tone: "Banking meets personality"
+
+Logo: LumeCredit (with option to include Credit Bro iconography)
+
+🚀 Next Steps
+
+Approve PRD scope
+
+AI developer to generate first version of frontend and backend logic
+
+Integrate resend.com API for emails
+
+Launch closed beta with 250-cap
+
+For questions, feedback, or API keys, contact: hello@creditbro.credit

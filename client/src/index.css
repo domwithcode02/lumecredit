@@ -39,7 +39,7 @@
   }
 
   .btn-primary {
-    @apply bg-[#4A90E2] hover:bg-blue-600 text-white font-medium rounded-lg px-6 py-3 shadow-sm transition-all;
+    @apply bg-[#000000] hover:bg-gray-800 text-white font-medium rounded-lg px-6 py-3 shadow-sm transition-all;
   }
   
   .btn-secondary {

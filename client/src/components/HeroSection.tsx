@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onButtonClick }: HeroSectionProps) {
   return (
-    <section className="bg-white pt-48 pb-16 sm:pt-48 sm:pb-20 overflow-hidden">
+    <section className="bg-white pt-32 pb-8 sm:pt-32 sm:pb-12 overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
@@ -18,7 +18,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-              Unlock Lifetime Credit Building for a One-Time <span className="text-[#F5C518]">$200</span> <span className="text-[#4A90E2]">Fee</span>
+              You Gotta Have <span className="text-[#003366]">Credit</span>, <span className="text-[#F5C518]">Bro</span>.
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-xl">
@@ -30,7 +30,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                 className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2"
                 onClick={onButtonClick}
               >
-                <span>Claim Your Lifetime Deal</span>
+                <span>Join the First 250 Now</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
@@ -41,15 +41,23 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             <div className="flex flex-wrap gap-x-8 gap-y-4">
               <div className="flex items-center text-sm text-slate-600">
                 <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>No monthly fees</span>
+                <span>FlexCredit™: Revolving Tradeline</span>
               </div>
               <div className="flex items-center text-sm text-slate-600">
                 <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>Cancel anytime</span>
+                <span>SteadyBuild™: Installment Tradeline</span>
               </div>
               <div className="flex items-center text-sm text-slate-600">
                 <Check size={16} className="text-[#4A90E2] mr-2" />
-                <span>30-day money back</span>
+                <span>HomeTrack™: Rent Reporting</span>
+              </div>
+              <div className="flex items-center text-sm text-slate-600">
+                <Check size={16} className="text-[#4A90E2] mr-2" />
+                <span>Free Checking Account</span>
+              </div>
+              <div className="flex items-center text-sm text-slate-600">
+                <Check size={16} className="text-[#4A90E2] mr-2" />
+                <span>LumeCredit Visa® Card Access</span>
               </div>
             </div>
           </div>
