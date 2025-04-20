@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import UrgencySection from "@/components/UrgencySection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import TradelinesSection from "@/components/TradelinesSection";
 import VisaCardSection from "@/components/VisaCardSection";
 import FormSection from "@/components/FormSection";
@@ -56,6 +57,7 @@ export default function HomePage() {
       <main className="flex-grow">
         <HeroSection onButtonClick={scrollToForm} />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
+        <HowItWorksSection />
         <TradelinesSection />
         <VisaCardSection />
         <FormSection id="reserve-form" onSuccess={refetch} />

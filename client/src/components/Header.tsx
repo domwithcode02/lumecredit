@@ -32,11 +32,11 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
         
         {/* Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#benefits" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
-            Benefits
-          </a>
           <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Deal
+          </a>
+          <a href="#how-it-works" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+            How It Works
           </a>
           <a href="#tradelines" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Tradelines

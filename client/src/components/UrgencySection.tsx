@@ -199,7 +199,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   onClick={scrollToForm}
                   className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base px-8 py-4 h-auto rounded-xl shadow-md shadow-[#F5C518]/20"
                 >
-                  SECURE YOUR SPOT NOW
+                  SECURE MY SPOT NOW
                 </Button>
                 
                 <div className="flex items-center">
