@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import BenefitsSection from "@/components/BenefitsSection";
 import UrgencySection from "@/components/UrgencySection";
 import TradelinesSection from "@/components/TradelinesSection";
 import VisaCardSection from "@/components/VisaCardSection";
@@ -56,7 +55,6 @@ export default function HomePage() {
       
       <main className="flex-grow">
         <HeroSection onButtonClick={scrollToForm} />
-        <BenefitsSection />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
         <TradelinesSection />
         <VisaCardSection />

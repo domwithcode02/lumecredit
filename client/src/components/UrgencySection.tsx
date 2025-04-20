@@ -1,4 +1,4 @@
-import { AlertTriangle, Check, Star, TrendingUp, Shield, Clock } from "lucide-react";
+import { AlertTriangle, Check, Star, TrendingUp, Shield, Clock, Lock, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface UrgencySectionProps {
@@ -25,9 +25,41 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Your <span className="text-[#F5C518]">Exclusive</span> Lifetime Credit Bundle
           </h2>
-          <p className="text-slate-600 text-lg">
+          <p className="text-slate-600 text-lg mb-6">
             Unlock the power of two premium tradelines to supercharge your credit journey
           </p>
+          
+          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-6">
+            <div className="flex items-start gap-3">
+              <div className="bg-[#003366]/10 p-2 rounded-full mt-1">
+                <Lock className="h-5 w-5 text-[#003366]" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold text-slate-900">Lifetime Access</h3>
+                <p className="text-slate-600 text-sm">Pay once, enjoy forever. No recurring fees.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
+              <div className="bg-[#003366]/10 p-2 rounded-full mt-1">
+                <TrendingUp className="h-5 w-5 text-[#003366]" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold text-slate-900">Two Credit Lines</h3>
+                <p className="text-slate-600 text-sm">Bundled premium tradelines boost scores faster.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
+              <div className="bg-[#003366]/10 p-2 rounded-full mt-1">
+                <DollarSign className="h-5 w-5 text-[#003366]" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold text-slate-900">Massive Savings</h3>
+                <p className="text-slate-600 text-sm">$3,285+ lifetime value ($697/year × 5+).</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-12 gap-8 mb-12">
@@ -165,7 +197,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               <div className="flex flex-col sm:flex-row gap-4 items-center">
                 <Button 
                   onClick={scrollToForm}
-                  className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base px-8 py-4 h-auto rounded-xl shadow-md shadow-[#F5C518]/20 animate-pulse"
+                  className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base px-8 py-4 h-auto rounded-xl shadow-md shadow-[#F5C518]/20"
                 >
                   SECURE YOUR SPOT NOW
                 </Button>

@@ -31,7 +31,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                 onClick={onButtonClick}
               >
                 <span>Join the First 250 Now</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
@@ -80,11 +80,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           <div className="relative hidden lg:block">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[550px] h-[550px] rounded-full -z-10"></div>
             
-            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">
-              <div className="absolute -top-8 -right-8 bg-white text-[#003366] font-bold rounded-full py-2 px-4 shadow-lg transform rotate-12 z-10 border-2 border-[#F5C518]">
-                760+ Credit Score!
-              </div>
-              
+            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">              
               <div className="mascot-container relative z-0">
                 <img 
                   src={mascotImage} 
