@@ -1,6 +1,3 @@
-import { Home } from "lucide-react";
-import { GiMuscleUp } from "react-icons/gi";
-import { FaHammer } from "react-icons/fa";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function TradelinesSection() {
@@ -24,9 +21,12 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <GiMuscleUp className="h-6 w-6 text-[#003366]" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 4L17 4 18 7 15 7 14 4 12 4 9 14 12 14 13 11 16 11 15 14 18 14 21 4z" />
+                  <path d="M4 4L7 4 6 7 9 7 10 4 12 4 15 14 12 14 11 11 8 11 9 14 6 14 3 4z" />
+                </svg>
               </div>
-              <CardTitle className="text-xl font-bold">FlexCredit Revolving Tradeline</CardTitle>
+              <CardTitle className="text-xl font-bold">FlexCredit Revolving</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
                 The foundation of excellent credit
               </CardDescription>
@@ -53,9 +53,13 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <FaHammer className="h-6 w-6 text-[#003366]" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9" />
+                  <path d="M17.64 15L22 10.64" />
+                  <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91" />
+                </svg>
               </div>
-              <CardTitle className="text-xl font-bold">SteadyBuild Tradeline</CardTitle>
+              <CardTitle className="text-xl font-bold">SteadyBuild Installment</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
                 Installment loans for diversifying your credit mix
               </CardDescription>
@@ -82,7 +86,10 @@ export default function TradelinesSection() {
           <Card className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <CardHeader className="pb-4">
               <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-4">
-                <Home className="h-6 w-6 text-[#003366]" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
               </div>
               <CardTitle className="text-xl font-bold">HomeTrack Rent Reporting</CardTitle>
               <CardDescription className="text-slate-600 mt-2">
