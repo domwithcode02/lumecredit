@@ -36,7 +36,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             Benefits
           </a>
           <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
-            Features
+            Deal
           </a>
         </div>
         

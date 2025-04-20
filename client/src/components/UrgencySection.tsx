@@ -15,13 +15,14 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
 
   return (
     <section id="features" className="py-16 bg-white">
+      {/* Deal Section */}
       <div className="container-custom">
         <div className="bg-[#003366] bg-opacity-5 rounded-2xl overflow-hidden shadow-sm">
           <div className="grid md:grid-cols-12 gap-0">
             <div className="md:col-span-8 p-8 md:p-12">
               <div className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 mb-5">
                 <AlertTriangle className="h-3.5 w-3.5 text-[#F5C518] mr-2" />
-                <span className="text-sm font-medium text-slate-700">Limited Time Offer</span>
+                <span className="text-sm font-medium text-slate-700">Limited Time Deal</span>
               </div>
             
               <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
