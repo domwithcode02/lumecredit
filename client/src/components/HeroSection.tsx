@@ -25,7 +25,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               Get Lume Credit's Premium Bundle with two credit line subscriptions to help build your credit history, with continuous reporting and expert guidance. No monthly fees ever again!
             </p>
             
-            <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
+            <div className="flex mb-12">
               <Button 
                 className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2"
                 onClick={onButtonClick}
@@ -36,11 +36,6 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
               </Button>
-              
-              <div className="bg-[#F5C518] text-slate-900 font-medium rounded-lg px-6 py-3 flex items-center justify-center">
-                <span className="mr-2">$200</span>
-                <span className="text-sm">Lifetime Access</span>
-              </div>
             </div>
             
             <div className="flex flex-wrap gap-x-8 gap-y-4">
