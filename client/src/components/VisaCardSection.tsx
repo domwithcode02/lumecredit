@@ -61,17 +61,7 @@ export default function VisaCardSection() {
                 </div>
               </div>
             </div>
-            
-            <Button 
-              className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2 bg-[#003366] hover:bg-[#002244]"
-              onClick={scrollToForm}
-            >
-              <span>Reserve Your Card Now</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </Button>
+
           </div>
           
           <div className="order-1 lg:order-2 flex justify-center">
