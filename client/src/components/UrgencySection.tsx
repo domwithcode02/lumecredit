@@ -16,7 +16,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
   return (
     <section id="features" className="py-16 bg-white">
       <div className="container-custom">
-        <div className="bg-[#4A90E2] bg-opacity-5 rounded-2xl overflow-hidden shadow-sm">
+        <div className="bg-[#003366] bg-opacity-5 rounded-2xl overflow-hidden shadow-sm">
           <div className="grid md:grid-cols-12 gap-0">
             <div className="md:col-span-8 p-8 md:p-12">
               <div className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 mb-5">
@@ -25,7 +25,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               </div>
             
               <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Only <span className="text-[#4A90E2]">{spotsRemaining}</span> spots left at this price
+                Only <span className="text-[#003366]">{spotsRemaining}</span> spots left at this price
               </h3>
               
               <p className="text-slate-600 mb-8 max-w-2xl text-lg">
@@ -42,15 +42,15 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </Button>
                 
                 <div className="inline-flex items-center">
-                  <div className="h-3 w-3 bg-[#4A90E2] rounded-full animate-pulse mr-3"></div>
+                  <div className="h-3 w-3 bg-[#003366] rounded-full animate-pulse mr-3"></div>
                   <span className="text-slate-600 font-medium">
-                    <span className="text-[#4A90E2] font-semibold">{spotsRemaining}</span> of 250 spots remaining
+                    <span className="text-[#003366] font-semibold">{spotsRemaining}</span> of 250 spots remaining
                   </span>
                 </div>
               </div>
             </div>
             
-            <div className="hidden md:block md:col-span-4 bg-[#4A90E2] p-12 relative">
+            <div className="hidden md:block md:col-span-4 bg-[#003366] p-12 relative">
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%2050%2050%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M0%200h50v50H0z%22%2F%3E%3Cpath%20d%3D%22M38%2040H22v6h-8v-6H0V20h8v-6h8v6h16v20z%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E')] bg-50 opacity-20"></div>
               </div>
