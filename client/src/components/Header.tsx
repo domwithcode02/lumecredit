@@ -20,7 +20,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="h-12 w-auto">
+          <div className="h-16 w-auto">
             <img 
               src={lumeLogo} 
               alt="LumeCredit Logo" 

@@ -12,7 +12,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <div className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 mb-6">
+            <div className="inline-flex items-center rounded-full bg-[#00336610] px-3 py-1 mb-6">
               <span className="h-2 w-2 rounded-full bg-[#F5C518] mr-2"></span>
               <span className="text-sm font-medium text-slate-700">Limited Time Offer - First 250 Users Only!</span>
             </div>

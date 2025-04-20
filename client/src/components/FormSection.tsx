@@ -67,7 +67,7 @@ export default function FormSection({ id, onSuccess }: FormSectionProps) {
   };
 
   return (
-    <section id={id} className="py-20 bg-blue-50">
+    <section id={id} className="py-20 bg-[#00336610]">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="section-title">
@@ -82,7 +82,7 @@ export default function FormSection({ id, onSuccess }: FormSectionProps) {
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
             <div className="grid md:grid-cols-5 gap-0">
-              <div className="md:col-span-2 bg-[#4A90E2] p-8 text-white flex flex-col justify-center">
+              <div className="md:col-span-2 bg-[#003366] p-8 text-white flex flex-col justify-center">
                 <div className="space-y-6">
                   <div className="flex items-center">
                     <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -227,7 +227,7 @@ export default function FormSection({ id, onSuccess }: FormSectionProps) {
                       </div>
                       
                       <p className="text-xs text-slate-500 text-center">
-                        By submitting, you agree to our <a href="#" className="text-[#4A90E2] hover:underline">Terms of Service</a> and <a href="#" className="text-[#4A90E2] hover:underline">Privacy Policy</a>.
+                        By submitting, you agree to our <a href="#" className="text-[#003366] hover:underline">Terms of Service</a> and <a href="#" className="text-[#003366] hover:underline">Privacy Policy</a>.
                       </p>
                     </form>
                   </Form>
