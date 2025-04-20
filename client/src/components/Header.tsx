@@ -1,5 +1,6 @@
 import SpotCounter from "@/components/SpotCounter";
 import { Button } from "@/components/ui/button";
+import lumeLogoPath from "@assets/ChatGPT Image Mar 30, 2025, 11_27_13 PM.png";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -15,12 +16,17 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   };
 
   return (
-    <header className="bg-white border-b border-slate-100 py-5">
+    <header className="bg-white border-b border-slate-100 py-4">
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="text-[#4A90E2] font-bold text-2xl">
-            LumeCredit
+          <div className="h-14 w-auto">
+            <img 
+              src={lumeLogoPath} 
+              alt="LumeCredit Logo" 
+              className="h-full w-auto object-contain"
+              style={{ filter: 'drop-shadow(0 0 2px rgba(255, 215, 0, 0.3))' }}
+            />
           </div>
         </div>
         

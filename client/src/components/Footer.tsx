@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import lumeLogoPath from "@assets/ChatGPT Image Mar 30, 2025, 11_27_13 PM.png";
 
 export default function Footer() {
   return (
@@ -6,17 +7,24 @@ export default function Footer() {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-1">
-            <div className="text-white font-bold text-2xl mb-5">LumeCredit</div>
-            <p className="text-slate-400 mb-6">Building brighter credit futures for everyone.</p>
+            <div className="mb-5 h-12 w-auto">
+              <img 
+                src={lumeLogoPath} 
+                alt="LumeCredit Logo" 
+                className="h-full w-auto object-contain"
+                style={{ filter: 'brightness(1.2)' }}
+              />
+            </div>
+            <p className="text-slate-400 mb-6">Illuminate your credit journey. Building brighter credit futures for everyone.</p>
             
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-[#4A90E2] transition">
+              <a href="#" className="text-slate-400 hover:text-[#F5C518] transition">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#4A90E2] transition">
+              <a href="#" className="text-slate-400 hover:text-[#F5C518] transition">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#4A90E2] transition">
+              <a href="#" className="text-slate-400 hover:text-[#F5C518] transition">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
