@@ -20,12 +20,12 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="h-14 w-auto">
+          <div className="h-20 w-auto">
             <img 
               src={lumeLogoPath} 
               alt="LumeCredit Logo" 
               className="h-full w-auto object-contain"
-              style={{ filter: 'drop-shadow(0 0 2px rgba(255, 215, 0, 0.3))' }}
+              style={{ filter: 'drop-shadow(0 0 3px rgba(255, 215, 0, 0.4))' }}
             />
           </div>
         </div>

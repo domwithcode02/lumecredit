@@ -1,0 +1,22 @@
+Here are the absolute essentials:
+Crystal Clear Headline:
+What: Immediately state the core value proposition and the offer.
+Example: "Unlock Lifetime Credit Building: Get Lume Credit's Premium Bundle for a One-Time $200 Fee" or "Limited Offer: Secure Lifetime Access to Lume Credit for $200 (First 250 Users Only!)"
+Focus: Benefit-driven, clear, mentions the lifetime aspect and price.
+Compelling Offer Description:
+Explain the Future Value: Briefly describe what the "bundle deal of two credit line subscriptions" will entail (e.g., tools to build credit history, reporting, etc. – keep it high-level but enticing).
+Highlight the Deal: Emphasize the $200 one-time fee for lifetime access. Contrast this implicitly or explicitly with typical monthly/annual subscription costs for similar services to show the immense value.
+Urgency & Scarcity: Clearly state "Limited to the first 250 sign-ups". This is crucial for driving immediate action. Mentioning "Limited Time Offer" also helps.
+Clear Call to Action (CTA):
+Obvious Button: Large, prominent button(s).
+Action-Oriented Text: Use text like "Reserve Your Spot Now", "Get Early Access", "Claim Your Lifetime Deal", "Sign Up for $200 Lifetime Access".
+Placement: Place it prominently, potentially multiple times (e.g., after the headline/offer, near the form).
+Simple Sign-Up Form:
+Minimal Fields: Absolutely stick to Name and Email as per your PRD. Adding more fields will reduce conversions. (If you must have Phone, make it clearly optional).
+Placement: Directly below or adjacent to the primary CTA.
+Trust & Credibility Elements (Even if Basic):
+Professional Look: Clean, simple, uncluttered design. Even basic, it shouldn't look amateurish.
+Brand Name/Logo: Display "Lume Credit" clearly.
+Brief "What is Lume Credit?" / Vision: A sentence or two explaining the future mission (to help people build credit) adds context and legitimacy.
+Explanation of Process: Clearly state what happens after signing up (e.g., "Enter your email to reserve your spot. We will contact you soon with instructions on how to complete your $200 lifetime purchase."). This manages expectations.
+(Highly Recommended) Privacy Assurance: A simple statement like "We respect your privacy and will only use your email to contact you about this offer and Lume Credit updates." A link to a basic Privacy Policy page (even if very simple) is even better for tru

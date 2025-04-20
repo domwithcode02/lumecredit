@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, CreditCard, TrendingUp, Shield } from "lucide-react";
+import mascotImage from "@assets/ChatGPT Image Apr 12, 2025, 10_10_34 PM.png";
 
 interface HeroSectionProps {
   onButtonClick: () => void;
@@ -12,24 +13,28 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <div className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 mb-6">
-              <span className="h-2 w-2 rounded-full bg-[#4A90E2] mr-2"></span>
-              <span className="text-sm font-medium text-slate-700">Limited Time Offer</span>
+              <span className="h-2 w-2 rounded-full bg-[#F5C518] mr-2"></span>
+              <span className="text-sm font-medium text-slate-700">Limited Time Offer - First 250 Users Only!</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-              The credit building tool that gets results<span className="text-[#4A90E2]">.</span>
+              Unlock Lifetime Credit Building for a One-Time <span className="text-[#F5C518]">$200</span> <span className="text-[#4A90E2]">Fee</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-xl">
-              For the first 250 early adopters only: Lock in lifetime access to our premium credit line subscriptions for a one-time payment of just $200.
+              Get Lume Credit's Premium Bundle with two credit line subscriptions to help build your credit history, with continuous reporting and expert guidance. No monthly fees ever again!
             </p>
             
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
               <Button 
-                className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto"
+                className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2"
                 onClick={onButtonClick}
               >
-                Reserve Your Spot
+                <span>Claim Your Lifetime Deal</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
               </Button>
               
               <div className="bg-[#F5C518] text-slate-900 font-medium rounded-lg px-6 py-3 flex items-center justify-center">
@@ -55,41 +60,24 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           </div>
           
           <div className="relative hidden lg:block">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-50 w-[500px] h-[500px] rounded-full -z-10"></div>
-            <div className="grid grid-cols-1 gap-6 relative">
-              <div className="feature-card translate-x-12">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-100 rounded-lg p-3">
-                    <CreditCard className="text-[#4A90E2] h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">Instant Credit Line</h3>
-                    <p className="text-slate-600 text-sm">Get approved and start building credit immediately.</p>
-                  </div>
-                </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-blue-50 to-[#F5C51820] w-[550px] h-[550px] rounded-full -z-10"></div>
+            
+            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">
+              <div className="absolute -top-4 -right-4 bg-white text-[#4A90E2] font-bold rounded-full py-2 px-4 shadow-lg transform rotate-12 z-10 border-2 border-[#F5C518]">
+                760+ Credit Score!
               </div>
               
-              <div className="feature-card -translate-x-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-100 rounded-lg p-3">
-                    <TrendingUp className="text-[#4A90E2] h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">Score Improvement</h3>
-                    <p className="text-slate-600 text-sm">Track your progress with real-time credit monitoring.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="feature-card translate-x-8">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-blue-100 rounded-lg p-3">
-                    <Shield className="text-[#4A90E2] h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">Secure & Protected</h3>
-                    <p className="text-slate-600 text-sm">Your data is encrypted and never shared with third parties.</p>
-                  </div>
+              <div className="mascot-container relative z-0">
+                <img 
+                  src={mascotImage} 
+                  alt="LumeCredit Mascot" 
+                  className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
+                />
+                
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-4 max-w-[80%] shadow-xl border border-[#4A90E2]/20">
+                  <p className="font-medium text-center">
+                    "Drive your credit score higher with LumeCredit!"
+                  </p>
                 </div>
               </div>
             </div>
