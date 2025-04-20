@@ -16,11 +16,11 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-4 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-6 shadow-sm">
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="h-28 w-auto">
+          <div className="h-36 w-auto">
             <img 
               src={lumeLogoPath} 
               alt="LumeCredit Logo" 
