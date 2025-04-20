@@ -38,6 +38,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Deal
           </a>
+          <a href="#tradelines" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+            Tradelines
+          </a>
         </div>
         
         {/* Actions */}
