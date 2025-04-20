@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
-import lumeLogoPath from "@assets/ChatGPT Image Mar 30, 2025, 11_27_13 PM.png";
+import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
 
 export default function Footer() {
   return (
@@ -9,12 +9,9 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-5 h-28 w-auto">
               <img 
-                src={lumeLogoPath} 
+                src={lumeLogo} 
                 alt="LumeCredit Logo" 
                 className="h-full w-auto object-contain"
-                style={{ 
-                  filter: 'brightness(1.2) drop-shadow(0 0 4px rgba(255, 215, 0, 0.3))'
-                }}
               />
             </div>
             <p className="text-slate-400 mb-6">Illuminate your credit journey. Building brighter credit futures for everyone.</p>
