@@ -7,6 +7,7 @@ import TradelinesSection from "@/components/TradelinesSection";
 import VisaCardSection from "@/components/VisaCardSection";
 import FormSection from "@/components/FormSection";
 import Footer from "@/components/Footer";
+import PartnersSection from "@/components/PartnersSection";
 import { useQuery } from "@tanstack/react-query";
 
 export default function HomePage() {
@@ -56,6 +57,7 @@ export default function HomePage() {
       
       <main className="flex-grow">
         <HeroSection onButtonClick={scrollToForm} />
+        <PartnersSection />
         <HowItWorksSection />
         <TradelinesSection />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
