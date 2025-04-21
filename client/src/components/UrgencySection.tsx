@@ -63,135 +63,168 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
         </div>
 
         <div className="grid md:grid-cols-12 gap-8 mb-12">
-          {/* Revolving Tradeline Card */}
+          {/* FlexCredit Revolving Tradeline Card */}
           <div className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
-            <div className="p-8">
-              <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp size={24} className="text-[#003366]" />
-              </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                Revolving Credit Tradeline
-              </h3>
-              
-              <ul className="space-y-4 mb-6">
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">Builds revolving credit history similar to credit cards</p>
-                </li>
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">Improves credit utilization, a key factor in scoring</p>
-                </li>
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">5 years of monthly reporting to all three bureaus</p>
-                </li>
-              </ul>
-              
-              <div className="rounded-lg bg-[#003366]/5 p-4">
-                <div className="flex items-center text-[#003366] font-semibold mb-1">
-                  <Star size={16} className="mr-2" />
-                  TYPICAL RESULT:
+            <div className="relative">
+              <div className="absolute top-0 right-0">
+                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
+                  COMING SOON
                 </div>
-                <p className="text-slate-600">+40-70 points in your first 60 days</p>
+              </div>
+              <div className="p-8">
+                <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
+                  <TrendingUp size={24} className="text-[#003366]" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                  FlexCredit™ Revolving
+                </h3>
+                
+                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
+                  <span className="font-medium text-slate-700">$25/month on $2,500 limit</span>
+                </div>
+                
+                <ul className="space-y-4 mb-6">
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700">Builds revolving credit history similar to credit cards</p>
+                  </li>
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700">Improves credit utilization, a key factor in scoring</p>
+                  </li>
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700"><span className="font-semibold">Essential for:</span> Qualifying for premium credit cards</p>
+                  </li>
+                </ul>
+                
+                <div className="rounded-lg bg-[#003366]/5 p-4">
+                  <div className="flex items-center text-[#003366] font-semibold mb-1">
+                    <Star size={16} className="mr-2" />
+                    TYPICAL RESULT:
+                  </div>
+                  <p className="text-slate-600">+40-70 points in your first 60 days</p>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* Installment Tradeline Card */}
+          {/* SteadyBuild Installment Tradeline Card */}
           <div className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
-            <div className="p-8">
-              <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9" />
-                  <path d="M17.64 15L22 10.64" />
-                  <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91" />
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                Installment Loan Tradeline
-              </h3>
-              
-              <ul className="space-y-4 mb-6">
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">Shows ability to manage fixed payment loans</p>
-                </li>
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">Diversifies your credit mix for optimal scoring</p>
-                </li>
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">5 years of on-time payments reported to bureaus</p>
-                </li>
-              </ul>
-              
-              <div className="rounded-lg bg-[#003366]/5 p-4">
-                <div className="flex items-center text-[#003366] font-semibold mb-1">
-                  <Star size={16} className="mr-2" />
-                  SCORING IMPACT:
+            <div className="relative">
+              <div className="absolute top-0 right-0">
+                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
+                  COMING SOON
                 </div>
-                <p className="text-slate-600">Improves 10% of your FICO® credit score factors</p>
+              </div>
+              <div className="p-8">
+                <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9" />
+                    <path d="M17.64 15L22 10.64" />
+                    <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91" />
+                  </svg>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                  SteadyBuild™ Installment
+                </h3>
+                
+                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
+                  <span className="font-medium text-slate-700">$35/month on $3,500 loan</span>
+                </div>
+                
+                <ul className="space-y-4 mb-6">
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700">Shows ability to manage fixed payment loans</p>
+                  </li>
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700">Diversifies your credit mix for optimal scoring</p>
+                  </li>
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700"><span className="font-semibold">Essential for:</span> Mortgage and auto loan approvals</p>
+                  </li>
+                </ul>
+                
+                <div className="rounded-lg bg-[#003366]/5 p-4">
+                  <div className="flex items-center text-[#003366] font-semibold mb-1">
+                    <Star size={16} className="mr-2" />
+                    SCORING IMPACT:
+                  </div>
+                  <p className="text-slate-600">Improves 10% of your FICO® credit score factors</p>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* Retail/Utility Tradeline Card */}
+          {/* HomeTrack Rent Reporting Card */}
           <div className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
-            <div className="p-8">
-              <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                Retail/Utility Tradeline
-              </h3>
-              
-              <ul className="space-y-4 mb-6">
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">Establishes regular payment history records</p>
-                </li>
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">Strengthens the most important score factor (35%)</p>
-                </li>
-                <li className="flex gap-3">
-                  <div className="flex-shrink-0 text-[#F5C518]">
-                    <Check size={20} />
-                  </div>
-                  <p className="text-slate-700">5 years of recurring payments on your reports</p>
-                </li>
-              </ul>
-              
-              <div className="rounded-lg bg-[#003366]/5 p-4">
-                <div className="flex items-center text-[#003366] font-semibold mb-1">
-                  <Star size={16} className="mr-2" />
-                  KEY BENEFIT:
+            <div className="relative">
+              <div className="absolute top-0 right-0">
+                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
+                  COMING SOON
                 </div>
-                <p className="text-slate-600">Most trusted account type by mortgage lenders</p>
+              </div>
+              <div className="p-8">
+                <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  </svg>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                  HomeTrack™ Rent Reporting
+                </h3>
+                
+                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
+                  <span className="font-medium text-slate-700">$19/month verification service</span>
+                </div>
+                
+                <ul className="space-y-4 mb-6">
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700">Establishes regular payment history records</p>
+                  </li>
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700">Strengthens the most important score factor (35%)</p>
+                  </li>
+                  <li className="flex gap-3">
+                    <div className="flex-shrink-0 text-[#F5C518]">
+                      <Check size={20} />
+                    </div>
+                    <p className="text-slate-700"><span className="font-semibold">Essential for:</span> Rental applications & housing approval</p>
+                  </li>
+                </ul>
+                
+                <div className="rounded-lg bg-[#003366]/5 p-4">
+                  <div className="flex items-center text-[#003366] font-semibold mb-1">
+                    <Star size={16} className="mr-2" />
+                    KEY BENEFIT:
+                  </div>
+                  <p className="text-slate-600">Most trusted account type by mortgage lenders</p>
+                </div>
               </div>
             </div>
           </div>
@@ -206,10 +239,8 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 <span className="text-sm font-bold text-[#F5C518]">WHY THIS DEAL IS EXCEPTIONAL</span>
               </div>
             
-              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 flex items-center">
-                <span className="mr-2 tracking-tight">Only</span> 
-                <span className="bg-[#F5C518] text-[#003366] px-2 py-1 rounded-md">{spotsRemaining}</span> 
-                <span className="ml-2 tracking-tight">founding memberships left</span>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
+                <span className="tracking-tight">First 250 Members Only - Limited Time Offer</span>
               </h3>
               
               <div className="flex gap-6 mb-6">
@@ -227,8 +258,8 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               </div>
               
               <p className="text-white/80 mb-8 max-w-2xl text-lg border-l-4 border-[#F5C518] pl-4">
-                After the first 250 members, the price will <span className="font-bold text-white">permanently increase</span>. 
-                Lock in your <span className="font-bold text-[#F5C518]">5-year access</span> now and <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">pay just once</span>.
+                After the first 250 members, <span className="font-bold text-white uppercase tracking-wide">this deal is gone forever</span>. 
+                Lock in your <span className="font-bold text-[#F5C518]">5-year access</span> now at this <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">exclusive one-time price</span>.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 items-center">
@@ -239,11 +270,9 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   SECURE MY SPOT NOW
                 </Button>
                 
-                <div className="flex items-center">
-                  <div className="h-3 w-3 bg-[#F5C518] rounded-full animate-pulse mr-3"></div>
-                  <span className="text-white/80 font-medium">
-                    <span className="text-[#F5C518] font-semibold">{spotsRemaining}</span> of 250 spots remaining
-                  </span>
+                <div className="flex items-center text-white/80 font-medium bg-[#F5C518]/10 px-4 py-2 rounded-lg">
+                  <Clock className="h-4 w-4 text-[#F5C518] mr-2" />
+                  <span>Limited availability - Act now!</span>
                 </div>
               </div>
             </div>
@@ -271,15 +300,15 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 <div className="text-white text-sm space-y-3">
                   <p className="flex items-start">
                     <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">Revolving</span> Credit Tradeline</span>
+                    <span><span className="font-bold">FlexCredit™</span> Revolving</span>
                   </p>
                   <p className="flex items-start">
                     <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">Installment</span> Loan Tradeline</span>
+                    <span><span className="font-bold">SteadyBuild™</span> Installment</span>
                   </p>
                   <p className="flex items-start">
                     <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">Retail/Utility</span> Tradeline</span>
+                    <span><span className="font-bold">HomeTrack™</span> Rent Reporting</span>
                   </p>
                   <p className="flex items-start">
                     <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />

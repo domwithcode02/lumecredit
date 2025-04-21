@@ -55,19 +55,19 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   <div className="w-8 h-8 bg-[#41c99e]/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <CreditCard size={16} className="text-[#41c99e]" />
                   </div>
-                  <span>Revolving Credit Tradeline</span>
+                  <span><b>FlexCredit™</b> Revolving</span>
                 </div>
                 <div className="flex items-center text-sm text-slate-700 bg-slate-50 p-3 rounded-lg">
                   <div className="w-8 h-8 bg-[#4aade3]/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <Shield size={16} className="text-[#4aade3]" />
                   </div>
-                  <span>Installment Loan Tradeline</span>
+                  <span><b>SteadyBuild™</b> Installment</span>
                 </div>
                 <div className="flex items-center text-sm text-slate-700 bg-slate-50 p-3 rounded-lg">
                   <div className="w-8 h-8 bg-[#ffc829]/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <TrendingUp size={16} className="text-[#ffc829]" />
                   </div>
-                  <span>Retail/Utility Tradeline</span>
+                  <span><b>HomeTrack™</b> Rent Reporting</span>
                 </div>
               </div>
             </div>
