@@ -1,4 +1,3 @@
-import SpotCounter from "@/components/SpotCounter";
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
 
@@ -32,14 +31,14 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
         
         {/* Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
-            Deal
-          </a>
           <a href="#how-it-works" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             How It Works
           </a>
           <a href="#tradelines" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Tradelines
+          </a>
+          <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+            Deal
           </a>
           <a href="#visa-card" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Visa Card
@@ -47,8 +46,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
         </div>
         
         {/* Actions */}
-        <div className="flex items-center space-x-4">
-          <SpotCounter spotsRemaining={spotsRemaining} totalSpots={totalSpots} />
+        <div className="flex items-center">
           <Button 
             onClick={scrollToForm}
             className="hidden md:flex bg-black hover:bg-slate-800 text-white font-medium rounded-lg px-5 py-2.5"
