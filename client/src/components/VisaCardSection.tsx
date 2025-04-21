@@ -61,7 +61,30 @@ export default function VisaCardSection() {
                 </div>
               </div>
             </div>
-
+            
+            <Button 
+              onClick={scrollToForm}
+              className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold px-6 py-3 rounded-lg mb-6"
+            >
+              Get Your Card
+            </Button>
+            
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 max-w-xl text-xs text-slate-500 space-y-2">
+              <p className="font-medium text-slate-700 mb-1">Important Disclosures:</p>
+              <p>
+                Card issued by Sutton Bank, Member FDIC, pursuant to license from Visa® U.S.A. Inc.
+              </p>
+              <p>
+                Funds in your LumeCredit account are FDIC-insured through our partner bank up to $250,000 per depositor.
+              </p>
+              <p>
+                <span className="font-medium text-slate-600">Fee Disclosure:</span> No monthly fees. No overdraft charges. No minimum balance requirements. See full terms for details.
+              </p>
+              <p className="text-[10px] italic">
+                The LumeCredit Visa® Card is subject to application and approval. Terms and conditions apply. 
+                See cardholder agreement for complete details including pricing and fees.
+              </p>
+            </div>
           </div>
           
           <div className="order-1 lg:order-2 flex justify-center">
@@ -72,6 +95,9 @@ export default function VisaCardSection() {
                 alt="LumeCredit Visa Card" 
                 className="relative w-full max-w-md object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out"
               />
+              <div className="absolute bottom-0 right-0 bg-white/80 backdrop-blur-sm px-3 py-1 rounded text-xs text-slate-500 shadow-sm border border-slate-200">
+                Card design subject to change
+              </div>
             </div>
           </div>
         </div>
