@@ -21,14 +21,14 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <div className="h-20 w-auto">
+          <a href="/" className="h-20 w-auto">
             <img 
               src={lumeLogo} 
               alt="LumeCredit Logo" 
               className="h-full w-auto object-contain"
               style={{ maxHeight: '100%' }}
             />
-          </div>
+          </a>
         </div>
         
         {/* Navigation */}
@@ -60,6 +60,10 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           
           <a href="#visa-card" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Visa Card
+          </a>
+          
+          <a href="/faq" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+            FAQ
           </a>
         </div>
         
