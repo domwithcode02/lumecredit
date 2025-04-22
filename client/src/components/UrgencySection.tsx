@@ -64,7 +64,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
 
         <div className="grid md:grid-cols-12 gap-8 mb-12">
           {/* FlexCredit Revolving Tradeline Card */}
-          <div className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+          <div id="flexcredit" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="absolute top-0 right-0">
                 <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
@@ -117,7 +117,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           </div>
           
           {/* SteadyBuild Installment Tradeline Card */}
-          <div className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+          <div id="steadybuild" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="absolute top-0 right-0">
                 <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
@@ -174,7 +174,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           </div>
           
           {/* HomeTrack Rent Reporting Card */}
-          <div className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+          <div id="hometrack" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="absolute top-0 right-0">
                 <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
@@ -240,8 +240,26 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               </div>
             
               <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
-                <span className="tracking-tight">Exclusive TotalBoost+ Bundle</span>
+                <span className="tracking-tight">Ultimate Credit Building Bundle</span>
               </h3>
+              
+              <div className="mb-4 p-3 bg-white/10 border border-[#F5C518]/30 rounded-lg">
+                <div className="flex flex-wrap gap-3 mb-3">
+                  <div className="inline-flex items-center bg-white/20 px-3 py-1.5 rounded-full">
+                    <span className="text-sm font-bold text-white">FlexCredit™: $25/month</span>
+                  </div>
+                  <div className="inline-flex items-center bg-white/20 px-3 py-1.5 rounded-full">
+                    <span className="text-sm font-bold text-white">SteadyBuild™: $25/month</span>
+                  </div>
+                  <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
+                    <span className="text-sm font-bold text-green-300">HomeTrack™: FREE</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between text-lg">
+                  <div className="font-semibold text-white">Bundled Monthly Price:</div>
+                  <div className="text-2xl font-bold text-[#F5C518]">$50<span className="text-sm text-white/80">/month</span></div>
+                </div>
+              </div>
               
               <div className="flex gap-6 mb-6">
                 <div className="flex flex-col items-center bg-white/5 rounded-lg p-3 min-w-[100px]">
@@ -252,13 +270,13 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   <span className="text-3xl font-bold">vs</span>
                 </div>
                 <div className="flex flex-col items-center bg-white/5 rounded-lg p-3 min-w-[100px]">
-                  <span className="text-2xl font-bold text-white/60 line-through">697<sup className="text-lg">$</sup></span>
-                  <span className="text-white/50 text-sm">per year</span>
+                  <span className="text-2xl font-bold text-white/60 line-through">3,000<sup className="text-lg">$</sup></span>
+                  <span className="text-white/50 text-sm">over 5 years</span>
                 </div>
               </div>
               
               <p className="text-white/80 mb-8 max-w-2xl text-lg border-l-4 border-[#F5C518] pl-4">
-                After the first 250 members, <span className="font-bold text-white uppercase tracking-wide">this deal is gone forever</span>. 
+                <span className="font-bold text-white">Once-in-a-lifetime opportunity:</span> Get ALL THREE credit-building tradelines for 5 YEARS at a price less than <span className="font-bold text-white">4 months</span> of the regular monthly rate. After the first 250 members, <span className="font-bold text-white uppercase tracking-wide">this deal vanishes forever</span>. 
                 Lock in your <span className="font-bold text-[#F5C518]">5-year access</span> now at this <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">exclusive one-time price</span>.
               </p>
               
@@ -287,13 +305,24 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               <div className="relative h-full flex flex-col justify-center">
                 <div className="text-white mb-5">
                   <div className="text-4xl font-extrabold">$200</div>
-                  <div className="text-[#F5C518] text-sm font-bold mt-1">5-YEAR ACCESS</div>
+                  <div className="flex items-center mt-1">
+                    <div className="text-[#F5C518] text-sm font-bold">5-YEAR ACCESS</div>
+                    <div className="ml-2 px-2 py-0.5 bg-white/10 rounded text-xs font-medium text-white/80">
+                      $3.33/mo
+                    </div>
+                  </div>
                 </div>
                 
                 <div className="mb-5 py-2 px-3 bg-[#F5C518]/10 rounded-lg border border-[#F5C518]/20">
-                  <div className="flex items-center">
-                    <span className="text-[#F5C518] font-extrabold mr-2">SAVE:</span>
-                    <span className="text-white font-bold">$3,285+</span>
+                  <div className="flex flex-col">
+                    <div className="flex items-center mb-1">
+                      <span className="text-[#F5C518] font-extrabold mr-2">REGULAR PRICE:</span>
+                      <span className="text-white/80 font-medium">$50/month</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="text-[#F5C518] font-extrabold mr-2">YOU SAVE:</span>
+                      <span className="text-white font-bold">$2,800+</span>
+                    </div>
                   </div>
                 </div>
                 
