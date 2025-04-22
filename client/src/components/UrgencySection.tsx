@@ -232,18 +232,18 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* Standard Monthly Option */}
-              <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+              <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10 relative">
+                <div className="absolute top-0 right-0">
+                  <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    COMING SOON
+                  </div>
+                </div>
                 <div className="p-6 md:p-8">
                   <div className="text-center mb-4">
                     <h4 className="text-xl md:text-2xl font-bold text-white">Standard Monthly</h4>
                   </div>
                   
-                  <div className="relative mb-8 text-center">
-                    <div className="absolute -top-3 right-0">
-                      <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
-                        COMING SOON
-                      </div>
-                    </div>
+                  <div className="mb-8 text-center">
                     <div className="flex items-end justify-center gap-1">
                       <span className="text-3xl font-bold text-white">$50</span>
                       <span className="text-lg text-white/80 mb-1">/month</span>
@@ -264,26 +264,26 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </div>
                   </div>
                   
+                  <div className="mb-4 text-center">
+                    <div className="inline-flex px-3 py-1.5 rounded-full bg-[#F5C518]/20 mb-2">
+                      <span className="text-xs font-bold text-[#F5C518]">Perfect Credit Mix™ Included</span>
+                    </div>
+                  </div>
+                  
                   <ul className="mb-6 text-white/80 text-sm space-y-3">
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span>Month-to-month flexibility</span>
+                      <span>Get all 3 essential tradeline types for maximum impact</span>
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span>Cancel anytime with no penalty</span>
+                      <span>Month-to-month flexibility with no commitments</span>
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span>All three bureaus reporting</span>
+                      <span>All three major credit bureaus reporting</span>
                     </li>
                   </ul>
-                  
-                  <div className="pt-4 border-t border-white/10 text-center">
-                    <p className="text-white/70 text-sm">
-                      5-year total: <span className="line-through">$3,000+</span> ($50 × 60 months)
-                    </p>
-                  </div>
                 </div>
               </div>
               
@@ -310,6 +310,12 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </div>
                     <div className="mt-2 bg-[#F5C518]/10 inline-flex items-center px-2 py-1 rounded">
                       <span className="text-xs text-white/90">Just $3.33/month over 5 years</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4 text-center">
+                    <div className="inline-flex px-3 py-1.5 rounded-full bg-[#F5C518]/20 mb-2">
+                      <span className="text-xs font-bold text-[#F5C518]">Perfect Credit Mix™ Included</span>
                     </div>
                   </div>
                   
