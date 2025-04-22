@@ -152,7 +152,7 @@ export default function TradelinesSection() {
                       <ArrowUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Our Solution:</span> FlexCredit™ Revolving Tradeline (included in your bundle)
+                      <span className="font-semibold">Our Solution:</span> FlexCredit™ Revolving Tradeline
                     </p>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function TradelinesSection() {
                       <ArrowUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Our Solution:</span> SteadyBuild™ Installment Tradeline (coming soon)
+                      <span className="font-semibold">Our Solution:</span> SteadyBuild™ Installment Tradeline
                     </p>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function TradelinesSection() {
                       <ArrowUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Our Solution:</span> HomeTrack™ Rent Reporting (coming soon)
+                      <span className="font-semibold">Our Solution:</span> HomeTrack™ Rent Reporting
                     </p>
                   </div>
                 </div>
