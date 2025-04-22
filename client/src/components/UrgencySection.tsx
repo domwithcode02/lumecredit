@@ -264,13 +264,13 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </div>
                   </div>
                   
-                  <div className="mb-4 text-center">
-                    <div className="inline-flex px-3 py-1.5 rounded-full bg-[#F5C518]/20 mb-2">
-                      <span className="text-xs font-bold text-[#F5C518]">Perfect Credit Mix™ Included</span>
-                    </div>
-                  </div>
-                  
                   <ul className="mb-6 text-white/80 text-sm space-y-3">
+                    <li className="flex items-start mb-3">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span className="text-white/90">
+                        <span className="font-bold text-white">Perfect Credit Mix:</span> A balanced combination of revolving, installment, and payment history tradelines that maximizes your credit score potential
+                      </span>
+                    </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
                       <span>Get all 3 essential tradeline types for maximum impact</span>
@@ -310,12 +310,6 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </div>
                     <div className="mt-2 bg-[#F5C518]/10 inline-flex items-center px-2 py-1 rounded">
                       <span className="text-xs text-white/90">Just $3.33/month over 5 years</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4 text-center">
-                    <div className="inline-flex px-3 py-1.5 rounded-full bg-[#F5C518]/20 mb-2">
-                      <span className="text-xs font-bold text-[#F5C518]">Perfect Credit Mix™ Included</span>
                     </div>
                   </div>
                   
