@@ -236,18 +236,25 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 <div className="p-6 md:p-8">
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="text-xl md:text-2xl font-bold text-white">Standard Monthly</h4>
-                    <div className="bg-white/10 px-3 py-1 rounded-full">
-                      <span className="text-sm text-white/80">Always Available</span>
+                    <div className="bg-[#F5C518]/20 px-3 py-1 rounded-full">
+                      <span className="text-sm text-[#F5C518]">Available on launch</span>
                     </div>
                   </div>
                   
-                  <div className="flex items-end gap-1 mb-5">
-                    <span className="text-3xl font-bold text-white">$50</span>
-                    <span className="text-lg text-white/80 mb-1">/month</span>
+                  <div className="relative mb-8 text-center">
+                    <div className="absolute -top-3 right-0">
+                      <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
+                        COMING SOON
+                      </div>
+                    </div>
+                    <div className="flex items-end justify-center gap-1">
+                      <span className="text-3xl font-bold text-white">$50</span>
+                      <span className="text-lg text-white/80 mb-1">/month</span>
+                    </div>
                   </div>
                   
-                  <div className="mb-6 space-y-2">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-6 space-y-2 flex flex-col items-center">
+                    <div className="flex flex-wrap justify-center gap-2">
                       <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
                         <span className="text-xs font-bold text-white">FlexCredit™: $25/mo</span>
                       </div>
@@ -299,17 +306,18 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </div>
                   </div>
                   
-                  <div className="flex items-end gap-1 mb-3">
-                    <span className="text-4xl font-extrabold text-white">$200</span>
-                    <span className="text-lg text-white/80 mb-1">one-time</span>
+                  <div className="relative mb-8 text-center">
+                    <div className="flex items-end justify-center gap-1">
+                      <span className="text-4xl font-extrabold text-white">$200</span>
+                      <span className="text-lg text-white/80 mb-1">one-time</span>
+                    </div>
+                    <div className="mt-2 bg-[#F5C518]/10 inline-flex items-center px-2 py-1 rounded">
+                      <span className="text-xs text-white/90">Just $3.33/month over 5 years</span>
+                    </div>
                   </div>
                   
-                  <div className="mb-2 bg-[#F5C518]/10 inline-flex items-center px-2 py-1 rounded">
-                    <span className="text-xs text-white/90">Just $3.33/month over 5 years</span>
-                  </div>
-                  
-                  <div className="mb-6 space-y-2">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-6 space-y-2 flex flex-col items-center">
+                    <div className="flex flex-wrap justify-center gap-2">
                       <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
                         <span className="text-xs font-bold text-white">FlexCredit™ Included</span>
                       </div>
