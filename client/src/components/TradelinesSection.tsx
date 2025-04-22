@@ -271,7 +271,7 @@ export default function TradelinesSection() {
         </div>
         
         {/* LumeCredit Products Section */}
-        <div className="mb-12">
+        <div id="products" className="mb-12">
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold text-slate-900">
               <span className="text-[#F5C518]">LumeCredit</span> Products
