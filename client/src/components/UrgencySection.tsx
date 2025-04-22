@@ -330,6 +330,10 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   <ul className="mb-6 text-white/80 text-sm space-y-3">
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span><span className="font-bold text-white">Perfect Credit Mix</span> including FlexCredit, SteadyBuild, HomeTrack...</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
                       <span>Pay once, <span className="font-bold text-white">enjoy for 5 full years</span></span>
                     </li>
                     <li className="flex items-start">
