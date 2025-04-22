@@ -20,7 +20,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">
-              Get Lume Credit's Premium Bundle with both essential tradeline types to build your credit history - FlexCredit™ Revolving and SteadyBuild™ Installment for $25 each, plus free rent reporting when bundled!
+              Get Lume Credit's Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!
             </p>
             
             {/* Limited Time Offer Benefits */}
