@@ -1,14 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
-import familyImage from "@assets/lumecredit_card_in_hand_transparent.png";
+import { Check, AlertCircle } from "lucide-react";
+import familyImage from "@assets/ChatGPT Image Apr 21, 2025, 10_58_13 PM.png";
 
 export default function FamiliesSection() {
-  const scrollToForm = () => {
-    const formSection = document.getElementById("reserve-form");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section id="families" className="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -19,7 +12,12 @@ export default function FamiliesSection() {
               <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
             </h2>
             
-            <div className="bg-[#F5C518]/10 px-4 py-3 rounded-lg border-l-4 border-[#F5C518] mb-6">
+            <div className="bg-[#F5C518]/10 px-4 py-3 rounded-lg border-l-4 border-[#F5C518] mb-6 relative">
+              <div className="absolute -top-4 -right-4">
+                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-lg">
+                  COMING SOON
+                </div>
+              </div>
               <p className="text-slate-700 font-medium">
                 Give your children the gift of excellent credit the moment they turn 18
               </p>
@@ -73,12 +71,22 @@ export default function FamiliesSection() {
             
             <div className="bg-[#003366]/5 p-6 rounded-xl border border-[#003366]/10 mb-8">
               <h3 className="text-xl font-bold text-[#003366] mb-3">
-                LumeStart™ Advantage
+                LumeStart™ Advantage 
               </h3>
               <p className="text-md text-slate-700 mb-4">
                 Give your child a 700+ credit score the moment they turn 18 - no other program offers this level of advantage.
               </p>
-              <div className="flex flex-wrap gap-3 mb-4">
+              
+              <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-r mb-5">
+                <div className="flex items-start">
+                  <AlertCircle size={18} className="text-green-600 mr-2 mt-0.5" />
+                  <p className="text-sm text-green-800">
+                    <span className="font-bold">100% Safe & Legal:</span> Our program uses authorized user tradelines and backdated reporting methods that are fully compliant with all credit regulations and bureau policies.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-3">
                 <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                   <Check size={14} className="text-[#003366] mr-1.5" />
                   <span>Fully legal and authorized</span>
@@ -91,17 +99,11 @@ export default function FamiliesSection() {
                   <Check size={14} className="text-[#003366] mr-1.5" />
                   <span>Parental controlled access</span>
                 </div>
+                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
+                  <Check size={14} className="text-[#003366] mr-1.5" />
+                  <span>Bureau-compliant method</span>
+                </div>
               </div>
-              <Button 
-                className="btn-primary text-base px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2 bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
-                onClick={scrollToForm}
-              >
-                <span>Secure Their Future Today</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </Button>
             </div>
           </div>
           
@@ -127,7 +129,7 @@ export default function FamiliesSection() {
               </div>
               
               <div className="absolute top-10 left-0 md:-left-10 bg-[#F5C518]/90 py-2 px-4 rounded-lg shadow-lg text-[#003366] font-bold transform rotate-[-5deg]">
-                <span>LIMITED TIME OFFER</span>
+                <span>COMING SOON</span>
               </div>
             </div>
           </div>
