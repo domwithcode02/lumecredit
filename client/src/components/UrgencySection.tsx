@@ -281,7 +281,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   
                   <div className="pt-4 border-t border-white/10 text-center">
                     <p className="text-white/70 text-sm">
-                      5-year total: <span className="line-through">$3,000</span> ($50 × 60 months)
+                      5-year total: <span className="line-through">$3,000+</span> ($50 × 60 months)
                     </p>
                   </div>
                 </div>
@@ -334,7 +334,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span><span className="font-bold text-[#F5C518]">Save $2,800</span> compared to monthly option</span>
+                      <span><span className="font-bold text-[#F5C518]">Save $2,800+</span> compared to monthly option</span>
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />

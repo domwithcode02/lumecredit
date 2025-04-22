@@ -49,10 +49,15 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             </div>
             
             {/* Special Bundle Offer */}
-            <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10">
+            <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10 relative">
+              <div className="absolute top-0 right-0">
+                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
+                  COMING SOON
+                </div>
+              </div>
               <h3 className="text-xl font-bold text-[#003366] mb-3">Special Offer - 5 Year Credit Bundle</h3>
               <p className="text-md text-slate-700 mb-4">
-                For the first 250 users only: Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000 in monthly payments!
+                For the first 250 users only: Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000+ over the same period!
               </p>
               <div className="flex flex-wrap gap-3 mb-4">
                 <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
