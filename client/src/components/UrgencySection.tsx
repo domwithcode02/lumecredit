@@ -230,121 +230,147 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           </div>
         </div>
 
-        {/* Price Box */}
+        {/* Comparison Section */}
         <div className="bg-gradient-to-r from-[#002244] to-[#003366] rounded-2xl overflow-hidden shadow-2xl border border-[#003366]/40">
-          <div className="grid md:grid-cols-12 gap-0">
-            <div className="md:col-span-8 p-8 md:p-12">
-              <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-3 py-1 mb-5">
-                <Clock className="h-3.5 w-3.5 text-[#F5C518] mr-2" />
-                <span className="text-sm font-bold text-[#F5C518]">WHY THIS DEAL IS EXCEPTIONAL</span>
-              </div>
+          <div className="p-8 md:p-12 text-center">
+            <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-3 py-1 mb-5">
+              <Clock className="h-3.5 w-3.5 text-[#F5C518] mr-2" />
+              <span className="text-sm font-bold text-[#F5C518]">COMPARE YOUR OPTIONS</span>
+            </div>
             
-              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
-                <span className="tracking-tight">Ultimate Credit Building Bundle</span>
-              </h3>
-              
-              <div className="mb-4 p-3 bg-white/10 border border-[#F5C518]/30 rounded-lg">
-                <div className="flex flex-wrap gap-3 mb-3">
-                  <div className="inline-flex items-center bg-white/20 px-3 py-1.5 rounded-full">
-                    <span className="text-sm font-bold text-white">FlexCredit™: $25/month</span>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-8">
+              <span className="tracking-tight">Choose Your Credit-Building Path</span>
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Standard Monthly Option */}
+              <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                <div className="p-6 md:p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-xl md:text-2xl font-bold text-white">Standard Monthly</h4>
+                    <div className="bg-white/10 px-3 py-1 rounded-full">
+                      <span className="text-sm text-white/80">Always Available</span>
+                    </div>
                   </div>
-                  <div className="inline-flex items-center bg-white/20 px-3 py-1.5 rounded-full">
-                    <span className="text-sm font-bold text-white">SteadyBuild™: $25/month</span>
+                  
+                  <div className="flex items-end gap-1 mb-5">
+                    <span className="text-3xl font-bold text-white">$50</span>
+                    <span className="text-lg text-white/80 mb-1">/month</span>
                   </div>
-                  <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
-                    <span className="text-sm font-bold text-green-300">HomeTrack™: FREE</span>
+                  
+                  <div className="mb-6 space-y-2">
+                    <div className="flex flex-wrap gap-2">
+                      <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
+                        <span className="text-xs font-bold text-white">FlexCredit™: $25/mo</span>
+                      </div>
+                      <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
+                        <span className="text-xs font-bold text-white">SteadyBuild™: $25/mo</span>
+                      </div>
+                    </div>
+                    <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
+                      <span className="text-xs font-bold text-green-300">HomeTrack™: Included Free</span>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center justify-between text-lg">
-                  <div className="font-semibold text-white">Bundled Monthly Price:</div>
-                  <div className="text-2xl font-bold text-[#F5C518]">$50<span className="text-sm text-white/80">/month</span></div>
+                  
+                  <ul className="mb-6 text-white/80 text-sm space-y-3">
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span>Month-to-month flexibility</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span>Cancel anytime with no penalty</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span>All three bureaus reporting</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="pt-4 border-t border-white/10">
+                    <p className="text-white/70 text-sm">
+                      Total cost over 5 years: <span className="line-through">$3,000</span>
+                    </p>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex gap-6 mb-6">
-                <div className="flex flex-col items-center bg-white/5 rounded-lg p-3 min-w-[100px]">
-                  <span className="text-3xl font-bold text-white">200<sup className="text-lg">$</sup></span>
-                  <span className="text-white/70 text-sm">one time</span>
+              {/* Special 5-Year Deal */}
+              <div className="bg-[#001a33] rounded-xl overflow-hidden border border-[#F5C518]/30 shadow-lg relative">
+                <div className="absolute top-0 right-0">
+                  <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
+                    LIMITED TIME OFFER
+                  </div>
                 </div>
-                <div className="flex items-center text-white">
-                  <span className="text-3xl font-bold">vs</span>
-                </div>
-                <div className="flex flex-col items-center bg-white/5 rounded-lg p-3 min-w-[100px]">
-                  <span className="text-2xl font-bold text-white/60 line-through">3,000<sup className="text-lg">$</sup></span>
-                  <span className="text-white/50 text-sm">over 5 years</span>
-                </div>
-              </div>
-              
-              <p className="text-white/80 mb-8 max-w-2xl text-lg border-l-4 border-[#F5C518] pl-4">
-                <span className="font-bold text-white">Once-in-a-lifetime opportunity:</span> Get ALL THREE credit-building tradelines for 5 YEARS at a price less than <span className="font-bold text-white">4 months</span> of the regular monthly rate. After the first 250 members, <span className="font-bold text-white uppercase tracking-wide">this deal vanishes forever</span>. 
-                Lock in your <span className="font-bold text-[#F5C518]">5-year access</span> now at this <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">exclusive one-time price</span>.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 items-center">
-                <Button 
-                  onClick={scrollToForm}
-                  className="bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base px-8 py-4 h-auto rounded-xl shadow-md shadow-[#F5C518]/20"
-                >
-                  SECURE MY SPOT NOW
-                </Button>
                 
-                <div className="flex items-center text-white/80 font-medium bg-[#F5C518]/10 px-4 py-2 rounded-lg">
-                  <Clock className="h-4 w-4 text-[#F5C518] mr-2" />
-                  <span>Limited availability - Act now!</span>
+                <div className="p-6 md:p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-xl md:text-2xl font-bold text-white">5-Year Special</h4>
+                    <div className="bg-[#F5C518]/20 px-3 py-1 rounded-full">
+                      <span className="text-sm text-[#F5C518]">First 250 Only</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-end gap-1 mb-3">
+                    <span className="text-4xl font-extrabold text-white">$200</span>
+                    <span className="text-lg text-white/80 mb-1">one-time</span>
+                  </div>
+                  
+                  <div className="mb-2 bg-[#F5C518]/10 inline-flex items-center px-2 py-1 rounded">
+                    <span className="text-xs text-white/90">Just $3.33/month over 5 years</span>
+                  </div>
+                  
+                  <div className="mb-6 space-y-2">
+                    <div className="flex flex-wrap gap-2">
+                      <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
+                        <span className="text-xs font-bold text-white">FlexCredit™ Included</span>
+                      </div>
+                      <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
+                        <span className="text-xs font-bold text-white">SteadyBuild™ Included</span>
+                      </div>
+                    </div>
+                    <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
+                      <span className="text-xs font-bold text-green-300">HomeTrack™ Included Free</span>
+                    </div>
+                  </div>
+                  
+                  <ul className="mb-6 text-white/80 text-sm space-y-3">
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span>Pay once, <span className="font-bold text-white">enjoy for 5 full years</span></span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span><span className="font-bold text-[#F5C518]">Save $2,800</span> compared to monthly option</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
+                      <span>All three bureaus reporting</span>
+                    </li>
+                  </ul>
+                  
+                  <Button 
+                    onClick={scrollToForm}
+                    className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base py-3 h-auto rounded-xl shadow-md shadow-[#F5C518]/20"
+                  >
+                    SECURE YOUR SPOT NOW
+                  </Button>
+                  
+                  <div className="mt-4 text-center">
+                    <p className="text-white/70 text-xs flex items-center justify-center">
+                      <Clock className="h-3 w-3 text-[#F5C518] mr-1" />
+                      <span>Limited availability - Act now before all spots are gone!</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
             
-            <div className="md:col-span-4 bg-[#001a33] p-8 md:p-12 relative">
-              <div className="absolute top-0 right-0 w-20 h-20">
-                <div className="absolute transform rotate-45 bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-6 right-[-20px] top-[15px] shadow-md">
-                  TOTALBOOST+
-                </div>
-              </div>
-              
-              <div className="relative h-full flex flex-col justify-center">
-                <div className="text-white mb-5">
-                  <div className="text-4xl font-extrabold">$200</div>
-                  <div className="flex items-center mt-1">
-                    <div className="text-[#F5C518] text-sm font-bold">5-YEAR ACCESS</div>
-                    <div className="ml-2 px-2 py-0.5 bg-white/10 rounded text-xs font-medium text-white/80">
-                      $3.33/mo
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mb-5 py-2 px-3 bg-[#F5C518]/10 rounded-lg border border-[#F5C518]/20">
-                  <div className="flex flex-col">
-                    <div className="flex items-center mb-1">
-                      <span className="text-[#F5C518] font-extrabold mr-2">REGULAR PRICE:</span>
-                      <span className="text-white/80 font-medium">$50/month</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-[#F5C518] font-extrabold mr-2">YOU SAVE:</span>
-                      <span className="text-white font-bold">$2,800+</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-white text-sm space-y-3">
-                  <p className="flex items-start">
-                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">FlexCredit™</span> Revolving</span>
-                  </p>
-                  <p className="flex items-start">
-                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">SteadyBuild™</span> Installment</span>
-                  </p>
-                  <p className="flex items-start">
-                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">HomeTrack™</span> Rent Reporting</span>
-                  </p>
-                  <p className="flex items-start">
-                    <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                    <span><span className="font-bold">All 3 Bureaus</span> Monthly Reporting</span>
-                  </p>
-                </div>
-              </div>
+            <div className="mt-8 border-t border-white/10 pt-8 text-left">
+              <p className="text-white/80 text-lg mb-8 max-w-3xl mx-auto border-l-4 border-[#F5C518] pl-4">
+                <span className="font-bold text-white">Once-in-a-lifetime opportunity:</span> Get ALL THREE credit-building tradelines for 5 YEARS at a price less than <span className="font-bold text-white">4 months</span> of the regular monthly rate. After the first 250 members, <span className="font-bold text-white uppercase tracking-wide">this deal vanishes forever</span>. 
+                Lock in your <span className="font-bold text-[#F5C518]">5-year access</span> now at this <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">exclusive one-time price</span>.
+              </p>
             </div>
           </div>
         </div>
