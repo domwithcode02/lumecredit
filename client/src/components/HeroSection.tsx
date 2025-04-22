@@ -19,33 +19,12 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-              <span className="text-[#F5C518]">TotalBoost+</span> 5-Year <span className="text-[#003366]">Credit</span> Bundle
+              <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">
-              Get Lume Credit's Premium Bundle with all three essential tradeline types to build your credit history with monthly reporting to every credit bureau. Just one payment for 5 years of service!
+              Get Lume Credit's Premium Bundle with both essential tradeline types to build your credit history - FlexCredit™ Revolving and SteadyBuild™ Installment for $25 each, plus free rent reporting when bundled!
             </p>
-            
-            <div className="mb-8">
-              <img 
-                src={creditMixImage} 
-                alt="The Perfect Credit Mix" 
-                className="max-w-xs md:max-w-sm mx-auto md:mx-0 h-auto object-contain"
-              />
-            </div>
-            
-            <div className="flex mb-10">
-              <Button 
-                className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2"
-                onClick={onButtonClick}
-              >
-                <span>Secure My Spot Now</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </Button>
-            </div>
             
             {/* Limited Time Offer Benefits */}
             <div className="mb-6">
@@ -72,27 +51,40 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </div>
             </div>
             
-            {/* Key Benefits */}
-            <div>
-              <h3 className="text-md font-medium text-slate-600 mb-2">TotalBoost+ Bundle Benefits:</h3>
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center bg-[#003366]/5 px-3 py-1.5 rounded-full text-sm text-slate-700">
+            {/* Limited Time Offer */}
+            <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10">
+              <h3 className="text-xl font-bold text-[#003366] mb-3">Limited Time Offer - 5 Year Credit Bundle</h3>
+              <p className="text-md text-slate-700 mb-4">
+                For the first 250 users only: Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000 in monthly payments!
+              </p>
+              <div className="flex flex-wrap gap-3 mb-4">
+                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                   <Check size={14} className="text-[#003366] mr-1.5" />
                   <span>Just $200 One-time Payment</span>
                 </div>
-                <div className="flex items-center bg-[#003366]/5 px-3 py-1.5 rounded-full text-sm text-slate-700">
+                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                   <Check size={14} className="text-[#003366] mr-1.5" />
                   <span>5 Years of Credit Reporting</span>
                 </div>
-                <div className="flex items-center bg-[#003366]/5 px-3 py-1.5 rounded-full text-sm text-slate-700">
+                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                   <Check size={14} className="text-[#003366] mr-1.5" />
                   <span>3 Tradeline Types</span>
                 </div>
-                <div className="flex items-center bg-[#003366]/5 px-3 py-1.5 rounded-full text-sm text-slate-700">
+                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                   <Check size={14} className="text-[#003366] mr-1.5" />
                   <span>All 3 Credit Bureaus</span>
                 </div>
               </div>
+              <Button 
+                className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2"
+                onClick={onButtonClick}
+              >
+                <span>Secure My Spot Now</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </Button>
             </div>
           </div>
           

@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -7,6 +9,8 @@ interface HeaderProps {
 }
 
 export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
     if (formSection) {
@@ -37,9 +41,33 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           <a href="#tradelines" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Tradelines
           </a>
-          <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
-            Deal
-          </a>
+          
+          {/* Products Dropdown */}
+          <div className="relative" 
+            onMouseEnter={() => setIsProductsOpen(true)}
+            onMouseLeave={() => setIsProductsOpen(false)}
+          >
+            <a href="#features" className="text-slate-600 hover:text-slate-900 font-medium transition-colors flex items-center gap-1">
+              Products <ChevronDown size={16} />
+            </a>
+            
+            {isProductsOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                <div className="py-1">
+                  <a href="#flexcredit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                    FlexCredit™ Revolving
+                  </a>
+                  <a href="#steadybuild" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                    SteadyBuild™ Installment
+                  </a>
+                  <a href="#hometrack" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                    HomeTrack™ Rent Reporting
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+          
           <a href="#visa-card" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
             Visa Card
           </a>
