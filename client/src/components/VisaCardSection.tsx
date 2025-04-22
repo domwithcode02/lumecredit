@@ -20,12 +20,12 @@ export default function VisaCardSection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-              The <span className="text-[#003366]">LumeCredit</span> <span className="text-[#F5C518]">Visa®</span> Card
+              The <span className="text-[#003366]">LumeCredit</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 max-w-xl">
-              Get access to our exclusive Visa® card that comes free when opened with a checking account. 
-              Build credit while enjoying premium benefits without the premium costs.
+              Get access to our exclusive Secured Visa® card that comes free with the purchase of any tradeline. 
+              Build credit with just a $100 deposit while enjoying premium benefits without the premium costs.
             </p>
             
             <div className="space-y-4 mb-8">
@@ -56,8 +56,8 @@ export default function VisaCardSection() {
               <div className="flex items-start gap-3">
                 <div className="h-6 w-6 rounded-full bg-[#F5C518] flex items-center justify-center text-white font-bold shrink-0">✓</div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">Free Checking Account</h3>
-                  <p className="text-slate-600">Get a free checking account with your card to simplify your banking experience.</p>
+                  <h3 className="font-semibold text-slate-900">0% Interest on Balance</h3>
+                  <p className="text-slate-600">Because why would we ever charge interest on YOUR OWN money?</p>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function VisaCardSection() {
                 Funds in your LumeCredit account are FDIC-insured through our partner bank up to $250,000 per depositor.
               </p>
               <p>
-                <span className="font-medium text-slate-600">Fee Disclosure:</span> No monthly fees. No overdraft charges. No minimum balance requirements. See full terms for details.
+                <span className="font-medium text-slate-600">Fee Disclosure:</span> <span className="font-bold text-[#003366]">No annual fees...ever</span>. No monthly fees. No overdraft charges. No minimum balance requirements. See full terms for details.
               </p>
               <p className="text-[10px] italic">
                 The LumeCredit Visa® Card is subject to application and approval. Terms and conditions apply. 

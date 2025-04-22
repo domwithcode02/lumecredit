@@ -270,8 +270,232 @@ export default function TradelinesSection() {
           </div>
         </div>
         
-        {/* Featured in Bundle Highlight */}
-        <div className="bg-[#003366] rounded-xl overflow-hidden shadow-xl py-10 px-8 md:px-12 relative">
+        {/* LumeCredit Products Section */}
+        <div className="mb-12">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-slate-900">
+              <span className="text-[#F5C518]">LumeCredit</span> Products
+            </h3>
+            <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
+              Choose the right credit building products to match your needs and budget
+            </p>
+          </div>
+          
+          {/* FlexCredit Product Section - with ID for anchor link */}
+          <div id="flexcredit" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
+            <div className="bg-[#003366] text-white py-4 px-6">
+              <h4 className="text-xl font-bold">FlexCredit™ Revolving Tradeline</h4>
+            </div>
+            <div className="p-6">
+              <p className="text-slate-600 mb-6">
+                Our most powerful credit-building tool gives you a revolving tradeline that reports to all three major credit bureaus, helping you establish or rebuild your credit history.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {/* Plan 1 */}
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <div className="flex justify-between items-center mb-4">
+                    <h5 className="text-lg font-bold text-slate-900">Standard Plan</h5>
+                    <div className="text-[#F5C518] bg-[#F5C518]/10 rounded-full px-3 py-1 text-sm font-semibold">Most Popular</div>
+                  </div>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-[#003366]">$25</span>
+                    <span className="text-slate-500 ml-1">/month</span>
+                  </div>
+                  <div className="text-lg text-slate-700 mb-4">$2,500 Credit Limit</div>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Reports to all 3 major credit bureaus</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Low utilization ratio reporting</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Perfect payment history reporting</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Plan 2 */}
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <div className="flex justify-between items-center mb-4">
+                    <h5 className="text-lg font-bold text-slate-900">Premium Plan</h5>
+                    <div className="text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-semibold">Higher Limit</div>
+                  </div>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-[#003366]">$35</span>
+                    <span className="text-slate-500 ml-1">/month</span>
+                  </div>
+                  <div className="text-lg text-slate-700 mb-4">$3,500 Credit Limit</div>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Reports to all 3 major credit bureaus</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Higher credit limit for improved scoring</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Priority customer service</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* SteadyBuild Product Section - with ID for anchor link */}
+          <div id="steadybuild" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
+            <div className="bg-[#003366] text-white py-4 px-6">
+              <h4 className="text-xl font-bold">SteadyBuild™ Installment Tradeline</h4>
+            </div>
+            <div className="p-6">
+              <p className="text-slate-600 mb-6">
+                Diversify your credit mix with our installment loan tradeline that reports fixed monthly payments to all three credit bureaus, showing lenders you can manage different types of credit.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {/* Plan 1 */}
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <div className="flex justify-between items-center mb-4">
+                    <h5 className="text-lg font-bold text-slate-900">Basic Plan</h5>
+                    <div className="text-[#F5C518] bg-[#F5C518]/10 rounded-full px-3 py-1 text-sm font-semibold">Great Starter</div>
+                  </div>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-[#003366]">$25</span>
+                    <span className="text-slate-500 ml-1">/month</span>
+                  </div>
+                  <div className="text-lg text-slate-700 mb-4">$1,000 Loan Amount</div>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Reports to all 3 major credit bureaus</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Shows positive payment history</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Improves credit mix diversification</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Plan 2 */}
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <div className="flex justify-between items-center mb-4">
+                    <h5 className="text-lg font-bold text-slate-900">Advanced Plan</h5>
+                    <div className="text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-semibold">Larger Loan</div>
+                  </div>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-[#003366]">$35</span>
+                    <span className="text-slate-500 ml-1">/month</span>
+                  </div>
+                  <div className="text-lg text-slate-700 mb-4">$1,500 Loan Amount</div>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Reports to all 3 major credit bureaus</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Larger loan amount for better impact</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Enhanced credit profile impact</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* HomeTrack Product Section - with ID for anchor link */}
+          <div id="hometrack" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
+            <div className="bg-[#003366] text-white py-4 px-6">
+              <h4 className="text-xl font-bold">HomeTrack™ Rent Reporting</h4>
+            </div>
+            <div className="p-6">
+              <p className="text-slate-600 mb-6">
+                Turn your largest monthly expense into a powerful credit builder. Our rent reporting service reports your rent payments to credit bureaus, helping you build credit history with payments you're already making.
+              </p>
+              
+              <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow max-w-md mx-auto">
+                <div className="flex justify-between items-center mb-4">
+                  <h5 className="text-lg font-bold text-slate-900">HomeTrack™ Plan</h5>
+                  <div className="text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-semibold">Best Value</div>
+                </div>
+                <div className="text-center mb-4">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-3xl font-bold text-[#003366]">$65</span>
+                    <span className="text-slate-500 ml-1">one-time setup</span>
+                  </div>
+                  <div className="text-md text-slate-700 mt-2">+ $7.50/month after first month</div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Reports to all 3 major credit bureaus</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Up to 24 months of payment history reported</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Maximize the impact of your largest expense</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Verification and reporting handled for you</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Impact Highlight Section */}
+        <div className="bg-[#003366] rounded-xl overflow-hidden shadow-xl py-10 px-8 md:px-12 relative mb-16">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#F5C518]/10 rounded-full -mt-20 -mr-20"></div>
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#F5C518]/5 rounded-full -mb-10 -ml-10"></div>
           
@@ -282,11 +506,11 @@ export default function TradelinesSection() {
               </div>
               
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                FlexCredit™ Revolving Tradeline
+                Build Your Credit With Confidence
               </h3>
               
               <p className="text-white/80 mb-6">
-                Our most powerful credit-building tool gives you a revolving tradeline that reports to all three major credit bureaus, helping you establish or rebuild your credit history.
+                Our powerful credit-building products each address a key aspect of your credit score, working together to maximize your credit building potential.
               </p>
               
               <div className="space-y-3">
@@ -299,19 +523,13 @@ export default function TradelinesSection() {
                 <div className="flex items-start">
                   <div className="text-[#F5C518] mr-3">✓</div>
                   <p className="text-white/90">
-                    <span className="font-semibold">Establishes revolving credit history</span> similar to having a credit card
+                    <span className="font-semibold">Establishes diverse credit history</span> with revolving, installment, and payment reporting
                   </p>
                 </div>
                 <div className="flex items-start">
                   <div className="text-[#F5C518] mr-3">✓</div>
                   <p className="text-white/90">
                     <span className="font-semibold">Reports to Experian, TransUnion, and Equifax</span> to maximize your score potential
-                  </p>
-                </div>
-                <div className="flex items-start">
-                  <div className="text-[#F5C518] mr-3">✓</div>
-                  <p className="text-white/90">
-                    <span className="font-semibold">Reports with a low utilization ratio</span> to optimize that 30% of your credit score
                   </p>
                 </div>
               </div>
