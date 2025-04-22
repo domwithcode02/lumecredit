@@ -13,10 +13,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <div className="inline-flex items-center rounded-full bg-[#00336610] px-3 py-1 mb-6">
-              <span className="h-2 w-2 rounded-full bg-[#F5C518] mr-2"></span>
-              <span className="text-sm font-medium text-slate-700">Limited Time Offer - First 250 Users Only!</span>
-            </div>
+
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
@@ -51,9 +48,9 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </div>
             </div>
             
-            {/* Limited Time Offer */}
+            {/* Special Bundle Offer */}
             <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10">
-              <h3 className="text-xl font-bold text-[#003366] mb-3">Limited Time Offer - 5 Year Credit Bundle</h3>
+              <h3 className="text-xl font-bold text-[#003366] mb-3">Special Offer - 5 Year Credit Bundle</h3>
               <p className="text-md text-slate-700 mb-4">
                 For the first 250 users only: Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000 in monthly payments!
               </p>

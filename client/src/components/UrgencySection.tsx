@@ -240,7 +240,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               </div>
             
               <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
-                <span className="tracking-tight">First 250 Members Only - Limited Time Offer</span>
+                <span className="tracking-tight">Exclusive TotalBoost+ Bundle</span>
               </h3>
               
               <div className="flex gap-6 mb-6">
