@@ -5,6 +5,7 @@ import UrgencySection from "@/components/UrgencySection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TradelinesSection from "@/components/TradelinesSection";
 import VisaCardSection from "@/components/VisaCardSection";
+import DebitCardSection from "@/components/DebitCardSection";
 import FormSection from "@/components/FormSection";
 import Footer from "@/components/Footer";
 import PartnersSection from "@/components/PartnersSection";
@@ -62,6 +63,7 @@ export default function HomePage() {
         <TradelinesSection />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
         <VisaCardSection />
+        <DebitCardSection />
         <FormSection id="reserve-form" onSuccess={refetch} />
       </main>
       

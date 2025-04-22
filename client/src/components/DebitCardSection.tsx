@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CreditCard, Wallet, Bank } from "lucide-react";
+import { CreditCard, Wallet, Building2 } from "lucide-react";
 
 export default function DebitCardSection() {
   const scrollToForm = () => {
@@ -41,7 +41,7 @@ export default function DebitCardSection() {
               
               <div className="flex items-start gap-3">
                 <div className="h-10 w-10 rounded-full bg-[#003366]/10 flex items-center justify-center text-[#003366] shrink-0">
-                  <Bank size={20} />
+                  <Building2 size={20} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900">50,000+ Free ATMs Nationwide</h3>
