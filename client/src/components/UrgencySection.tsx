@@ -26,7 +26,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
             <span className="text-[#F5C518]">TotalBoost+</span> 5-Year Credit Tradeline Bundle
           </h2>
           <p className="text-slate-600 text-lg mb-6">
-            Unlock the power of all three premium tradeline types to supercharge your credit journey
+            Unlock the <span className="font-bold text-[#003366]">Perfect Credit Mix</span> with all three premium tradeline types to supercharge your credit score
           </p>
           
           <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-6">
@@ -66,21 +66,16 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           {/* FlexCredit Revolving Tradeline Card */}
           <div id="flexcredit" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
             <div className="relative">
-              <div className="absolute top-0 right-0">
-                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
-                  COMING SOON
-                </div>
-              </div>
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
                   <TrendingUp size={24} className="text-[#003366]" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
                   FlexCredit™ Revolving
                 </h3>
                 
-                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
+                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 text-center mx-auto">
                   <span className="font-medium text-slate-700">$25/month for $2,500 limit</span>
                 </div>
                 
@@ -119,11 +114,6 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           {/* SteadyBuild Installment Tradeline Card */}
           <div id="steadybuild" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
             <div className="relative">
-              <div className="absolute top-0 right-0">
-                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
-                  COMING SOON
-                </div>
-              </div>
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -133,11 +123,11 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   </svg>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
                   SteadyBuild™ Installment
                 </h3>
                 
-                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
+                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 text-center mx-auto">
                   <span className="font-medium text-slate-700">$25/month for $1,000 loan</span>
                 </div>
                 
@@ -176,11 +166,6 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           {/* HomeTrack Rent Reporting Card */}
           <div id="hometrack" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
             <div className="relative">
-              <div className="absolute top-0 right-0">
-                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3">
-                  COMING SOON
-                </div>
-              </div>
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -189,11 +174,11 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   </svg>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
                   HomeTrack™ Rent Reporting
                 </h3>
                 
-                <div className="mb-4 bg-green-100 rounded-lg p-3 inline-block">
+                <div className="mb-4 bg-green-100 rounded-lg p-3 text-center mx-auto">
                   <span className="font-medium text-green-700">FREE with TotalBoost+ Bundle!</span>
                 </div>
                 
@@ -238,9 +223,12 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               <span className="text-sm font-bold text-[#F5C518]">COMPARE YOUR OPTIONS</span>
             </div>
             
-            <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-8">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
               <span className="tracking-tight">Choose Your Credit-Building Path</span>
             </h3>
+            <p className="text-white/80 text-lg mb-6 max-w-2xl mx-auto">
+              Get the <span className="font-bold text-[#F5C518]">Perfect Credit Mix</span> by combining revolving, installment, and payment history tradelines
+            </p>
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* Standard Monthly Option */}
@@ -353,7 +341,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     onClick={scrollToForm}
                     className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-extrabold text-base py-3 h-auto rounded-xl shadow-md shadow-[#F5C518]/20"
                   >
-                    SECURE YOUR SPOT NOW
+                    SECURE MY SPOT NOW
                   </Button>
                   
                   <div className="mt-4 text-center">
