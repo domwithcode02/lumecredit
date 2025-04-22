@@ -17,7 +17,6 @@ export default function HowItWorksSection() {
           {/* Step 1 */}
           <div className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden group hover:shadow-lg transition-shadow">
             <div className="absolute top-0 left-0 w-2 h-full bg-[#F5C518]"></div>
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#003366]/5 rounded-full"></div>
             
             <div className="flex flex-col items-center text-center relative">
               <div className="w-16 h-16 rounded-full bg-[#003366]/10 flex items-center justify-center mb-6">
@@ -32,7 +31,7 @@ export default function HowItWorksSection() {
               
               <p className="text-slate-600">
                 Complete our simple form to secure your spot as one of our first 250 members.
-                Pay a one-time fee and never worry about monthly payments again.
+                Pay a one-time fee of $200 for 5 full years of service.
               </p>
             </div>
           </div>
@@ -40,7 +39,6 @@ export default function HowItWorksSection() {
           {/* Step 2 */}
           <div className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden group hover:shadow-lg transition-shadow">
             <div className="absolute top-0 left-0 w-2 h-full bg-[#F5C518]"></div>
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#003366]/5 rounded-full"></div>
             
             <div className="flex flex-col items-center text-center relative">
               <div className="w-16 h-16 rounded-full bg-[#003366]/10 flex items-center justify-center mb-6">
@@ -51,11 +49,11 @@ export default function HowItWorksSection() {
                 2
               </div>
               
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Get Added to Tradelines</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Get Your Perfect Credit Mix</h3>
               
               <p className="text-slate-600">
-                Our team will add you to both FlexCredit™ revolving tradeline and
-                FlexLife™ credit monitoring services automatically. No paperwork needed.
+                You'll be added to all three essential tradelines: FlexCredit™ revolving, 
+                SteadyBuild™ installment, and HomeTrack™ rent reporting.
               </p>
             </div>
           </div>
@@ -63,7 +61,6 @@ export default function HowItWorksSection() {
           {/* Step 3 */}
           <div className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden group hover:shadow-lg transition-shadow">
             <div className="absolute top-0 left-0 w-2 h-full bg-[#F5C518]"></div>
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#003366]/5 rounded-full"></div>
             
             <div className="flex flex-col items-center text-center relative">
               <div className="w-16 h-16 rounded-full bg-[#003366]/10 flex items-center justify-center mb-6">

@@ -234,11 +234,8 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
               {/* Standard Monthly Option */}
               <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
                 <div className="p-6 md:p-8">
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="text-center mb-4">
                     <h4 className="text-xl md:text-2xl font-bold text-white">Standard Monthly</h4>
-                    <div className="bg-[#F5C518]/20 px-3 py-1 rounded-full">
-                      <span className="text-sm text-[#F5C518]">Available on launch</span>
-                    </div>
                   </div>
                   
                   <div className="relative mb-8 text-center">
@@ -282,9 +279,9 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </li>
                   </ul>
                   
-                  <div className="pt-4 border-t border-white/10">
+                  <div className="pt-4 border-t border-white/10 text-center">
                     <p className="text-white/70 text-sm">
-                      Total cost over 5 years: <span className="line-through">$3,000</span>
+                      5-year total: <span className="line-through">$3,000</span> ($50 × 60 months)
                     </p>
                   </div>
                 </div>
@@ -299,9 +296,9 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
                 
                 <div className="p-6 md:p-8">
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="text-center mb-4">
                     <h4 className="text-xl md:text-2xl font-bold text-white">5-Year Special</h4>
-                    <div className="bg-[#F5C518]/20 px-3 py-1 rounded-full">
+                    <div className="mt-1 bg-[#F5C518]/20 px-3 py-1 rounded-full inline-block">
                       <span className="text-sm text-[#F5C518]">First 250 Only</span>
                     </div>
                   </div>
