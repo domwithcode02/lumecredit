@@ -45,6 +45,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             
             <div className="invisible absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
               <div className="py-1">
+                <a href="#totalboost" className="block px-4 py-2 text-sm text-[#003366] font-bold bg-[#F5C518]/10 hover:bg-[#F5C518]/20 border-l-2 border-[#F5C518]">
+                  TotalBoost+™ Bundle
+                </a>
                 <a href="#flexcredit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
                   FlexCredit™ Revolving
                 </a>

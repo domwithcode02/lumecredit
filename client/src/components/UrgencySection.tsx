@@ -14,7 +14,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
   };
 
   return (
-    <section id="features" className="py-16 bg-white">
+    <section id="totalboost" className="py-16 bg-white">
       {/* Deal Section */}
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -81,7 +81,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </h3>
                 
                 <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
-                  <span className="font-medium text-slate-700">$25/month on $2,500 limit</span>
+                  <span className="font-medium text-slate-700">$25/month for $2,500 limit</span>
                 </div>
                 
                 <ul className="space-y-4 mb-6">
@@ -138,7 +138,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </h3>
                 
                 <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
-                  <span className="font-medium text-slate-700">$35/month on $3,500 loan</span>
+                  <span className="font-medium text-slate-700">$25/month for $1,000 loan</span>
                 </div>
                 
                 <ul className="space-y-4 mb-6">
@@ -193,8 +193,8 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   HomeTrack™ Rent Reporting
                 </h3>
                 
-                <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 inline-block">
-                  <span className="font-medium text-slate-700">$19/month verification service</span>
+                <div className="mb-4 bg-green-100 rounded-lg p-3 inline-block">
+                  <span className="font-medium text-green-700">FREE with TotalBoost+ Bundle!</span>
                 </div>
                 
                 <ul className="space-y-4 mb-6">
