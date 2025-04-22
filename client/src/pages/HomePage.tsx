@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import UrgencySection from "@/components/UrgencySection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TradelinesSection from "@/components/TradelinesSection";
+import FamiliesSection from "@/components/FamiliesSection";
 import VisaCardSection from "@/components/VisaCardSection";
 import DebitCardSection from "@/components/DebitCardSection";
 import FormSection from "@/components/FormSection";
@@ -61,6 +62,7 @@ export default function HomePage() {
         <PartnersSection />
         <HowItWorksSection />
         <TradelinesSection />
+        <FamiliesSection />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
         <VisaCardSection />
         <DebitCardSection />

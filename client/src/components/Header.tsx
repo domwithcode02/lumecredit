@@ -57,6 +57,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                 <a href="#hometrack" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
                   HomeTrack™ Rent Reporting
                 </a>
+                <a href="#families" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                  LumeStart™ for Families
+                </a>
               </div>
             </div>
           </div>
