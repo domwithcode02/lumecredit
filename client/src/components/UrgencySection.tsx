@@ -265,11 +265,9 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   </div>
                   
                   <ul className="mb-6 text-white/80 text-sm space-y-3">
-                    <li className="flex items-start mb-3">
+                    <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span className="text-white/90">
-                        <span className="font-bold text-white">Perfect Credit Mix:</span> A balanced combination of revolving, installment, and payment history tradelines that maximizes your credit score potential
-                      </span>
+                      <span><span className="font-bold text-white">Perfect Credit Mix:</span> A balanced combination of revolving, installment, and payment history tradelines that maximizes your credit score potential</span>
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />

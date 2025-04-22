@@ -127,10 +127,6 @@ export default function FamiliesSection() {
                   </p>
                 </div>
               </div>
-              
-              <div className="absolute top-10 left-0 md:-left-10 bg-[#F5C518]/90 py-2 px-4 rounded-lg shadow-lg text-[#003366] font-bold transform rotate-[-5deg]">
-                <span>COMING SOON</span>
-              </div>
             </div>
           </div>
         </div>
