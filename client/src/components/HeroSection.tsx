@@ -93,15 +93,23 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[1200px] h-[1200px] rounded-full -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[600px] h-[600px] rounded-full -z-10"></div>
 
-            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out -translate-y-48">              
+            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">              
               <div className="mascot-container relative z-0 flex justify-center">
+                {/* Speech bubble */}
+                <div className="absolute -top-14 right-14 bg-white text-black px-4 py-2 rounded-xl font-bold shadow-md z-10 border-2 border-gray-800 text-sm max-w-[150px]">
+                  <div className="relative">
+                    You gotta have credit bro!
+                    {/* Triangle pointer */}
+                    <div className="absolute -bottom-4 right-5 w-0 h-0 border-l-[8px] border-l-transparent border-t-[16px] border-t-white border-r-[8px] border-r-transparent"></div>
+                  </div>
+                </div>
+                
                 <img 
                   src={mascotInCarImage} 
                   alt="LumeCredit Mascot in Car with Credit Score" 
-                  className="w-full mx-auto object-contain drop-shadow-2xl"
-                  style={{ transform: 'scale(6)', maxWidth: '140%', marginLeft: '-20%' }}
+                  className="w-full max-w-md mx-auto object-contain drop-shadow-md"
                 />
               </div>
             </div>
