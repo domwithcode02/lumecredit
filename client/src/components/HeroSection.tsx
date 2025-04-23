@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check, CreditCard, TrendingUp, Shield } from "lucide-react";
 import mascotImage from "@assets/ChatGPT Image Apr 12, 2025, 10_10_34 PM.png";
 import creditMixImage from "@assets/161df62e-8ed6-42dc-9cac-0568d4c47b82.png";
+import speechBubbleImage from "@assets/ChatGPT Image Apr 22, 2025, 10_44_33 PM.png";
 
 interface HeroSectionProps {
   onButtonClick: () => void;
@@ -103,38 +104,22 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 
-                <div className="absolute top-0 right-16 -translate-y-20 z-10">
-                  {/* Comic style speech bubble */}
-                  <div className="relative w-[220px]">
-                    <div 
-                      className="relative bg-white border-2 border-[#003366] p-4 shadow-md"
-                      style={{ 
-                        width: '100%',
-                        height: '70px',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}
-                    >
-                      <p className="font-bold text-slate-800 text-base text-center" 
-                         style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
+                <div className="absolute top-0 right-16 -translate-y-40 z-10">
+                  {/* Comic style speech bubble using direct image */}
+                  <div className="relative w-[250px]">
+                    <img 
+                      src={speechBubbleImage} 
+                      alt="Speech Bubble" 
+                      className="w-full"
+                    />
+                    
+                    {/* Text overlay on speech bubble */}
+                    <div className="absolute inset-0 flex items-center justify-center" style={{ paddingBottom: '25px' }}>
+                      <p className="font-bold text-white text-lg text-center drop-shadow-md" 
+                         style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif', textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
                         You gotta have credit bro!
                       </p>
                     </div>
-                    
-                    {/* Speech bubble pointer */}
-                    <div 
-                      className="absolute -bottom-5 right-12" 
-                      style={{
-                        width: '20px',
-                        height: '20px',
-                        backgroundColor: 'white',
-                        borderRight: '2px solid #003366',
-                        borderBottom: '2px solid #003366',
-                        transform: 'rotate(45deg)'
-                      }}
-                    ></div>
                   </div>
                 </div>
               </div>
