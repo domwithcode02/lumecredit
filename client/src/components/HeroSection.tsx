@@ -103,21 +103,38 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 
-                <div className="absolute top-0 right-16 -translate-y-24 max-w-[220px] filter drop-shadow-lg">
-                  <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feDropShadow dx="3" dy="3" stdDeviation="2" floodColor="#00336640" />
-                    </filter>
-                    <path d="M10,10 L200,10 C210,10 210,10 210,20 L210,80 C210,90 210,90 200,90 L60,90 L40,110 L50,90 L10,90 C0,90 0,90 0,80 L0,20 C0,10 0,10 10,10 Z" 
-                          fill="white" 
-                          stroke="#003366" 
-                          strokeWidth="2.5"
-                          filter="url(#shadow)" />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center pt-2 pb-10 px-6">
-                    <p className="font-bold text-center text-slate-800 text-lg" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
-                      You gotta have credit bro!
-                    </p>
+                <div className="absolute top-0 right-16 -translate-y-20 z-10">
+                  {/* Comic style speech bubble */}
+                  <div className="relative w-[220px]">
+                    <div 
+                      className="relative bg-white border-2 border-[#003366] p-4 shadow-md"
+                      style={{ 
+                        width: '100%',
+                        height: '70px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <p className="font-bold text-slate-800 text-base text-center" 
+                         style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
+                        You gotta have credit bro!
+                      </p>
+                    </div>
+                    
+                    {/* Speech bubble pointer */}
+                    <div 
+                      className="absolute -bottom-5 right-12" 
+                      style={{
+                        width: '20px',
+                        height: '20px',
+                        backgroundColor: 'white',
+                        borderRight: '2px solid #003366',
+                        borderBottom: '2px solid #003366',
+                        transform: 'rotate(45deg)'
+                      }}
+                    ></div>
                   </div>
                 </div>
               </div>
