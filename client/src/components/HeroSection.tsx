@@ -103,7 +103,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                 
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-4 max-w-[80%] shadow-xl border border-[#F5C518]/30">
                   <p className="font-medium text-center">
-                    "Drive your credit score higher with LumeCredit!"
+                    "You gotta have credit bro!"
                   </p>
                 </div>
               </div>

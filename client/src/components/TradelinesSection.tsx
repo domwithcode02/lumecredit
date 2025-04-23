@@ -109,19 +109,19 @@ export default function TradelinesSection() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Revolving Credit */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow relative group">
-              <div className="absolute top-0 h-1 w-full bg-[#F5C518]"></div>
+            <div className="bg-gradient-to-br from-[#41c99e]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow relative group">
+              <div className="absolute top-0 h-1 w-full bg-[#41c99e]"></div>
               <div className="p-8">
-                <div className="w-16 h-16 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                <div className="w-16 h-16 bg-[#41c99e]/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
                   <img src={flexingIcon} alt="Flexing arm" width="32" height="32" style={{ filter: 'invert(13%) sepia(74%) saturate(2397%) hue-rotate(198deg) brightness(92%) contrast(105%)' }} />
                 </div>
                 
                 <h3 className="text-xl font-bold text-center text-slate-900 mb-4 flex items-center justify-center">
-                  <div className="bg-[#F5C518]/20 text-[#003366] font-bold rounded-full h-6 w-6 flex items-center justify-center mr-2">1</div>
+                  <div className="bg-[#41c99e]/20 text-[#003366] font-bold rounded-full h-6 w-6 flex items-center justify-center mr-2">1</div>
                   Revolving Credit
                 </h3>
                 
-                <div className="bg-slate-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
                   <p className="text-slate-700 text-sm">
                     <span className="font-semibold block mb-1">What is it?</span> 
                     Accounts with flexible balances and payments, like credit cards or lines of credit.
@@ -160,10 +160,10 @@ export default function TradelinesSection() {
             </div>
             
             {/* Installment Credit */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow relative group">
-              <div className="absolute top-0 h-1 w-full bg-[#F5C518]"></div>
+            <div className="bg-gradient-to-br from-[#4aade3]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow relative group">
+              <div className="absolute top-0 h-1 w-full bg-[#4aade3]"></div>
               <div className="p-8">
-                <div className="w-16 h-16 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                <div className="w-16 h-16 bg-[#4aade3]/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9" />
                     <path d="M17.64 15L22 10.64" />
@@ -172,11 +172,11 @@ export default function TradelinesSection() {
                 </div>
                 
                 <h3 className="text-xl font-bold text-center text-slate-900 mb-4 flex items-center justify-center">
-                  <div className="bg-[#F5C518]/20 text-[#003366] font-bold rounded-full h-6 w-6 flex items-center justify-center mr-2">2</div>
+                  <div className="bg-[#4aade3]/20 text-[#003366] font-bold rounded-full h-6 w-6 flex items-center justify-center mr-2">2</div>
                   Installment Credit
                 </h3>
                 
-                <div className="bg-slate-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
                   <p className="text-slate-700 text-sm">
                     <span className="font-semibold block mb-1">What is it?</span> 
                     Fixed payment loans with set terms, like auto loans, mortgages, and personal loans.
@@ -215,10 +215,10 @@ export default function TradelinesSection() {
             </div>
             
             {/* Payment History Credit */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow relative group">
-              <div className="absolute top-0 h-1 w-full bg-[#F5C518]"></div>
+            <div className="bg-gradient-to-br from-[#ffc829]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow relative group">
+              <div className="absolute top-0 h-1 w-full bg-[#ffc829]"></div>
               <div className="p-8">
-                <div className="w-16 h-16 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                <div className="w-16 h-16 bg-[#ffc829]/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -226,11 +226,11 @@ export default function TradelinesSection() {
                 </div>
                 
                 <h3 className="text-xl font-bold text-center text-slate-900 mb-4 flex items-center justify-center">
-                  <div className="bg-[#F5C518]/20 text-[#003366] font-bold rounded-full h-6 w-6 flex items-center justify-center mr-2">3</div>
+                  <div className="bg-[#ffc829]/20 text-[#003366] font-bold rounded-full h-6 w-6 flex items-center justify-center mr-2">3</div>
                   Payment History
                 </h3>
                 
-                <div className="bg-slate-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
                   <p className="text-slate-700 text-sm">
                     <span className="font-semibold block mb-1">What is it?</span> 
                     Reported regular payments like rent, utilities, and subscriptions that show reliability.
