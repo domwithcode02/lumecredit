@@ -15,10 +15,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           <div>
 
             
-            <div className="inline-flex items-center bg-[#003366]/10 px-3 py-1 rounded-full mb-3">
-              <span className="mr-2 h-2 w-2 rounded-full bg-[#F5C518]"></span>
-              <span className="text-sm font-semibold text-[#003366]">LAUNCHING SEPTEMBER 01, 2025</span>
-            </div>
+
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
@@ -106,10 +103,11 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 
-                <div className="absolute top-8 right-8 bg-white text-slate-800 p-4 shadow-xl border-2 border-[#003366] rounded-lg transform rotate-6 max-w-[200px]" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 60% 100%, 55% 75%, 0% 75%)" }}>
-                  <p className="font-bold text-center" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
+                <div className="absolute top-0 right-16 -translate-y-14 bg-white text-slate-800 p-4 shadow-xl border-2 border-[#003366] rounded-lg transform rotate-3 max-w-[200px]">
+                  <p className="font-bold text-center mb-2" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
                     You gotta have credit bro!
                   </p>
+                  <div className="absolute -bottom-4 right-6 w-8 h-8 bg-white border-r-2 border-b-2 border-[#003366] transform rotate-45"></div>
                 </div>
               </div>
             </div>
