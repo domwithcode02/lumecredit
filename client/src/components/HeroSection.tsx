@@ -103,11 +103,22 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 
-                <div className="absolute top-0 right-16 -translate-y-14 bg-white text-slate-800 p-4 shadow-xl border-2 border-[#003366] rounded-lg transform rotate-3 max-w-[200px]">
-                  <p className="font-bold text-center mb-2" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
-                    You gotta have credit bro!
-                  </p>
-                  <div className="absolute -bottom-4 right-6 w-8 h-8 bg-white border-r-2 border-b-2 border-[#003366] transform rotate-45"></div>
+                <div className="absolute top-0 right-16 -translate-y-24 max-w-[220px] filter drop-shadow-lg">
+                  <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="3" dy="3" stdDeviation="2" floodColor="#00336640" />
+                    </filter>
+                    <path d="M10,10 L200,10 C210,10 210,10 210,20 L210,80 C210,90 210,90 200,90 L60,90 L40,110 L50,90 L10,90 C0,90 0,90 0,80 L0,20 C0,10 0,10 10,10 Z" 
+                          fill="white" 
+                          stroke="#003366" 
+                          strokeWidth="2.5"
+                          filter="url(#shadow)" />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center pt-2 pb-10 px-6">
+                    <p className="font-bold text-center text-slate-800 text-lg" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
+                      You gotta have credit bro!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
