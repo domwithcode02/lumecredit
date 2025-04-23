@@ -104,18 +104,18 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 
-                <div className="absolute top-0 right-16 -translate-y-40 z-10">
+                <div className="absolute top-0 right-16 -translate-y-80 z-10">
                   {/* Comic style speech bubble using direct image */}
-                  <div className="relative w-[250px]">
+                  <div className="relative w-[350px]">
                     <img 
                       src={speechBubbleImage} 
                       alt="Speech Bubble" 
-                      className="w-full"
+                      className="w-full h-auto"
                     />
                     
                     {/* Text overlay on speech bubble */}
                     <div className="absolute inset-0 flex items-center justify-center" style={{ paddingBottom: '25px' }}>
-                      <p className="font-bold text-white text-lg text-center drop-shadow-md" 
+                      <p className="font-bold text-white text-2xl text-center drop-shadow-md" 
                          style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif', textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
                         You gotta have credit bro!
                       </p>
