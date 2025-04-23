@@ -93,15 +93,15 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           </div>
           
           <div className="relative hidden lg:block">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[900px] h-[900px] rounded-full -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[1200px] h-[1200px] rounded-full -z-10"></div>
             
-            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out -translate-y-28">              
+            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out -translate-y-96">              
               <div className="mascot-container relative z-0 flex justify-center">
                 <img 
                   src={mascotInCarImage} 
                   alt="LumeCredit Mascot in Car with Credit Score" 
                   className="w-full mx-auto object-contain drop-shadow-2xl"
-                  style={{ transform: 'scale(2.5)', maxWidth: '100%' }}
+                  style={{ transform: 'scale(5)', maxWidth: '120%', marginLeft: '-10%' }}
                 />
               </div>
             </div>
