@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, CreditCard, TrendingUp, Shield } from "lucide-react";
-import mascotInCarImage from "@assets/image_1745388345357.png";
+import mascotInCarImage from "@assets/final_transparent_background_image.png";
 import creditMixImage from "@assets/161df62e-8ed6-42dc-9cac-0568d4c47b82.png";
 
 interface HeroSectionProps {
@@ -93,14 +93,15 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           </div>
           
           <div className="relative hidden lg:block">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[550px] h-[550px] rounded-full -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[650px] h-[650px] rounded-full -z-10"></div>
             
             <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">              
               <div className="mascot-container relative z-0 flex justify-center">
                 <img 
                   src={mascotInCarImage} 
                   alt="LumeCredit Mascot in Car with Credit Score" 
-                  className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
+                  className="w-full max-w-xl mx-auto object-contain drop-shadow-2xl"
+                  style={{ transform: 'scale(1.2)' }}
                 />
               </div>
             </div>
