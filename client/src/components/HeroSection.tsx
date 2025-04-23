@@ -15,6 +15,11 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
           <div>
 
             
+            <div className="inline-flex items-center bg-[#003366]/10 px-3 py-1 rounded-full mb-3">
+              <span className="mr-2 h-2 w-2 rounded-full bg-[#F5C518]"></span>
+              <span className="text-sm font-semibold text-[#003366]">LAUNCHING SEPTEMBER 01, 2025</span>
+            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
             </h1>
