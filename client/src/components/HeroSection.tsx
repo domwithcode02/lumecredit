@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, CreditCard, TrendingUp, Shield } from "lucide-react";
-import mascotImage from "@assets/ChatGPT Image Apr 12, 2025, 10_10_34 PM.png";
+import mascotInCarImage from "@assets/image_1745388345357.png";
 import creditMixImage from "@assets/161df62e-8ed6-42dc-9cac-0568d4c47b82.png";
-import speechBubbleImage from "@assets/ChatGPT Image Apr 22, 2025, 10_44_33 PM.png";
 
 interface HeroSectionProps {
   onButtonClick: () => void;
@@ -97,31 +96,12 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[550px] h-[550px] rounded-full -z-10"></div>
             
             <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">              
-              <div className="mascot-container relative z-0">
+              <div className="mascot-container relative z-0 flex justify-center">
                 <img 
-                  src={mascotImage} 
-                  alt="LumeCredit Mascot" 
+                  src={mascotInCarImage} 
+                  alt="LumeCredit Mascot in Car with Credit Score" 
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
-                
-                <div className="absolute top-0 right-16 -translate-y-80 z-10">
-                  {/* Comic style speech bubble using direct image */}
-                  <div className="relative w-[350px]">
-                    <img 
-                      src={speechBubbleImage} 
-                      alt="Speech Bubble" 
-                      className="w-full h-auto"
-                    />
-                    
-                    {/* Text overlay on speech bubble */}
-                    <div className="absolute inset-0 flex items-center justify-center" style={{ paddingBottom: '25px' }}>
-                      <p className="font-bold text-white text-2xl text-center drop-shadow-md" 
-                         style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif', textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
-                        You gotta have credit bro!
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
