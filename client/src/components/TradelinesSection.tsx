@@ -282,7 +282,7 @@ export default function TradelinesSection() {
           </div>
           
           {/* FlexCredit Product Section - with ID for anchor link */}
-          <div id="flexcredit" className="bg-gradient-to-br from-[#41c99e]/10 to-white rounded-xl shadow-lg overflow-hidden border border-[#41c99e]/30 mb-8">
+          <div id="flexcredit" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
             <div className="bg-[#003366] text-white py-4 px-6">
               <h4 className="text-xl font-bold">FlexCredit™ Revolving Tradeline</h4>
             </div>
@@ -293,7 +293,7 @@ export default function TradelinesSection() {
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Plan 1 */}
-                <div className="border border-[#41c99e]/30 rounded-lg p-5 hover:shadow-md transition-shadow bg-[#41c99e]/5">
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
                   <div className="flex justify-between items-center mb-4">
                     <h5 className="text-lg font-bold text-slate-900">Standard Plan</h5>
                     <div className="text-[#F5C518] bg-[#F5C518]/10 rounded-full px-3 py-1 text-sm font-semibold">Most Popular</div>
@@ -326,7 +326,7 @@ export default function TradelinesSection() {
                 </div>
                 
                 {/* Plan 2 */}
-                <div className="border border-[#41c99e]/30 rounded-lg p-5 hover:shadow-md transition-shadow bg-[#41c99e]/5">
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
                   <div className="flex justify-between items-center mb-4">
                     <h5 className="text-lg font-bold text-slate-900">Premium Plan</h5>
                     <div className="text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-semibold">Higher Limit</div>
@@ -362,7 +362,7 @@ export default function TradelinesSection() {
           </div>
           
           {/* SteadyBuild Product Section - with ID for anchor link */}
-          <div id="steadybuild" className="bg-gradient-to-br from-[#4aade3]/10 to-white rounded-xl shadow-lg overflow-hidden border border-[#4aade3]/30 mb-8">
+          <div id="steadybuild" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
             <div className="bg-[#003366] text-white py-4 px-6">
               <h4 className="text-xl font-bold">SteadyBuild™ Installment Tradeline</h4>
             </div>
@@ -373,7 +373,7 @@ export default function TradelinesSection() {
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Plan 1 */}
-                <div className="border border-[#4aade3]/30 rounded-lg p-5 hover:shadow-md transition-shadow bg-[#4aade3]/5">
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
                   <div className="flex justify-between items-center mb-4">
                     <h5 className="text-lg font-bold text-slate-900">Basic Plan</h5>
                     <div className="text-[#F5C518] bg-[#F5C518]/10 rounded-full px-3 py-1 text-sm font-semibold">Great Starter</div>
@@ -406,7 +406,7 @@ export default function TradelinesSection() {
                 </div>
                 
                 {/* Plan 2 */}
-                <div className="border border-[#4aade3]/30 rounded-lg p-5 hover:shadow-md transition-shadow bg-[#4aade3]/5">
+                <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow">
                   <div className="flex justify-between items-center mb-4">
                     <h5 className="text-lg font-bold text-slate-900">Advanced Plan</h5>
                     <div className="text-blue-600 bg-blue-50 rounded-full px-3 py-1 text-sm font-semibold">Larger Loan</div>
@@ -442,7 +442,7 @@ export default function TradelinesSection() {
           </div>
           
           {/* HomeTrack Product Section - with ID for anchor link */}
-          <div id="hometrack" className="bg-gradient-to-br from-[#ffc829]/10 to-white rounded-xl shadow-lg overflow-hidden border border-[#ffc829]/30 mb-8">
+          <div id="hometrack" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
             <div className="bg-[#003366] text-white py-4 px-6">
               <h4 className="text-xl font-bold">HomeTrack™ Rent Reporting</h4>
             </div>
@@ -451,7 +451,7 @@ export default function TradelinesSection() {
                 Turn your largest monthly expense into a powerful credit builder. Our rent reporting service reports your rent payments to credit bureaus, helping you build credit history with payments you're already making.
               </p>
               
-              <div className="border border-[#ffc829]/30 rounded-lg p-5 hover:shadow-md transition-shadow max-w-md mx-auto bg-[#ffc829]/5">
+              <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow max-w-md mx-auto">
                 <div className="flex justify-between items-center mb-4">
                   <h5 className="text-lg font-bold text-slate-900">HomeTrack™ Plan</h5>
                   <div className="text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-semibold">Best Value</div>

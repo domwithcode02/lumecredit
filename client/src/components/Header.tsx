@@ -17,16 +17,8 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 shadow-sm">
-      <div className="bg-[#003366] text-white py-2 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#F5C518]/10 via-transparent to-[#F5C518]/10"></div>
-        <p className="text-sm font-medium relative z-10 flex items-center justify-center">
-          <span className="inline-block w-2 h-2 bg-[#F5C518] rounded-full mr-2 animate-pulse"></span>
-          LumeCredit Set To Launch September 1, 2025
-          <span className="inline-block w-2 h-2 bg-[#F5C518] rounded-full ml-2 animate-pulse"></span>
-        </p>
-      </div>
-      <div className="container-custom flex justify-between items-center py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-4 shadow-sm">
+      <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <a href="/" className="h-20 w-auto">

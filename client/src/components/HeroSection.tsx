@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, CreditCard, TrendingUp, Shield } from "lucide-react";
-import mascotInCarImage from "@assets/final_transparent_background_image.png";
+import mascotImage from "@assets/ChatGPT Image Apr 12, 2025, 10_10_34 PM.png";
 import creditMixImage from "@assets/161df62e-8ed6-42dc-9cac-0568d4c47b82.png";
 
 interface HeroSectionProps {
@@ -9,22 +9,25 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onButtonClick }: HeroSectionProps) {
   return (
-    <section className="bg-white pt-44 pb-6 sm:pt-44 sm:pb-8 overflow-hidden">
+    <section className="bg-white pt-32 pb-6 sm:pt-32 sm:pb-8 overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
 
-
-
-
+            
+            <div className="inline-flex items-center bg-[#003366]/10 px-3 py-1 rounded-full mb-3">
+              <span className="mr-2 h-2 w-2 rounded-full bg-[#F5C518]"></span>
+              <span className="text-sm font-semibold text-[#003366]">LAUNCHING SEPTEMBER 01, 2025</span>
+            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
             </h1>
-
+            
             <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">
               Get Lume Credit's Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!
             </p>
-
+            
             {/* Limited Time Offer Benefits */}
             <div className="mb-6">
               <h3 className="text-lg font-bold text-[#003366] mb-3">Exclusive Bundle Includes:</h3>
@@ -49,7 +52,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                 </div>
               </div>
             </div>
-
+            
             {/* Special Bundle Offer */}
             <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10 relative">
               <div className="absolute top-0 right-0">
@@ -91,26 +94,23 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </Button>
             </div>
           </div>
-
+          
           <div className="relative hidden lg:block">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[600px] h-[600px] rounded-full -z-10"></div>
-
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[550px] h-[550px] rounded-full -z-10"></div>
+            
             <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out">              
-              <div className="mascot-container relative z-0 flex justify-center">
-                {/* Speech bubble */}
-                <div className="absolute -top-14 right-14 bg-white text-black px-4 py-2 rounded-xl font-bold shadow-md z-10 border-2 border-gray-800 text-sm max-w-[150px]">
-                  <div className="relative">
-                    You gotta have credit bro!
-                    {/* Triangle pointer */}
-                    <div className="absolute -bottom-4 right-5 w-0 h-0 border-l-[8px] border-l-transparent border-t-[16px] border-t-white border-r-[8px] border-r-transparent"></div>
-                  </div>
-                </div>
-                
+              <div className="mascot-container relative z-0">
                 <img 
-                  src={mascotInCarImage} 
-                  alt="LumeCredit Mascot in Car with Credit Score" 
-                  className="w-full max-w-md mx-auto object-contain drop-shadow-md"
+                  src={mascotImage} 
+                  alt="LumeCredit Mascot" 
+                  className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
+                
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-4 max-w-[80%] shadow-xl border border-[#F5C518]/30">
+                  <p className="font-medium text-center">
+                    "You gotta have credit bro!"
+                  </p>
+                </div>
               </div>
             </div>
           </div>
