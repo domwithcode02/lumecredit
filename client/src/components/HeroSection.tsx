@@ -14,17 +14,17 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
 
-            
 
-            
+
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">
               Get Lume Credit's Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!
             </p>
-            
+
             {/* Limited Time Offer Benefits */}
             <div className="mb-6">
               <h3 className="text-lg font-bold text-[#003366] mb-3">Exclusive Bundle Includes:</h3>
@@ -49,7 +49,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                 </div>
               </div>
             </div>
-            
+
             {/* Special Bundle Offer */}
             <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10 relative">
               <div className="absolute top-0 right-0">
@@ -91,17 +91,17 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </Button>
             </div>
           </div>
-          
+
           <div className="relative hidden lg:block">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[1200px] h-[1200px] rounded-full -z-10"></div>
-            
-            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out -translate-y-96">              
+
+            <div className="relative transform hover:scale-105 transition-transform duration-500 ease-in-out -translate-y-48">              
               <div className="mascot-container relative z-0 flex justify-center">
                 <img 
                   src={mascotInCarImage} 
                   alt="LumeCredit Mascot in Car with Credit Score" 
                   className="w-full mx-auto object-contain drop-shadow-2xl"
-                  style={{ transform: 'scale(5)', maxWidth: '120%', marginLeft: '-10%' }}
+                  style={{ transform: 'scale(6)', maxWidth: '140%', marginLeft: '-20%' }}
                 />
               </div>
             </div>
