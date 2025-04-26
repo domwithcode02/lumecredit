@@ -14,20 +14,22 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
   };
 
   return (
-    <section id="totalboost" className="py-16 bg-white">
+    <section id="totalboost" className="py-16 bg-gradient-to-b from-white via-[#F5C518]/5 to-white">
       {/* Deal Section */}
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 mb-4">
-            <AlertTriangle className="h-3.5 w-3.5 text-[#F5C518] mr-2" />
-            <span className="text-sm font-medium text-slate-700">First 250 Users Only</span>
+          <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-4 py-2 mb-4 shadow-sm border border-[#F5C518]/30">
+            <AlertTriangle className="h-4 w-4 text-[#F5C518] mr-2" />
+            <span className="text-sm font-bold text-[#003366]">ONLY {spotsRemaining} SPOTS REMAINING!</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
             <span className="text-[#F5C518]">TotalBoost+</span> 5-Year Credit Tradeline Bundle
           </h2>
-          <p className="text-slate-600 text-lg mb-6">
-            Unlock the <span className="font-bold text-[#003366]">Perfect Credit Mix</span> with all three premium tradeline types to supercharge your credit score
-          </p>
+          <div className="max-w-2xl mx-auto p-4 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 rounded-lg mb-6">
+            <p className="text-slate-700 text-lg">
+              Unlock the <span className="font-bold text-[#003366]">Perfect Credit Mix</span> with all three premium tradeline types to supercharge your credit score
+            </p>
+          </div>
           
           <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-6">
             <div className="flex items-start gap-3">
@@ -64,7 +66,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
 
         <div className="grid md:grid-cols-12 gap-8 mb-12">
           {/* FlexCredit Revolving Tradeline Card */}
-          <div id="flexcredit" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+          <div id="flexcredit" className="md:col-span-4 bg-gradient-to-b from-[#41c99e]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
@@ -112,7 +114,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           </div>
           
           {/* SteadyBuild Installment Tradeline Card */}
-          <div id="steadybuild" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+          <div id="steadybuild" className="md:col-span-4 bg-gradient-to-b from-[#4aade3]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
