@@ -69,7 +69,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           <div id="flexcredit" className="md:col-span-4 bg-gradient-to-b from-[#41c99e]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-8">
-                <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-[#41c99e]/20 rounded-lg flex items-center justify-center mb-6">
                   <TrendingUp size={24} className="text-[#003366]" />
                 </div>
                 
@@ -117,7 +117,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           <div id="steadybuild" className="md:col-span-4 bg-gradient-to-b from-[#4aade3]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-8">
-                <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-[#4aade3]/20 rounded-lg flex items-center justify-center mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9" />
                     <path d="M17.64 15L22 10.64" />
@@ -166,10 +166,10 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
           </div>
           
           {/* HomeTrack Rent Reporting Card */}
-          <div id="hometrack" className="md:col-span-4 bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+          <div id="hometrack" className="md:col-span-4 bg-gradient-to-b from-[#ffc829]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-8">
-                <div className="w-12 h-12 bg-[#003366]/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-[#ffc829]/20 rounded-lg flex items-center justify-center mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
