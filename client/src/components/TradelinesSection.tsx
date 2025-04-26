@@ -282,8 +282,8 @@ export default function TradelinesSection() {
           </div>
           
           {/* FlexCredit Product Section - with ID for anchor link */}
-          <div id="flexcredit" className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 mb-8">
-            <div className="bg-[#003366] text-white py-4 px-6">
+          <div id="flexcredit" className="bg-gradient-to-b from-[#41c99e]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#41c99e]/30 mb-8">
+            <div className="bg-[#41c99e] text-white py-4 px-6">
               <h4 className="text-xl font-bold">FlexCredit™ Revolving Tradeline</h4>
             </div>
             <div className="p-6">

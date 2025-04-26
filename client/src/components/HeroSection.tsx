@@ -9,16 +9,13 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onButtonClick }: HeroSectionProps) {
   return (
-    <section className="bg-white pt-32 pb-6 sm:pt-32 sm:pb-8 overflow-hidden">
+    <section className="bg-white pt-36 pb-6 sm:pt-36 sm:pb-8 overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
 
             
-            <div className="inline-flex items-center bg-[#003366]/10 px-3 py-1 rounded-full mb-3">
-              <span className="mr-2 h-2 w-2 rounded-full bg-[#F5C518]"></span>
-              <span className="text-sm font-semibold text-[#003366]">LAUNCHING SEPTEMBER 01, 2025</span>
-            </div>
+
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
@@ -54,36 +51,36 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             </div>
             
             {/* Special Bundle Offer */}
-            <div className="mb-8 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 p-6 rounded-xl border border-[#003366]/10 relative">
-              <div className="absolute top-0 right-0">
-                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
+            <div className="mb-8 bg-gradient-to-r from-[#003366]/15 via-[#F5C518]/10 to-[#003366]/15 p-8 rounded-xl border-2 border-[#F5C518]/30 relative shadow-lg transform transition-all duration-300 hover:shadow-xl hover:scale-[1.01] -mx-2 sm:mx-0 sm:w-[110%]">
+              <div className="absolute -top-4 -right-2">
+                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1.5 px-4 rounded-lg shadow-md">
                   LIMITED TIME OFFER
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#003366] mb-3">Special Offer - 5 Year Credit Bundle</h3>
-              <p className="text-md text-slate-700 mb-4">
-                For the first 250 users only: Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000+ over the same period!
+              <h3 className="text-2xl font-bold text-[#003366] mb-4">Special Offer - 5 Year Credit Bundle</h3>
+              <p className="text-md text-slate-700 mb-5">
+                <span className="font-semibold">For the first 250 users only:</span> Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000+ over the same period!
               </p>
-              <div className="flex flex-wrap gap-3 mb-4">
-                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
-                  <Check size={14} className="text-[#003366] mr-1.5" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                <div className="flex items-center bg-white px-4 py-2 rounded-lg text-sm text-slate-700 shadow-sm">
+                  <Check size={16} className="text-green-500 mr-2" />
                   <span>Just $200 One-time Payment</span>
                 </div>
-                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
-                  <Check size={14} className="text-[#003366] mr-1.5" />
+                <div className="flex items-center bg-white px-4 py-2 rounded-lg text-sm text-slate-700 shadow-sm">
+                  <Check size={16} className="text-green-500 mr-2" />
                   <span>5 Years of Credit Reporting</span>
                 </div>
-                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
-                  <Check size={14} className="text-[#003366] mr-1.5" />
+                <div className="flex items-center bg-white px-4 py-2 rounded-lg text-sm text-slate-700 shadow-sm">
+                  <Check size={16} className="text-green-500 mr-2" />
                   <span>3 Tradeline Types</span>
                 </div>
-                <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
-                  <Check size={14} className="text-[#003366] mr-1.5" />
+                <div className="flex items-center bg-white px-4 py-2 rounded-lg text-sm text-slate-700 shadow-sm">
+                  <Check size={16} className="text-green-500 mr-2" />
                   <span>All 3 Credit Bureaus</span>
                 </div>
               </div>
               <Button 
-                className="btn-primary text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2"
+                className="bg-[#F5C518] hover:bg-[#e5b816] text-[#003366] font-bold text-base sm:text-lg px-8 py-6 h-auto w-full sm:w-auto flex items-center gap-2 shadow-md"
                 onClick={onButtonClick}
               >
                 <span>Secure My Spot Now</span>
