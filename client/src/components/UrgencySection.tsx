@@ -28,6 +28,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
       }
     }
   };
+
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
     if (formSection) {
@@ -39,22 +40,42 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
     <section id="totalboost" className="py-16 bg-gradient-to-b from-white via-[#F5C518]/5 to-white">
       {/* Deal Section */}
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-4 py-2 mb-4 shadow-sm border border-[#F5C518]/30">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          <motion.div 
+            className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-4 py-2 mb-4 shadow-sm border border-[#F5C518]/30"
+            variants={itemVariants}
+          >
             <AlertTriangle className="h-4 w-4 text-[#F5C518] mr-2" />
             <span className="text-sm font-bold text-[#003366]">ONLY {spotsRemaining} SPOTS REMAINING!</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
+          </motion.div>
+          
+          <motion.h2 
+            className="text-3xl md:text-5xl font-bold text-slate-900 mb-4"
+            variants={itemVariants}
+          >
             <span className="text-[#F5C518]">TotalBoost+</span> 5-Year Credit Tradeline Bundle
-          </h2>
-          <div className="max-w-2xl mx-auto p-4 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 rounded-lg mb-6">
+          </motion.h2>
+          
+          <motion.div 
+            className="max-w-2xl mx-auto p-4 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 rounded-lg mb-6"
+            variants={itemVariants}
+          >
             <p className="text-slate-700 text-lg">
               Unlock the <span className="font-bold text-[#003366]">Perfect Credit Mix</span> with all three premium tradeline types to supercharge your credit score
             </p>
-          </div>
+          </motion.div>
           
-          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-6">
-            <div className="flex items-start gap-3">
+          <motion.div 
+            className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-6"
+            variants={containerVariants}
+          >
+            <motion.div className="flex items-start gap-3" variants={itemVariants}>
               <div className="bg-[#003366]/10 p-2 rounded-full mt-1">
                 <Lock className="h-5 w-5 text-[#003366]" />
               </div>
@@ -62,9 +83,9 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 <h3 className="font-semibold text-slate-900">5-Year Access</h3>
                 <p className="text-slate-600 text-sm">Pay once, enjoy for 5 years. No recurring fees.</p>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="flex items-start gap-3">
+            <motion.div className="flex items-start gap-3" variants={itemVariants}>
               <div className="bg-[#003366]/10 p-2 rounded-full mt-1">
                 <TrendingUp className="h-5 w-5 text-[#003366]" />
               </div>
@@ -72,9 +93,9 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 <h3 className="font-semibold text-slate-900">Three Credit Lines</h3>
                 <p className="text-slate-600 text-sm">All tradeline types to maximize score potential.</p>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="flex items-start gap-3">
+            <motion.div className="flex items-start gap-3" variants={itemVariants}>
               <div className="bg-[#003366]/10 p-2 rounded-full mt-1">
                 <DollarSign className="h-5 w-5 text-[#003366]" />
               </div>
@@ -82,13 +103,23 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 <h3 className="font-semibold text-slate-900">Massive Savings</h3>
                 <p className="text-slate-600 text-sm">$3,485+ value ($697/year × 5 years).</p>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-12 gap-8 mb-12">
+        <motion.div 
+          className="grid md:grid-cols-12 gap-8 mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
+        >
           {/* FlexCredit Revolving Tradeline Card */}
-          <div id="flexcredit" className="md:col-span-4 bg-gradient-to-b from-[#41c99e]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow">
+          <motion.div 
+            id="flexcredit" 
+            className="md:col-span-4 bg-gradient-to-b from-[#41c99e]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow"
+            variants={itemVariants}
+          >
             <div className="relative">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#41c99e]/20 rounded-lg flex items-center justify-center mb-6">
@@ -133,10 +164,14 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* SteadyBuild Installment Tradeline Card */}
-          <div id="steadybuild" className="md:col-span-4 bg-gradient-to-b from-[#4aade3]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow">
+          <motion.div 
+            id="steadybuild" 
+            className="md:col-span-4 bg-gradient-to-b from-[#4aade3]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow"
+            variants={itemVariants}
+          >
             <div className="relative">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#4aade3]/20 rounded-lg flex items-center justify-center mb-6">
@@ -185,10 +220,14 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* HomeTrack Rent Reporting Card */}
-          <div id="hometrack" className="md:col-span-4 bg-gradient-to-b from-[#ffc829]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow">
+          <motion.div 
+            id="hometrack" 
+            className="md:col-span-4 bg-gradient-to-b from-[#ffc829]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow"
+            variants={itemVariants}
+          >
             <div className="relative">
               <div className="p-8">
                 <div className="w-12 h-12 bg-[#ffc829]/20 rounded-lg flex items-center justify-center mb-6">
@@ -236,11 +275,17 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Comparison Section */}
-        <div className="bg-gradient-to-r from-[#002244] to-[#003366] rounded-2xl overflow-hidden shadow-2xl border border-[#003366]/40">
+        <motion.div 
+          className="bg-gradient-to-r from-[#002244] to-[#003366] rounded-2xl overflow-hidden shadow-2xl border border-[#003366]/40"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="p-8 md:p-12 text-center">
             <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-3 py-1 mb-5">
               <Clock className="h-3.5 w-3.5 text-[#F5C518] mr-2" />
@@ -256,7 +301,13 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* Standard Monthly Option */}
-              <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10 relative">
+              <motion.div 
+                className="bg-white/5 rounded-xl overflow-hidden border border-white/10 relative"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <div className="absolute top-0 right-0">
                   <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
                     COMING SOON
@@ -301,62 +352,62 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
                       <span>Month-to-month flexibility with no commitments</span>
                     </li>
-                    <li className="flex items-start">
-                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span>All three major credit bureaus reporting</span>
-                    </li>
                   </ul>
+                  
+                  <Button 
+                    disabled
+                    className="w-full bg-white/20 hover:bg-white/30 text-white font-extrabold text-base py-3 h-auto rounded-xl cursor-not-allowed"
+                  >
+                    LAUNCHING SEPTEMBER 2025
+                  </Button>
                 </div>
-              </div>
+              </motion.div>
               
-              {/* Special 5-Year Deal */}
-              <div className="bg-[#001a33] rounded-xl overflow-hidden border border-[#F5C518]/30 shadow-lg relative">
+              {/* 5-Year Special Option */}
+              <motion.div 
+                className="bg-white/5 rounded-xl overflow-hidden border border-[#F5C518] relative shadow-lg shadow-[#F5C518]/10"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <div className="absolute top-0 right-0">
                   <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-bl-lg">
-                    LIMITED TIME OFFER
+                    SPECIAL OFFER
                   </div>
                 </div>
-                
                 <div className="p-6 md:p-8">
                   <div className="text-center mb-4">
                     <h4 className="text-xl md:text-2xl font-bold text-white">5-Year Special</h4>
-                    <div className="mt-1 bg-[#F5C518]/20 px-3 py-1 rounded-full inline-block">
-                      <span className="text-sm text-[#F5C518]">First 250 Only</span>
-                    </div>
+                    <p className="text-[#F5C518] text-sm mt-1 italic">First 250 members only</p>
                   </div>
                   
-                  <div className="relative mb-8 text-center">
+                  <div className="mb-6 text-center">
                     <div className="flex items-end justify-center gap-1">
-                      <span className="text-4xl font-extrabold text-white">$200</span>
+                      <span className="text-3xl font-bold text-white">$200</span>
                       <span className="text-lg text-white/80 mb-1">one-time</span>
                     </div>
-                    <div className="mt-2 bg-[#F5C518]/10 inline-flex items-center px-2 py-1 rounded">
-                      <span className="text-xs text-white/90">Just $3.33/month over 5 years</span>
-                    </div>
+                    <p className="text-[#F5C518] text-xs mt-1">Only $3.33/month over 5 years</p>
                   </div>
                   
                   <div className="mb-6 space-y-2 flex flex-col items-center">
                     <div className="flex flex-wrap justify-center gap-2">
-                      <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
-                        <span className="text-xs font-bold text-white">FlexCredit™ Included</span>
+                      <div className="inline-flex items-center bg-[#F5C518]/20 px-3 py-1.5 rounded-full">
+                        <span className="text-xs font-bold text-[#F5C518]">FlexCredit™: 5 Years</span>
                       </div>
-                      <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
-                        <span className="text-xs font-bold text-white">SteadyBuild™ Included</span>
+                      <div className="inline-flex items-center bg-[#F5C518]/20 px-3 py-1.5 rounded-full">
+                        <span className="text-xs font-bold text-[#F5C518]">SteadyBuild™: 5 Years</span>
                       </div>
                     </div>
                     <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
-                      <span className="text-xs font-bold text-green-300">HomeTrack™ Included Free</span>
+                      <span className="text-xs font-bold text-green-300">HomeTrack™: 5 Years Free</span>
                     </div>
                   </div>
                   
                   <ul className="mb-6 text-white/80 text-sm space-y-3 text-left">
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span className="text-left"><span className="font-bold text-white">Perfect Credit Mix</span> including FlexCredit, SteadyBuild, HomeTrack...</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span>Pay once, <span className="font-bold text-white">enjoy for 5 full years</span></span>
+                      <span><span className="font-bold text-[#F5C518]">93% DISCOUNT</span> over regular monthly price!</span>
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
@@ -382,17 +433,23 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
             
-            <div className="mt-8 border-t border-white/10 pt-8 text-left">
+            <motion.div 
+              className="mt-8 border-t border-white/10 pt-8 text-left"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
               <p className="text-white/80 text-lg mb-8 max-w-3xl mx-auto border-l-4 border-[#F5C518] pl-4">
                 <span className="font-bold text-white">Once-in-a-lifetime opportunity:</span> Get ALL THREE credit-building tradelines for 5 YEARS at a price less than <span className="font-bold text-white">4 months</span> of the regular monthly rate. After the first 250 members, <span className="font-bold text-white uppercase tracking-wide">this deal vanishes forever</span>. 
                 Lock in your <span className="font-bold text-[#F5C518]">5-year access</span> now at this <span className="underline decoration-[#F5C518] decoration-2 underline-offset-4">exclusive one-time price</span>.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
