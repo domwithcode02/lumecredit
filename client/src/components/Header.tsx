@@ -17,16 +17,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
 
   return (
     <div className="header-container">
-      <div className="bg-[#003366] text-white py-1.5 text-center fixed top-0 left-0 right-0 z-50 animate-slideDown">
+      <div className="bg-[#003366] text-white py-1.5 text-center fixed top-0 left-0 right-0 z-50">
         <div className="container-custom flex items-center justify-center">
-          <span className="h-2 w-2 rounded-full bg-[#F5C518] mr-2 animate-pulse"></span>
+          <span className="h-2 w-2 rounded-full bg-[#F5C518] mr-2"></span>
           <span className="text-sm font-semibold">LAUNCHING SEPTEMBER 01, 2025</span>
         </div>
       </div>
-      <header className="fixed top-7 left-0 right-0 z-40 bg-white border-b border-slate-100 py-4 shadow-sm animate-fadeIn">
+      <header className="fixed top-7 left-0 right-0 z-40 bg-white border-b border-slate-100 py-4 shadow-sm">
         <div className="container-custom flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center animate-fadeInLeft">
+          <div className="flex items-center">
             <a href="/" className="h-20 w-auto">
               <img 
                 src={lumeLogo} 
@@ -38,14 +38,14 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           </div>
           
           {/* Navigation */}
-          <div className="hidden md:flex items-center space-x-8 animate-fadeInDown">
-            <a href="#how-it-works" className="text-slate-600 hover:text-slate-900 font-medium transition-colors hover:-translate-y-1 hover:duration-300">
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#how-it-works" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
               How It Works
             </a>
             
             {/* Products Dropdown - Using CSS hover */}
             <div className="relative group">
-              <a href="#products" className="text-slate-600 hover:text-slate-900 font-medium transition-colors flex items-center gap-1 hover:-translate-y-1 hover:duration-300">
+              <a href="#products" className="text-slate-600 hover:text-slate-900 font-medium transition-colors flex items-center gap-1">
                 Products <ChevronDown size={16} />
               </a>
               
@@ -70,20 +70,20 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
               </div>
             </div>
             
-            <a href="#visa-card" className="text-slate-600 hover:text-slate-900 font-medium transition-colors hover:-translate-y-1 hover:duration-300">
+            <a href="#visa-card" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
               Visa Card
             </a>
             
-            <a href="/faq" className="text-slate-600 hover:text-slate-900 font-medium transition-colors hover:-translate-y-1 hover:duration-300">
+            <a href="/faq" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
               FAQ
             </a>
           </div>
           
           {/* Actions */}
-          <div className="flex items-center animate-fadeInRight">
+          <div className="flex items-center">
             <Button 
               onClick={scrollToForm}
-              className="hidden md:flex bg-black hover:bg-slate-800 text-white font-medium rounded-lg px-5 py-2.5 hover:scale-105 active:scale-95 transition-all duration-200"
+              className="hidden md:flex bg-black hover:bg-slate-800 text-white font-medium rounded-lg px-5 py-2.5"
             >
               Reserve Now
             </Button>

@@ -7,7 +7,6 @@ import TradelinesSection from "@/components/TradelinesSection";
 import FamiliesSection from "@/components/FamiliesSection";
 import VisaCardSection from "@/components/VisaCardSection";
 import DebitCardSection from "@/components/DebitCardSection";
-import BenefitsSection from "@/components/BenefitsSection";
 import FormSection from "@/components/FormSection";
 import Footer from "@/components/Footer";
 import PartnersSection from "@/components/PartnersSection";
@@ -62,7 +61,6 @@ export default function HomePage() {
         <HeroSection onButtonClick={scrollToForm} />
         <PartnersSection />
         <HowItWorksSection />
-        <BenefitsSection />
         <TradelinesSection />
         <FamiliesSection />
         <UrgencySection spotsRemaining={spotsData?.spotsRemaining || 0} />
