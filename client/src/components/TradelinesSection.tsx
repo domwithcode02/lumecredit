@@ -121,10 +121,10 @@ export default function TradelinesSection() {
                   Revolving Credit
                 </h3>
                 
-                <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
+                <div className="bg-white rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 shadow-sm">
                   <p className="text-slate-700 text-sm">
                     <span className="font-semibold block mb-1">What is it?</span> 
-                    Accounts with flexible balances and payments, like credit cards or lines of credit.
+                    Accounts with flexible balances like credit cards or lines of credit.
                   </p>
                 </div>
                 
@@ -134,7 +134,7 @@ export default function TradelinesSection() {
                       <TrendingUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Impact:</span> Major influence on credit utilization ratio (30% of your score)
+                      <span className="font-semibold">Impact:</span> 30% of score (utilization ratio)
                     </p>
                   </div>
                   
@@ -143,7 +143,7 @@ export default function TradelinesSection() {
                       <Clock size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Time to Impact:</span> 30-60 days to start seeing credit score improvements
+                      <span className="font-semibold">Time to Impact:</span> 30-60 days
                     </p>
                   </div>
                   
@@ -176,10 +176,10 @@ export default function TradelinesSection() {
                   Installment Credit
                 </h3>
                 
-                <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
+                <div className="bg-white rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 shadow-sm">
                   <p className="text-slate-700 text-sm">
                     <span className="font-semibold block mb-1">What is it?</span> 
-                    Fixed payment loans with set terms, like auto loans, mortgages, and personal loans.
+                    Fixed payment loans with set terms, like auto loans or personal loans.
                   </p>
                 </div>
                 
@@ -189,7 +189,7 @@ export default function TradelinesSection() {
                       <TrendingUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Impact:</span> Shows ability to manage long-term commitments (10% of your score)
+                      <span className="font-semibold">Impact:</span> 10% of score (credit mix)
                     </p>
                   </div>
                   
@@ -198,7 +198,7 @@ export default function TradelinesSection() {
                       <Clock size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Time to Impact:</span> 60-90 days to reflect the diversified credit mix benefit
+                      <span className="font-semibold">Time to Impact:</span> 60-90 days
                     </p>
                   </div>
                   
@@ -230,10 +230,10 @@ export default function TradelinesSection() {
                   Payment History
                 </h3>
                 
-                <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
+                <div className="bg-white rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 shadow-sm">
                   <p className="text-slate-700 text-sm">
                     <span className="font-semibold block mb-1">What is it?</span> 
-                    Reported regular payments like rent, utilities, and subscriptions that show reliability.
+                    Regular reported payments like rent that show reliability over time.
                   </p>
                 </div>
                 
@@ -243,7 +243,7 @@ export default function TradelinesSection() {
                       <TrendingUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Impact:</span> Payment history is the biggest factor (35% of your credit score)
+                      <span className="font-semibold">Impact:</span> 35% of score (payment history)
                     </p>
                   </div>
                   
@@ -252,7 +252,7 @@ export default function TradelinesSection() {
                       <Clock size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Time to Impact:</span> 30-60 days for rent reporting to reflect on reports
+                      <span className="font-semibold">Time to Impact:</span> 30-60 days
                     </p>
                   </div>
                   
