@@ -92,13 +92,13 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700">Improves credit utilization, a key factor in scoring</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Improves credit utilization ratio</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700"><span className="font-semibold">Essential for:</span> Qualifying for premium credit cards</p>
+                    <p className="text-slate-700 text-sm sm:text-base"><span className="font-semibold">Essential for:</span> Premium credit cards</p>
                   </li>
                 </ul>
                 
@@ -107,7 +107,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     <Star size={16} className="mr-2" />
                     TYPICAL RESULT:
                   </div>
-                  <p className="text-slate-600">+40-70 points in your first 60 days</p>
+                  <p className="text-slate-600 text-sm sm:text-base">+40-70 points in first 60 days</p>
                 </div>
               </div>
             </div>
@@ -138,19 +138,19 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700">Shows ability to manage fixed payment loans</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Shows fixed payment loan management</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700">Diversifies your credit mix for optimal scoring</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Diversifies your credit mix</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700"><span className="font-semibold">Essential for:</span> Mortgage and auto loan approvals</p>
+                    <p className="text-slate-700 text-sm sm:text-base"><span className="font-semibold">Essential for:</span> Mortgage approvals</p>
                   </li>
                 </ul>
                 
@@ -159,7 +159,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     <Star size={16} className="mr-2" />
                     SCORING IMPACT:
                   </div>
-                  <p className="text-slate-600">Improves 10% of your FICO® credit score factors</p>
+                  <p className="text-slate-600 text-sm sm:text-base">Improves 10% of FICO® score factors</p>
                 </div>
               </div>
             </div>
@@ -189,19 +189,19 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700">Establishes regular payment history records</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Establishes payment history</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700">Strengthens the most important score factor (35%)</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Affects 35% of your credit score</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="flex-shrink-0 text-[#F5C518]">
                       <Check size={20} />
                     </div>
-                    <p className="text-slate-700"><span className="font-semibold">Essential for:</span> Rental applications & housing approval</p>
+                    <p className="text-slate-700 text-sm sm:text-base"><span className="font-semibold">Essential for:</span> Rental approvals</p>
                   </li>
                 </ul>
                 
@@ -210,7 +210,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                     <Star size={16} className="mr-2" />
                     KEY BENEFIT:
                   </div>
-                  <p className="text-slate-600">Most trusted account type by mortgage lenders</p>
+                  <p className="text-slate-600 text-sm sm:text-base">Trusted by mortgage lenders</p>
                 </div>
               </div>
             </div>
