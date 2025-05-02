@@ -62,7 +62,7 @@ export default function TradelinesSection() {
               </div>
             </div>
             
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-slate-50 rounded-xl p-4 sm:p-6 border border-slate-200 overflow-hidden">
               <h3 className="font-bold text-xl text-slate-900 mb-4 flex items-center">
                 <AlertCircle size={20} className="text-[#F5C518] mr-2" />
                 The Credit Catch-22
@@ -70,7 +70,7 @@ export default function TradelinesSection() {
               <p className="text-slate-600 mb-4">
                 To build credit, you need credit accounts. But to get credit accounts, lenders want to see existing credit history. It's a frustrating cycle!
               </p>
-              <div className="flex items-center justify-center my-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 my-6">
                 <div className="w-32 h-32 rounded-full bg-red-50 border-2 border-red-100 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-red-500 font-bold">No Credit</div>
@@ -78,7 +78,7 @@ export default function TradelinesSection() {
                     <div className="text-red-500 font-bold">No Approval</div>
                   </div>
                 </div>
-                <div className="w-12 flex justify-center">
+                <div className="rotate-90 sm:rotate-0 w-6 sm:w-12 flex justify-center">
                   <ChevronRight size={24} className="text-slate-300" />
                 </div>
                 <div className="w-32 h-32 rounded-full bg-green-50 border-2 border-green-100 flex items-center justify-center">
