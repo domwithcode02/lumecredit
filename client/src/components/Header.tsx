@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetTrigger,
-  SheetClose
+  SheetTrigger
 } from "@/components/ui/sheet";
 
 interface HeaderProps {
@@ -114,13 +113,8 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="p-0">
-                <div className="p-4 border-b border-slate-100 flex justify-between items-center">
+                <div className="p-4 border-b border-slate-100">
                   <span className="font-bold text-slate-900">Menu</span>
-                  <SheetClose asChild>
-                    <Button variant="ghost" size="icon">
-                      <X className="h-5 w-5 text-slate-700" />
-                    </Button>
-                  </SheetClose>
                 </div>
                 
                 <div className="flex flex-col p-4 space-y-4">
