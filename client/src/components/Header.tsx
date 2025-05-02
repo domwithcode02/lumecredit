@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose
+} from "@/components/ui/sheet";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -8,10 +15,21 @@ interface HeaderProps {
 }
 
 export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
+  const [open, setOpen] = useState(false);
+  
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
     if (formSection) {
       formSection.scrollIntoView({ behavior: "smooth" });
+      setOpen(false); // Close the mobile menu if open
+    }
+  };
+  
+  const handleNavLinkClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setOpen(false); // Close the mobile menu
     }
   };
 
@@ -80,13 +98,105 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           </div>
           
           {/* Actions */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
             <Button 
               onClick={scrollToForm}
               className="hidden md:flex bg-black hover:bg-slate-800 text-white font-medium rounded-lg px-5 py-2.5"
             >
               Reserve Now
             </Button>
+            
+            {/* Mobile Menu Button */}
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6 text-slate-700" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="p-0">
+                <div className="p-4 border-b border-slate-100 flex justify-between items-center">
+                  <span className="font-bold text-slate-900">Menu</span>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon">
+                      <X className="h-5 w-5 text-slate-700" />
+                    </Button>
+                  </SheetClose>
+                </div>
+                
+                <div className="flex flex-col p-4 space-y-4">
+                  <a 
+                    href="#how-it-works" 
+                    className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
+                    onClick={(e) => { e.preventDefault(); handleNavLinkClick('how-it-works'); }}
+                  >
+                    How It Works
+                  </a>
+                  
+                  <div className="space-y-2">
+                    <div className="text-slate-700 font-medium">Products</div>
+                    <div className="pl-4 space-y-2">
+                      <a 
+                        href="#totalboost" 
+                        className="block text-sm text-[#003366] font-bold"
+                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('totalboost'); }}
+                      >
+                        TotalBoost+™ Bundle
+                      </a>
+                      <a 
+                        href="#flexcredit" 
+                        className="block text-sm text-slate-700"
+                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('flexcredit'); }}
+                      >
+                        FlexCredit™ Revolving
+                      </a>
+                      <a 
+                        href="#steadybuild" 
+                        className="block text-sm text-slate-700"
+                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('steadybuild'); }}
+                      >
+                        SteadyBuild™ Installment
+                      </a>
+                      <a 
+                        href="#hometrack" 
+                        className="block text-sm text-slate-700"
+                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('hometrack'); }}
+                      >
+                        HomeTrack™ Rent Reporting
+                      </a>
+                      <a 
+                        href="#families" 
+                        className="block text-sm text-slate-700"
+                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('families'); }}
+                      >
+                        LumeStart™ for Families
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <a 
+                    href="#visa-card" 
+                    className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
+                    onClick={(e) => { e.preventDefault(); handleNavLinkClick('visa-card'); }}
+                  >
+                    Visa Card
+                  </a>
+                  
+                  <a 
+                    href="/faq" 
+                    className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
+                  >
+                    FAQ
+                  </a>
+                  
+                  <Button 
+                    onClick={scrollToForm}
+                    className="mt-4 bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
+                  >
+                    Reserve Now
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
