@@ -6,6 +6,33 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Basic authentication middleware
+app.use((req, res, next) => {
+  const auth = req.headers.authorization;
+  
+  // Skip auth for API routes
+  if (req.path.startsWith('/api')) {
+    return next();
+  }
+
+  if (!auth) {
+    res.setHeader('WWW-Authenticate', 'Basic');
+    return res.status(401).send('Authentication required');
+  }
+
+  const [username, password] = Buffer.from(auth.split(' ')[1], 'base64')
+    .toString()
+    .split(':');
+
+  // Replace these with your desired credentials
+  if (username === 'admin' && password === 'secretpassword123') {
+    next();
+  } else {
+    res.setHeader('WWW-Authenticate', 'Basic');
+    return res.status(401).send('Invalid credentials');
+  }
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
