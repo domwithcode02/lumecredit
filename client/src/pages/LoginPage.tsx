@@ -37,19 +37,12 @@ export default function LoginPage() {
       console.log("Login response status:", response.status);
       
       if (response.ok) {
-        console.log("Login successful, redirecting to homepage");
+        console.log("Login successful, redirecting to app");
         const data = await response.json();
         console.log("Response data:", data);
         
-        // Wait a moment for the cookie to be set
-        setTimeout(() => {
-          // Force a hard reload of the page to ensure the cookie is recognized
-          window.location.href = data.redirectTo || '/';
-          // If the redirect doesn't happen after 1 second, force it
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
-        }, 300);
+        // Redirect to app page
+        window.location.href = '/app';
       } else {
         const data = await response.json();
         console.error("Login failed:", data);

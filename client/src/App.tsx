@@ -12,8 +12,14 @@ function Router() {
   // Check if auth token exists in cookies
   const isAuthenticated = document.cookie.includes('auth_token');
 
-  // Redirect to login if not authenticated and trying to access protected routes
-  if (!isAuthenticated && window.location.pathname !== '/login') {
+  // If authenticated and on login page, redirect to app
+  if (isAuthenticated && window.location.pathname === '/login') {
+    window.location.href = '/app';
+    return null;
+  }
+
+  // If not authenticated and trying to access protected routes, redirect to login
+  if (!isAuthenticated && !['/login', '/'].includes(window.location.pathname)) {
     window.location.href = '/login';
     return null;
   }
