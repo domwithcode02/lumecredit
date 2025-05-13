@@ -34,7 +34,8 @@ export default function LoginPage() {
       });
       
       if (response.ok) {
-        window.location.href = '/app';
+        window.location.replace('/app');
+        return;
       } else {
         const data = await response.json();
         throw new Error(data.message || "Invalid credentials");

@@ -9,18 +9,15 @@ import FAQPage from "@/pages/FAQPage";
 import LoginPage from "@/pages/LoginPage";
 
 function Router() {
-  // Check if auth token exists in cookies
   const isAuthenticated = document.cookie.includes('auth_token');
-
-  // If authenticated and on login page, redirect to app
+  
   if (isAuthenticated && window.location.pathname === '/login') {
-    window.location.href = '/app';
+    window.location.replace('/app');
     return null;
   }
-
-  // If not authenticated and trying to access protected routes, redirect to login
-  if (!isAuthenticated && !['/login', '/'].includes(window.location.pathname)) {
-    window.location.href = '/login';
+  
+  if (!isAuthenticated && window.location.pathname !== '/login') {
+    window.location.replace('/login');
     return null;
   }
 

@@ -121,20 +121,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
         
         // For browser-based login, redirect to homepage
-        if (req.headers['content-type'] === 'application/json') {
-          res.status(200).json({
-            success: true,
-            message: "Login successful",
-            user: { 
-              username: user.username,
-              role: user.role
-            },
-            redirectTo: '/app'
-          });
-        } else {
-          // Direct redirect for form submissions
-          res.redirect('/');
-        }
+        res.status(200).json({
+          success: true,
+          message: "Login successful",
+          user: { 
+            username: user.username,
+            role: user.role
+          }
+        });
       } else {
         res.status(401).json({
           success: false,
