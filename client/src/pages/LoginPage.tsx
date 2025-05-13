@@ -22,8 +22,10 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    console.log("Login attempt with username:", username);
 
     try {
+      console.log("Submitting login request...");
       const response = await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -32,13 +34,19 @@ export default function LoginPage() {
         body: JSON.stringify({ username, password }),
       });
 
+      console.log("Login response status:", response.status);
+      
       if (response.ok) {
-        window.location.href = "/";
+        console.log("Login successful, redirecting to homepage");
+        // Force page reload to ensure the cookie is recognized
+        window.location.replace("/");
       } else {
         const data = await response.json();
+        console.error("Login failed:", data);
         throw new Error(data.message || "Invalid credentials");
       }
     } catch (error: any) {
+      console.error("Login error:", error);
       toast({
         title: "Login Failed",
         description: error.message || "Something went wrong",
