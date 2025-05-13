@@ -120,9 +120,18 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     log(`serving on port ${port}`);
   });
   
-  // In production, add catch-all route that serves index.html for all unmatched routes
-  // This should be the LAST route handler
+  // In production, add a specific handler for the root route to redirect to login
   if (process.env.NODE_ENV === 'production') {
+    // Specific handler for the root route
+    app.get('/', (req: Request, res: Response) => {
+      const token = req.cookies.auth_token;
+      if (!token) {
+        return res.redirect('/login');
+      }
+      res.sendFile(path.join(import.meta.dirname, './public/index.html'));
+    });
+    
+    // Catch-all route for all other unmatched routes
     app.get('*', (req: Request, res: Response) => {
       if (!req.path.startsWith('/api') && req.path !== '/health') {
         res.sendFile(path.join(import.meta.dirname, './public/index.html'));
