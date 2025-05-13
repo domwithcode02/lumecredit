@@ -15,16 +15,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Health check endpoints for Autoscale
-app.get('/', (_req, res) => {
-  res.status(200).send('OK');
-});
-
+// Health check endpoint for Autoscale - keep this separate from main routes
 app.get('/health', (_req, res) => {
   res.status(200).send('OK');
 });
 
-app.use(express.static(path.join(import.meta.dirname, process.env.NODE_ENV === 'production' ? './public' : '../dist/public')));
+// Serve static files from the appropriate directory based on environment
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(import.meta.dirname, './public')));
+} else {
+  app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
+}
 
 // JWT authentication middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -118,4 +119,14 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }, () => {
     log(`serving on port ${port}`);
   });
+  
+  // In production, add catch-all route that serves index.html for all unmatched routes
+  // This should be the LAST route handler
+  if (process.env.NODE_ENV === 'production') {
+    app.get('*', (req: Request, res: Response) => {
+      if (!req.path.startsWith('/api') && req.path !== '/health') {
+        res.sendFile(path.join(import.meta.dirname, './public/index.html'));
+      }
+    });
+  }
 })();
