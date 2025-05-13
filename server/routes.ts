@@ -101,13 +101,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       if (user) {
         // Create JWT token
+        // Use the same secure default JWT secret as in server/index.ts
+        const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
         const token = jwt.sign(
           { 
             id: `${user.username}-user`,
             username: user.username,
             role: user.role
           },
-          process.env.JWT_SECRET || "your-secret-key",
+          jwtSecret,
           { expiresIn: "24h" }
         );
         
