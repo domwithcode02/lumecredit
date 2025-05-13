@@ -15,41 +15,6 @@ import { Label } from "@/components/ui/label";
 import { Lock, User } from "lucide-react";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-      
-      if (response.ok) {
-        window.location.replace('/app');
-        return;
-      } else {
-        const data = await response.json();
-        throw new Error(data.message || "Invalid credentials");
-      }
-    } catch (error: any) {
-      toast({
-        title: "Login Failed",
-        description: error.message || "Something went wrong",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-4">
@@ -72,15 +37,14 @@ export default function LoginPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-6">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form action="/api/login" method="POST" className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    name="username"
                     type="text"
                     placeholder="Enter your username"
                     className="pl-10"
@@ -95,8 +59,7 @@ export default function LoginPage() {
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    name="password"
                     type="password"
                     placeholder="Enter your password"
                     className="pl-10"
@@ -107,11 +70,16 @@ export default function LoginPage() {
 
               <Button 
                 type="submit"
-                disabled={isLoading}
                 className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
               >
-                {isLoading ? "Signing in..." : "Sign in"}
+                Sign in
               </Button>
+              
+              <div className="text-center mt-4">
+                <a href="/quick-login" className="text-blue-600 hover:underline text-sm">
+                  Quick Login (Direct Access)
+                </a>
+              </div>
             </form>
           </CardContent>
         </Card>

