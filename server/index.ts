@@ -14,7 +14,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
+
+// Health check endpoint for Autoscale
+app.get('/health', (_req, res) => {
+  res.status(200).send('OK');
+});
+
+app.use(express.static(path.join(import.meta.dirname, process.env.NODE_ENV === 'production' ? './public' : '../dist/public')));
 
 // JWT authentication middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
