@@ -16,15 +16,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
 
-// JWT authentication middleware - TEMPORARILY DISABLED FOR TESTING
+// JWT authentication middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
-  // Skip auth for now
-  next();
-  
-  // Original auth code - commented out for testing
-  /*
-  // Skip auth for public routes
-  if (req.path.startsWith('/api') || req.path === '/login') {
+  // Skip auth for API routes, login page, and static assets
+  if (
+    req.path.startsWith('/api') || 
+    req.path === '/login' || 
+    req.path.includes('.') || 
+    req.path.startsWith('/@') || 
+    req.path.startsWith('/node_modules') || 
+    req.path.startsWith('/src/')
+  ) {
     return next();
   }
 
@@ -41,7 +43,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.clearCookie('auth_token');
     return res.redirect('/login');
   }
-  */
 });
 
 app.use((req: Request, res: Response, next: NextFunction) => {

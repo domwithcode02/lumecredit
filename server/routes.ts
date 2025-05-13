@@ -90,12 +90,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Hardcoded credentials for demo purposes
       // In a real application, you would check against a database
-      if (username === "admin" && password === "secretpassword123") {
+      const validCredentials = [
+        { username: "admin", password: "secretpassword123", role: "admin" },
+        { username: "rebekah", password: "virginia123", role: "staff" }
+      ];
+      
+      const user = validCredentials.find(
+        cred => cred.username === username && cred.password === password
+      );
+      
+      if (user) {
         // Create JWT token
         const token = jwt.sign(
           { 
-            id: "admin-user",
-            username: username
+            id: `${user.username}-user`,
+            username: user.username,
+            role: user.role
           },
           process.env.JWT_SECRET || "your-secret-key",
           { expiresIn: "24h" }
@@ -111,7 +121,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         res.status(200).json({
           success: true,
           message: "Login successful",
-          user: { username: username }
+          user: { 
+            username: user.username,
+            role: user.role
+          }
         });
       } else {
         res.status(401).json({
@@ -124,6 +137,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({
         success: false,
         message: "An error occurred during login"
+      });
+    }
+  });
+  
+  // Logout API endpoint
+  app.post("/api/logout", (req: Request, res: Response) => {
+    try {
+      // Clear auth cookie
+      res.clearCookie("auth_token");
+      
+      res.status(200).json({
+        success: true,
+        message: "Logout successful"
+      });
+    } catch (error) {
+      console.error("Logout error:", error);
+      res.status(500).json({
+        success: false,
+        message: "An error occurred during logout"
       });
     }
   });

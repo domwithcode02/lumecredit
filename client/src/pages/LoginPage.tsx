@@ -7,11 +7,18 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Lock, User } from "lucide-react";
+import { Lock, User, Info } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -58,18 +65,18 @@ export default function LoginPage() {
             alt="LumeCredit Logo"
             className="h-20 mx-auto mb-4"
           />
-          <h1 className="text-2xl font-bold text-slate-900">Admin Login</h1>
-          <p className="text-slate-600">Enter your credentials to continue</p>
+          <h1 className="text-2xl font-bold text-slate-900">Secure Access</h1>
+          <p className="text-slate-600">Please log in to view the LumeCredit landing page</p>
         </div>
 
-        <Card>
-          <CardHeader className="space-y-1">
+        <Card className="shadow-lg">
+          <CardHeader className="space-y-1 bg-[#003366] text-white rounded-t-lg">
             <CardTitle className="text-xl">Authorized Access Only</CardTitle>
-            <CardDescription>
+            <CardDescription className="text-slate-200">
               This area is restricted to authorized personnel
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
@@ -105,13 +112,34 @@ export default function LoginPage() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-[#003366] hover:bg-[#00264d]"
+                className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
                 disabled={isLoading}
               >
                 {isLoading ? "Signing in..." : "Sign in"}
               </Button>
             </form>
           </CardContent>
+          <CardFooter className="flex flex-col bg-slate-50 border-t">
+            <div className="flex items-start space-x-2 text-sm text-slate-600 mb-4">
+              <Info className="h-4 w-4 text-[#003366] mt-0.5 flex-shrink-0" />
+              <span>For demonstration purposes, you can use one of the following accounts:</span>
+            </div>
+            
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="py-2 font-medium">Admin</TableCell>
+                  <TableCell className="py-2">username: <span className="font-mono bg-slate-100 px-1">admin</span></TableCell>
+                  <TableCell className="py-2">password: <span className="font-mono bg-slate-100 px-1">secretpassword123</span></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-2 font-medium">Staff</TableCell>
+                  <TableCell className="py-2">username: <span className="font-mono bg-slate-100 px-1">rebekah</span></TableCell>
+                  <TableCell className="py-2">password: <span className="font-mono bg-slate-100 px-1">virginia123</span></TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </CardFooter>
         </Card>
       </div>
     </div>
