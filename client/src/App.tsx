@@ -9,11 +9,20 @@ import FAQPage from "@/pages/FAQPage";
 import LoginPage from "@/pages/LoginPage";
 
 function Router() {
+  // Check if auth token exists in cookies
+  const isAuthenticated = document.cookie.includes('auth_token');
+
+  // Redirect to login if not authenticated and trying to access protected routes
+  if (!isAuthenticated && window.location.pathname !== '/login') {
+    window.location.href = '/login';
+    return null;
+  }
+
   return (
     <Switch>
-      <Route path="/" component={HomePage} />
-      <Route path="/faq" component={FAQPage} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/" component={isAuthenticated ? HomePage : LoginPage} />
+      <Route path="/faq" component={isAuthenticated ? FAQPage : LoginPage} />
       <Route component={NotFound} />
     </Switch>
   );
