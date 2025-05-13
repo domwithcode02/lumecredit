@@ -120,14 +120,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
           maxAge: 24 * 60 * 60 * 1000 // 24 hours
         });
         
-        res.status(200).json({
-          success: true,
-          message: "Login successful",
-          user: { 
-            username: user.username,
-            role: user.role
-          }
-        });
+        // For browser-based login, redirect to homepage
+        if (req.headers['content-type'] === 'application/json') {
+          res.status(200).json({
+            success: true,
+            message: "Login successful",
+            user: { 
+              username: user.username,
+              role: user.role
+            },
+            redirectTo: '/'
+          });
+        } else {
+          // Direct redirect for form submissions
+          res.redirect('/');
+        }
       } else {
         res.status(401).json({
           success: false,

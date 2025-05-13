@@ -38,8 +38,18 @@ export default function LoginPage() {
       
       if (response.ok) {
         console.log("Login successful, redirecting to homepage");
-        // Force page reload to ensure the cookie is recognized
-        window.location.replace("/");
+        const data = await response.json();
+        console.log("Response data:", data);
+        
+        // Wait a moment for the cookie to be set
+        setTimeout(() => {
+          // Force a hard reload of the page to ensure the cookie is recognized
+          window.location.href = data.redirectTo || '/';
+          // If the redirect doesn't happen after 1 second, force it
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        }, 300);
       } else {
         const data = await response.json();
         console.error("Login failed:", data);
@@ -78,18 +88,18 @@ export default function LoginPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-6">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Use a regular form submission that posts directly to the server */}
+            <form action="/api/login" method="POST" className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="username"
+                    name="username"
                     type="text"
                     placeholder="Enter your username"
                     className="pl-10"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                 </div>
@@ -101,11 +111,10 @@ export default function LoginPage() {
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="password"
+                    name="password"
                     type="password"
                     placeholder="Enter your password"
                     className="pl-10"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
                 </div>
@@ -114,9 +123,8 @@ export default function LoginPage() {
               <Button 
                 type="submit" 
                 className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
-                disabled={isLoading}
               >
-                {isLoading ? "Signing in..." : "Sign in"}
+                Sign in
               </Button>
             </form>
           </CardContent>
