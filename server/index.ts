@@ -8,30 +8,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
 
-// Basic authentication middleware
+// JWT authentication middleware
 app.use((req, res, next) => {
-  const auth = req.headers.authorization;
-  
-  // Skip auth for API routes
-  if (req.path.startsWith('/api')) {
+  // Skip auth for public routes
+  if (req.path.startsWith('/api') || req.path === '/login') {
     return next();
   }
 
-  if (!auth) {
-    res.setHeader('WWW-Authenticate', 'Basic');
-    return res.status(401).send('Authentication required');
+  const token = req.cookies.auth_token;
+  if (!token) {
+    return res.redirect('/login');
   }
 
-  const [username, password] = Buffer.from(auth.split(' ')[1], 'base64')
-    .toString()
-    .split(':');
-
-  // Replace these with your desired credentials
-  if (username === 'admin' && password === 'secretpassword123') {
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    req.user = decoded;
     next();
-  } else {
-    res.setHeader('WWW-Authenticate', 'Basic');
-    return res.status(401).send('Invalid credentials');
+  } catch (err) {
+    res.clearCookie('auth_token');
+    return res.redirect('/login');
   }
 });
 
