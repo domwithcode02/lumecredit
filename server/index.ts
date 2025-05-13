@@ -15,14 +15,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Health check endpoints for Autoscale
+// Health check endpoints for Autoscale - must be before auth middleware
 app.get('/', (_req, res) => {
-  res.status(200).send('OK');
+  if (process.env.NODE_ENV === 'production' && req.path === '/') {
+    return res.status(200).send('OK');
+  }
+  next();
 });
 
 app.get('/health', (_req, res) => {
   res.status(200).send('OK');
 });
+
+// Serve static files before auth middleware
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(import.meta.dirname, './public')));
+} else {
+  app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
+}
 
 // Serve static files from the appropriate directory based on environment
 if (process.env.NODE_ENV === 'production') {
