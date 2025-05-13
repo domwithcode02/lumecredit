@@ -15,7 +15,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Health check endpoint for Autoscale
+// Health check endpoints for Autoscale
+app.get('/', (_req, res) => {
+  res.status(200).send('OK');
+});
+
 app.get('/health', (_req, res) => {
   res.status(200).send('OK');
 });
@@ -42,7 +46,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || process.env.SESSION_SECRET || 'your-secret-key');
     req.user = decoded;
     next();
   } catch (err) {
