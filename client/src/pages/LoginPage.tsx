@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
@@ -22,10 +23,8 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log("Login attempt with username:", username);
 
     try {
-      console.log("Submitting login request...");
       const response = await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -33,23 +32,14 @@ export default function LoginPage() {
         },
         body: JSON.stringify({ username, password }),
       });
-
-      console.log("Login response status:", response.status);
       
       if (response.ok) {
-        console.log("Login successful, redirecting to app");
-        const data = await response.json();
-        console.log("Response data:", data);
-        
-        // Redirect to app page
         window.location.href = '/app';
       } else {
         const data = await response.json();
-        console.error("Login failed:", data);
         throw new Error(data.message || "Invalid credentials");
       }
     } catch (error: any) {
-      console.error("Login error:", error);
       toast({
         title: "Login Failed",
         description: error.message || "Something went wrong",
@@ -81,15 +71,15 @@ export default function LoginPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-6">
-            {/* Use a regular form submission that posts directly to the server */}
-            <form action="/api/login" method="POST" className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="username"
-                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     type="text"
                     placeholder="Enter your username"
                     className="pl-10"
@@ -104,7 +94,8 @@ export default function LoginPage() {
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="password"
-                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder="Enter your password"
                     className="pl-10"
@@ -114,10 +105,11 @@ export default function LoginPage() {
               </div>
 
               <Button 
-                type="submit" 
+                type="submit"
+                disabled={isLoading}
                 className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
               >
-                Sign in
+                {isLoading ? "Signing in..." : "Sign in"}
               </Button>
             </form>
           </CardContent>
