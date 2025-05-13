@@ -29,6 +29,10 @@ function Router() {
       <Route path="/login" component={LoginPage} />
       <Route path="/app" component={isAuthenticated ? HomePage : LoginPage} />
       <Route path="/faq" component={isAuthenticated ? FAQPage : LoginPage} />
+      <Route path="/" component={() => {
+        window.location.href = isAuthenticated ? '/app' : '/login';
+        return null;
+      }} />
       <Route component={NotFound} />
     </Switch>
   );

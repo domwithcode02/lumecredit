@@ -129,7 +129,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
               username: user.username,
               role: user.role
             },
-            redirectTo: '/'
+            redirectTo: '/app'
           });
         } else {
           // Direct redirect for form submissions
