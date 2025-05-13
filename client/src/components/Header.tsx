@@ -121,7 +121,11 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   <a 
                     href="#how-it-works" 
                     className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
-                    onClick={(e) => { e.preventDefault(); handleNavLinkClick('how-it-works'); }}
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      handleNavLinkClick('how-it-works');
+                      setOpen(false); // Close menu after click
+                    }}
                   >
                     How It Works
                   </a>
@@ -132,35 +136,55 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       <a 
                         href="#totalboost" 
                         className="block text-sm text-[#003366] font-bold"
-                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('totalboost'); }}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          handleNavLinkClick('totalboost');
+                          setOpen(false); // Close menu after click
+                        }}
                       >
                         TotalBoost+™ Bundle
                       </a>
                       <a 
                         href="#flexcredit" 
                         className="block text-sm text-slate-700"
-                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('flexcredit'); }}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          handleNavLinkClick('flexcredit');
+                          setOpen(false); // Close menu after click
+                        }}
                       >
                         FlexCredit™ Revolving
                       </a>
                       <a 
                         href="#steadybuild" 
                         className="block text-sm text-slate-700"
-                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('steadybuild'); }}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          handleNavLinkClick('steadybuild');
+                          setOpen(false); // Close menu after click
+                        }}
                       >
                         SteadyBuild™ Installment
                       </a>
                       <a 
                         href="#hometrack" 
                         className="block text-sm text-slate-700"
-                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('hometrack'); }}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          handleNavLinkClick('hometrack');
+                          setOpen(false); // Close menu after click
+                        }}
                       >
                         HomeTrack™ Rent Reporting
                       </a>
                       <a 
                         href="#families" 
                         className="block text-sm text-slate-700"
-                        onClick={(e) => { e.preventDefault(); handleNavLinkClick('families'); }}
+                        onClick={(e) => { 
+                          e.preventDefault(); 
+                          handleNavLinkClick('families');
+                          setOpen(false); // Close menu after click
+                        }}
                       >
                         LumeStart™ for Families
                       </a>
@@ -170,7 +194,11 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   <a 
                     href="#visa-card" 
                     className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
-                    onClick={(e) => { e.preventDefault(); handleNavLinkClick('visa-card'); }}
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      handleNavLinkClick('visa-card');
+                      setOpen(false); // Close menu after click
+                    }}
                   >
                     Visa Card
                   </a>
@@ -178,12 +206,20 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   <a 
                     href="/faq" 
                     className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
+                    onClick={() => {
+                      // The FAQ page is a separate page, so we'll close the menu
+                      // but let the default navigation happen
+                      setOpen(false);
+                    }}
                   >
                     FAQ
                   </a>
                   
                   <Button 
-                    onClick={scrollToForm}
+                    onClick={() => {
+                      scrollToForm();
+                      setOpen(false); // Make sure to close the menu
+                    }}
                     className="mt-4 bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
                   >
                     Reserve Now
