@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { ZodError } from "zod";
 import { insertSubscriberWithValidationSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import jwt from "jsonwebtoken";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get spots remaining count
@@ -78,6 +79,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       res.status(500).json({ 
         message: "An error occurred while processing your request. Please try again."
+      });
+    }
+  });
+
+  // Login API endpoint
+  app.post("/api/login", (req: Request, res: Response) => {
+    try {
+      const { username, password } = req.body;
+      
+      // Hardcoded credentials for demo purposes
+      // In a real application, you would check against a database
+      if (username === "admin" && password === "secretpassword123") {
+        // Create JWT token
+        const token = jwt.sign(
+          { 
+            id: "admin-user",
+            username: username
+          },
+          process.env.JWT_SECRET || "your-secret-key",
+          { expiresIn: "24h" }
+        );
+        
+        // Set cookie
+        res.cookie("auth_token", token, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          maxAge: 24 * 60 * 60 * 1000 // 24 hours
+        });
+        
+        res.status(200).json({
+          success: true,
+          message: "Login successful",
+          user: { username: username }
+        });
+      } else {
+        res.status(401).json({
+          success: false,
+          message: "Invalid credentials"
+        });
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      res.status(500).json({
+        success: false,
+        message: "An error occurred during login"
       });
     }
   });
