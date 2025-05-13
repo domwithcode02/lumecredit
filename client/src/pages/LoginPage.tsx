@@ -7,18 +7,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Lock, User, Info } from "lucide-react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table";
+import { Lock, User } from "lucide-react";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -119,27 +112,6 @@ export default function LoginPage() {
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex flex-col bg-slate-50 border-t">
-            <div className="flex items-start space-x-2 text-sm text-slate-600 mb-4">
-              <Info className="h-4 w-4 text-[#003366] mt-0.5 flex-shrink-0" />
-              <span>For demonstration purposes, you can use one of the following accounts:</span>
-            </div>
-            
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="py-2 font-medium">Admin</TableCell>
-                  <TableCell className="py-2">username: <span className="font-mono bg-slate-100 px-1">admin</span></TableCell>
-                  <TableCell className="py-2">password: <span className="font-mono bg-slate-100 px-1">secretpassword123</span></TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="py-2 font-medium">Staff</TableCell>
-                  <TableCell className="py-2">username: <span className="font-mono bg-slate-100 px-1">rebekah</span></TableCell>
-                  <TableCell className="py-2">password: <span className="font-mono bg-slate-100 px-1">virginia123</span></TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </CardFooter>
         </Card>
       </div>
     </div>
