@@ -21,7 +21,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/login" component={LoginPage} />
-      <Route path="/" component={isAuthenticated ? HomePage : LoginPage} />
+      <Route path="/app" component={isAuthenticated ? HomePage : LoginPage} />
       <Route path="/faq" component={isAuthenticated ? FAQPage : LoginPage} />
       <Route component={NotFound} />
     </Switch>

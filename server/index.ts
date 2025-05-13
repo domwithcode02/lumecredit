@@ -15,7 +15,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Health check endpoint for Autoscale - keep this separate from main routes
+// Health check endpoints for Autoscale
+app.get('/', (_req, res) => {
+  res.status(200).send('OK');
+});
+
 app.get('/health', (_req, res) => {
   res.status(200).send('OK');
 });
@@ -120,10 +124,10 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     log(`serving on port ${port}`);
   });
   
-  // In production, add a specific handler for the root route to redirect to login
+  // In production, add handlers for routes
   if (process.env.NODE_ENV === 'production') {
-    // Specific handler for the root route
-    app.get('/', (req: Request, res: Response) => {
+    // App route handler for authenticated users
+    app.get('/app', (req: Request, res: Response) => {
       const token = req.cookies.auth_token;
       if (!token) {
         return res.redirect('/login');
