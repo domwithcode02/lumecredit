@@ -15,26 +15,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Health check endpoints for Autoscale - must be before auth middleware
-app.get('/', (_req, res) => {
-  if (process.env.NODE_ENV === 'production' && req.path === '/') {
-    return res.status(200).send('OK');
-  }
-  next();
-});
-
+// Health check endpoint
 app.get('/health', (_req, res) => {
   res.status(200).send('OK');
 });
 
-// Serve static files before auth middleware
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(import.meta.dirname, './public')));
-} else {
-  app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
-}
-
-// Serve static files from the appropriate directory based on environment
+// Serve static files
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(import.meta.dirname, './public')));
 } else {
@@ -61,7 +47,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    // Use a secure default JWT secret if none is provided in environment
+    // Use a secure default JWT secret if none is provided
     const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
     const decoded = jwt.verify(token, jwtSecret);
     req.user = decoded;
@@ -72,6 +58,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+// API request logging middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
   const path = req.path;
@@ -105,26 +92,22 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 (async () => {
   const server = await registerRoutes(app);
 
+  // Error handler
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
-
     res.status(status).json({ message });
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
+  // Setup vite in development or serve static in production
+  if (process.env.NODE_ENV === 'development') {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
+  // Start server
   const port = 5000;
   server.listen({
     port,
@@ -133,23 +116,4 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }, () => {
     log(`serving on port ${port}`);
   });
-  
-  // In production, add handlers for routes
-  if (process.env.NODE_ENV === 'production') {
-    // App route handler for authenticated users
-    app.get('/app', (req: Request, res: Response) => {
-      const token = req.cookies.auth_token;
-      if (!token) {
-        return res.redirect('/login');
-      }
-      res.sendFile(path.join(import.meta.dirname, './public/index.html'));
-    });
-    
-    // Catch-all route for all other unmatched routes
-    app.get('*', (req: Request, res: Response) => {
-      if (!req.path.startsWith('/api') && req.path !== '/health') {
-        res.sendFile(path.join(import.meta.dirname, './public/index.html'));
-      }
-    });
-  }
 })();
