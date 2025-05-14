@@ -119,7 +119,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       } else {
         // Invalid credentials
-        return res.status(401).redirect('/login?error=invalid');
+        return res.status(401).json({
+          success: false,
+          message: "Invalid credentials"
+        });
       }
     } catch (error) {
       console.error("Login error:", error);

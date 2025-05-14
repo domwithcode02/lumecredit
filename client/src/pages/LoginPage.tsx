@@ -16,7 +16,31 @@ export default function LoginPage() {
         maxWidth: '400px'
       }}>
         <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Login</h1>
-        <form action="/api/login" method="POST">
+        <form onSubmit={async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          try {
+            const response = await fetch('/api/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                username: formData.get('username'),
+                password: formData.get('password')
+              })
+            });
+            
+            if (response.ok) {
+              window.location.href = '/app';
+            } else {
+              alert('Invalid credentials');
+            }
+          } catch (error) {
+            console.error('Login error:', error);
+            alert('Login failed');
+          }
+        }}>
           <div style={{ marginBottom: '15px' }}>
             <label style={{ display: 'block', marginBottom: '5px' }}>Username:</label>
             <input 
