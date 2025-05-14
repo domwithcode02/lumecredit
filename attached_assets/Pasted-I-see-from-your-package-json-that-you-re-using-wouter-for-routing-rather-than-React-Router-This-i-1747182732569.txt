@@ -1,0 +1,206 @@
+I see from your package.json that you're using "wouter" for routing rather than React Router. This is great information! Wouter is a lightweight router that's perfect for this use case.
+
+Based on your dependencies, here's how you can handle the login redirection with wouter:
+
+```tsx
+import { useState } from 'react';
+import { useLocation } from 'wouter';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+// Define validation schema
+const loginSchema = z.object({
+  username: z.string().min(1, "Username is required"),
+  password: z.string().min(1, "Password is required")
+});
+
+type LoginFormValues = z.infer<typeof loginSchema>;
+
+function LoginPage() {
+  const [, setLocation] = useLocation();
+  const [error, setError] = useState('');
+  
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema)
+  });
+  
+  const onSubmit = async (data: LoginFormValues) => {
+    setError('');
+    
+    try {
+      // Replace with your actual authentication API call
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || 'Login failed');
+      }
+      
+      const responseData = await response.json();
+      
+      // Store the token or user data
+      localStorage.setItem('token', responseData.token);
+      
+      // Redirect to dashboard
+      setLocation('/dashboard');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Invalid username or password');
+      console.error('Login error:', err);
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-background">
+      <div className="w-full max-w-md p-8 space-y-6 bg-card rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-center">Login</h2>
+        
+        {error && (
+          <div className="p-3 text-sm text-destructive bg-destructive/20 rounded-md">
+            {error}
+          </div>
+        )}
+        
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <div className="space-y-2">
+            <label htmlFor="username" className="text-sm font-medium">
+              Username
+            </label>
+            <input
+              id="username"
+              {...register('username')}
+              className="w-full px-3 py-2 border rounded-md"
+            />
+            {errors.username && (
+              <p className="text-sm text-destructive">{errors.username.message}</p>
+            )}
+          </div>
+          
+          <div className="space-y-2">
+            <label htmlFor="password" className="text-sm font-medium">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              {...register('password')}
+              className="w-full px-3 py-2 border rounded-md"
+            />
+            {errors.password && (
+              <p className="text-sm text-destructive">{errors.password.message}</p>
+            )}
+          </div>
+          
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full py-2 font-medium text-white bg-primary rounded-md hover:bg-primary/90 disabled:opacity-70"
+          >
+            {isSubmitting ? 'Logging in...' : 'Login'}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default LoginPage;
+```
+
+Then, in your main app file (likely in the client/src directory), you'll want to set up the routes with wouter:
+
+```tsx
+import { Route, Switch } from 'wouter';
+import LoginPage from './path/to/LoginPage';
+import Dashboard from './path/to/Dashboard';
+
+// Protected route component
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const isAuthenticated = localStorage.getItem('token') !== null;
+  
+  if (!isAuthenticated) {
+    // Redirect to login if not authenticated
+    window.location.href = '/login';
+    return null;
+  }
+  
+  return <Component {...rest} />;
+};
+
+function App() {
+  return (
+    <Switch>
+      <Route path="/login" component={LoginPage} />
+      <Route path="/dashboard">
+        <ProtectedRoute component={Dashboard} />
+      </Route>
+      <Route path="/">
+        {localStorage.getItem('token') ? 
+          window.location.href = '/dashboard' : 
+          window.location.href = '/login'}
+      </Route>
+    </Switch>
+  );
+}
+
+export default App;
+```
+
+I notice you're also using a lot of shadcn UI components (based on Radix UI), so you might want to use those for your form inputs instead of the basic HTML elements I used above.
+
+You're also using express on the backend, so make sure your login endpoint is properly set up to handle the authentication and return a token. Given your stack, you might want to create a server endpoint like this in your server directory:
+
+```ts
+// Example server/auth.ts
+import express from 'express';
+import jwt from 'jsonwebtoken';
+import { z } from 'zod';
+
+const router = express.Router();
+
+const loginSchema = z.object({
+  username: z.string().min(1),
+  password: z.string().min(1)
+});
+
+router.post('/login', async (req, res) => {
+  try {
+    const { username, password } = loginSchema.parse(req.body);
+    
+    // Replace with your actual authentication logic
+    // e.g., check credentials against database
+    if (username === 'validuser' && password === 'correctpassword') {
+      // Create JWT token
+      const token = jwt.sign(
+        { id: 'user_id', username },
+        process.env.JWT_SECRET || 'your-secret-key',
+        { expiresIn: '24h' }
+      );
+      
+      // Set cookie if desired
+      res.cookie('token', token, { 
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+      });
+      
+      return res.json({ token, user: { username } });
+    }
+    
+    return res.status(401).json({ message: 'Invalid credentials' });
+  } catch (error) {
+    console.error('Login error:', error);
+    return res.status(400).json({ message: 'Invalid request' });
+  }
+});
+
+export default router;
+```
+
+Does this approach align with your project structure? I'm happy to adjust the solution based on more details about your client directory structure.
