@@ -7,16 +7,14 @@ import { fromZodError } from "zod-validation-error";
 import { logLogin, getLoginLogs } from "./login-tracker";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Health check endpoint for deployment
-  // Login route for authentication
   app.post("/api/login", (req: Request, res: Response) => {
     const { username, password } = req.body;
-    
+
     // Simple hardcoded authentication with test accounts
     if (username === "rebekah" && password === "virginia123") {
       // Log successful login
       logLogin(req, username, true, "Regular user login successful");
-      
+
       return res.status(200).json({ 
         success: true,
         user: { 
@@ -26,12 +24,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       });
     }
-    
+
     // Admin user
     if (username === "admin" && password === "5winners") {
       // Log successful admin login
       logLogin(req, username, true, "Admin login successful");
-      
+
       return res.status(200).json({ 
         success: true,
         user: { 
@@ -41,10 +39,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       });
     }
-    
+
     // Log failed login attempt
     logLogin(req, username, false, "Invalid username or password");
-    
+
     // Return error if credentials don't match
     return res.status(401).json({ 
       success: false, 
@@ -57,7 +55,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const totalSpots = 250;
       const subscribers = await storage.getAllSubscribers();
       const spotsRemaining = Math.max(0, totalSpots - subscribers.length);
-      
+
       res.json({ spotsRemaining, totalSpots });
     } catch (error) {
       console.error("Error fetching spots count:", error);
@@ -73,7 +71,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       // Get admin token from query or headers (basic authorization for this endpoint)
       const token = req.query.token || req.headers.authorization?.split(" ")[1];
-      
+
       // Only admin with correct token can access logs (using "5winners" as the token)
       if (token !== "5winners") {
         return res.status(401).json({
@@ -81,11 +79,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
           message: "Unauthorized access"
         });
       }
-      
+
       // Get login logs (default limit 100)
       const limit = req.query.limit ? parseInt(req.query.limit as string) : 100;
       const logs = await getLoginLogs(limit);
-      
+
       res.json({
         success: true,
         count: logs.length,
@@ -99,7 +97,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     }
   });
-  
+
   app.post("/api/subscribe", async (req: Request, res: Response) => {
     try {
       // Check if honeypot field is filled (spam protection)
@@ -107,10 +105,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Silent success to avoid alerting bots
         return res.status(200).json({ success: true });
       }
-      
+
       // Validate input
       const validatedData = insertSubscriberWithValidationSchema.parse(req.body);
-      
+
       // Check if we've reached the limit
       const subscribers = await storage.getAllSubscribers();
       if (subscribers.length >= 250) {
@@ -118,7 +116,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           message: "Sorry, all spots have been filled. Thank you for your interest!"
         });
       }
-      
+
       // Check if email already exists
       const existingUser = await storage.getSubscriberByEmail(validatedData.email);
       if (existingUser) {
@@ -126,13 +124,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
           message: "This email has already been registered. Thank you for your interest!"
         });
       }
-      
+
       // Add timestamp
       const subscriber = await storage.createSubscriber({
         ...validatedData,
         timestamp: new Date().toISOString(),
       });
-      
+
       // Return success response
       res.status(201).json({
         success: true,
@@ -145,14 +143,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Subscription error:", error);
-      
+
       if (error instanceof ZodError) {
         const validationError = fromZodError(error);
         return res.status(400).json({ 
           message: validationError.message
         });
       }
-      
+
       res.status(500).json({ 
         message: "An error occurred while processing your request. Please try again."
       });
