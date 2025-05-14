@@ -4,9 +4,42 @@ import { storage } from "./storage";
 import { ZodError } from "zod";
 import { insertSubscriberWithValidationSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
-import jwt from "jsonwebtoken";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Login route for authentication
+  app.post("/api/login", (req: Request, res: Response) => {
+    const { username, password } = req.body;
+    
+    // Simple hardcoded authentication with test accounts
+    if (username === "rebekah" && password === "virginia123") {
+      return res.status(200).json({ 
+        success: true,
+        user: { 
+          id: 1, 
+          username: "rebekah",
+          name: "Rebekah Johnson"
+        }
+      });
+    }
+    
+    // Admin user
+    if (username === "admin" && password === "5winners") {
+      return res.status(200).json({ 
+        success: true,
+        user: { 
+          id: 2, 
+          username: "admin",
+          name: "Administrator"
+        }
+      });
+    }
+    
+    // Return error if credentials don't match
+    return res.status(401).json({ 
+      success: false, 
+      message: "Invalid username or password" 
+    });
+  });
   // Get spots remaining count
   app.get("/api/spots-remaining", async (_req: Request, res: Response) => {
     try {
@@ -79,69 +112,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       res.status(500).json({ 
         message: "An error occurred while processing your request. Please try again."
-      });
-    }
-  });
-
-  // Login API endpoint - with credential checking
-  app.post("/api/login", (req: Request, res: Response) => {
-    try {
-      const { username, password } = req.body;
-      
-      // Simple credential check - only specific credentials work
-      if (username === "admin" && password === "secretpassword123") {
-        
-        // Create a JWT token
-        const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
-        const token = jwt.sign(
-          { 
-            id: `${username}-user`,
-            username: username,
-            role: "admin"
-          },
-          jwtSecret,
-          { expiresIn: "24h" }
-        );
-        
-        // Set cookie with token
-        res.cookie("auth_token", token, {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          maxAge: 24 * 60 * 60 * 1000 // 24 hours
-        });
-        
-        // For proper client-side routing, return JSON with token instead of redirect
-        return res.status(200).json({
-          success: true,
-          message: "Login successful",
-          token: token
-        });
-      } else {
-        // Invalid credentials
-        return res.status(401).json({
-          success: false,
-          message: "Invalid credentials"
-        });
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      return res.status(500).redirect('/login?error=server');
-    }
-  });
-  
-  // Logout endpoint
-  app.post("/api/logout", (req: Request, res: Response) => {
-    try {
-      // Clear auth cookie
-      res.clearCookie("auth_token");
-      
-      // Redirect to login page
-      return res.redirect('/login');
-    } catch (error) {
-      console.error("Logout error:", error);
-      return res.status(500).json({
-        success: false,
-        message: "An error occurred during logout"
       });
     }
   });

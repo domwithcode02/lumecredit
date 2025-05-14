@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import { ChevronDown, Menu, LogOut } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 import {
   Sheet,
   SheetContent,
   SheetTrigger
 } from "@/components/ui/sheet";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -31,19 +30,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
       element.scrollIntoView({ behavior: "smooth" });
       setOpen(false); // Close the mobile menu
     }
-  };
-  
-  const handleLogout = () => {
-    fetch('/api/logout', {
-      method: 'POST',
-      credentials: 'include'
-    })
-    .then(() => {
-      window.location.href = '/login';
-    })
-    .catch(error => {
-      console.error('Logout error:', error);
-    });
   };
 
   return (
@@ -118,25 +104,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             >
               Reserve Now
             </Button>
-            
-            {/* Logout Button */}
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button 
-                    onClick={handleLogout} 
-                    variant="ghost" 
-                    size="icon"
-                    className="hidden md:flex text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                  >
-                    <LogOut className="h-5 w-5" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Logout</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
             
             {/* Mobile Menu Button */}
             <Sheet open={open} onOpenChange={setOpen}>
@@ -256,14 +223,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     className="mt-4 bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
                   >
                     Reserve Now
-                  </Button>
-                  
-                  <Button 
-                    onClick={handleLogout}
-                    className="mt-4 bg-transparent hover:bg-slate-100 border border-slate-300 text-slate-700 flex items-center gap-2"
-                  >
-                    <LogOut className="h-4 w-4" />
-                    Logout
                   </Button>
                 </div>
               </SheetContent>
