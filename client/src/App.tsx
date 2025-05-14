@@ -12,12 +12,12 @@ function Router() {
   const isAuthenticated = document.cookie.includes('auth_token');
   
   if (isAuthenticated && window.location.pathname === '/login') {
-    window.location.replace('/app');
+    setLocation('/app');
     return null;
   }
   
   if (!isAuthenticated && window.location.pathname !== '/login') {
-    window.location.replace('/login');
+    setLocation('/login');
     return null;
   }
 
