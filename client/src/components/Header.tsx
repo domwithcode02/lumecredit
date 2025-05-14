@@ -122,30 +122,54 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   </a>
                   <a href="#flexcredit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
-                    // This targets exactly the FlexCredit card with the green header
-                    const element = document.getElementById('flexcredit');
+                    // This targets exactly the FlexCredit product card in the products section
+                    const element = document.getElementById('products');
                     if (element) {
+                      // Scroll to products section first
                       element.scrollIntoView({ behavior: 'smooth' });
+                      // Then find the flexcredit element within products section
+                      setTimeout(() => {
+                        const flexcredit = document.getElementById('flexcredit');
+                        if (flexcredit && flexcredit.closest('#products')) {
+                          flexcredit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                      }, 500);
                     }
                   }}>
                     FlexCredit™ Revolving
                   </a>
                   <a href="#steadybuild" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
-                    // This targets exactly the SteadyBuild card with the blue header
-                    const element = document.getElementById('steadybuild');
+                    // This targets exactly the SteadyBuild product card in the products section
+                    const element = document.getElementById('products');
                     if (element) {
+                      // Scroll to products section first
                       element.scrollIntoView({ behavior: 'smooth' });
+                      // Then find the steadybuild element within products section
+                      setTimeout(() => {
+                        const steadybuild = document.getElementById('steadybuild');
+                        if (steadybuild && steadybuild.closest('#products')) {
+                          steadybuild.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                      }, 500);
                     }
                   }}>
                     SteadyBuild™ Installment
                   </a>
                   <a href="#hometrack" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
-                    // This targets exactly the HomeTrack card with the yellow header
-                    const element = document.getElementById('hometrack');
+                    // This targets exactly the HomeTrack product card in the products section
+                    const element = document.getElementById('products');
                     if (element) {
+                      // Scroll to products section first
                       element.scrollIntoView({ behavior: 'smooth' });
+                      // Then find the hometrack element within products section
+                      setTimeout(() => {
+                        const hometrack = document.getElementById('hometrack');
+                        if (hometrack && hometrack.closest('#products')) {
+                          hometrack.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                      }, 500);
                     }
                   }}>
                     HomeTrack™ Rent Reporting
@@ -260,10 +284,18 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
-                            // This targets exactly the FlexCredit card with the green header
-                            const element = document.getElementById('flexcredit');
+                            // This targets exactly the FlexCredit product card in the products section
+                            const element = document.getElementById('products');
                             if (element) {
+                              // Scroll to products section first
                               element.scrollIntoView({ behavior: 'smooth' });
+                              // Then find the flexcredit element within products section
+                              setTimeout(() => {
+                                const flexcredit = document.getElementById('flexcredit');
+                                if (flexcredit && flexcredit.closest('#products')) {
+                                  flexcredit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                              }, 500);
                             }
                           }, 100);
                         }}
@@ -277,10 +309,18 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
-                            // This targets exactly the SteadyBuild card with the blue header
-                            const element = document.getElementById('steadybuild');
+                            // This targets exactly the SteadyBuild product card in the products section
+                            const element = document.getElementById('products');
                             if (element) {
+                              // Scroll to products section first
                               element.scrollIntoView({ behavior: 'smooth' });
+                              // Then find the steadybuild element within products section
+                              setTimeout(() => {
+                                const steadybuild = document.getElementById('steadybuild');
+                                if (steadybuild && steadybuild.closest('#products')) {
+                                  steadybuild.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                              }, 500);
                             }
                           }, 100);
                         }}
@@ -294,10 +334,18 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
-                            // This targets exactly the HomeTrack card with the yellow header
-                            const element = document.getElementById('hometrack');
+                            // This targets exactly the HomeTrack product card in the products section
+                            const element = document.getElementById('products');
                             if (element) {
+                              // Scroll to products section first
                               element.scrollIntoView({ behavior: 'smooth' });
+                              // Then find the hometrack element within products section
+                              setTimeout(() => {
+                                const hometrack = document.getElementById('hometrack');
+                                if (hometrack && hometrack.closest('#products')) {
+                                  hometrack.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                              }, 500);
                             }
                           }, 100);
                         }}
