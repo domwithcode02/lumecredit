@@ -1,12 +1,21 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, LogOut, User } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import {
   Sheet,
   SheetContent,
   SheetTrigger
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -15,6 +24,40 @@ interface HeaderProps {
 
 export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   const [open, setOpen] = useState(false);
+  const [, setLocation] = useLocation();
+  
+  // Get current user details
+  const getUserName = () => {
+    try {
+      // Check if authenticated
+      const isAuthenticated = localStorage.getItem("isAuthenticated");
+      if (!isAuthenticated) return null;
+      
+      // Try to get user data
+      const userData = localStorage.getItem("userData");
+      if (userData) {
+        const user = JSON.parse(userData);
+        return user.name || user.username || "User";
+      }
+      
+      return "User";
+    } catch (error) {
+      console.error("Error getting user data:", error);
+      return "User";
+    }
+  };
+  
+  const userName = getUserName();
+  
+  const handleLogout = () => {
+    // Clear authentication data
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("adminToken");
+    
+    // Redirect to login page
+    setLocation("/login");
+  };
   
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
@@ -98,6 +141,33 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           
           {/* Actions */}
           <div className="flex items-center gap-4">
+            {/* User Profile Dropdown */}
+            {userName && (
+              <div className="hidden md:block">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <User size={16} />
+                      <span className="hidden sm:inline">{userName}</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-48">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {localStorage.getItem("adminToken") && (
+                      <DropdownMenuItem onClick={() => setLocation("/admin/login-logs")}>
+                        Login Logs
+                      </DropdownMenuItem>
+                    )}
+                    <DropdownMenuItem onClick={handleLogout} className="text-red-600">
+                      <LogOut size={16} className="mr-2" />
+                      Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            )}
+            
             <Button 
               onClick={scrollToForm}
               className="hidden md:flex bg-black hover:bg-slate-800 text-white font-medium rounded-lg px-5 py-2.5"
@@ -113,8 +183,14 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="p-0">
-                <div className="p-4 border-b border-slate-100">
+                <div className="p-4 border-b border-slate-100 flex items-center justify-between">
                   <span className="font-bold text-slate-900">Menu</span>
+                  {userName && (
+                    <div className="text-sm text-slate-600 flex items-center gap-2">
+                      <User size={14} className="text-slate-500" />
+                      <span>{userName}</span>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="flex flex-col p-4 space-y-4">
@@ -220,10 +296,39 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       scrollToForm();
                       setOpen(false); // Make sure to close the menu
                     }}
-                    className="mt-4 bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
+                    className="mt-4 bg-black hover:bg-slate-800 text-white font-bold"
                   >
                     Reserve Now
                   </Button>
+                  
+                  {/* Admin option */}
+                  {localStorage.getItem("adminToken") && (
+                    <Button 
+                      onClick={() => {
+                        setLocation("/admin/login-logs");
+                        setOpen(false);
+                      }}
+                      variant="outline"
+                      className="mt-2"
+                    >
+                      View Login Logs
+                    </Button>
+                  )}
+                  
+                  {/* Logout button */}
+                  {userName && (
+                    <Button 
+                      onClick={() => {
+                        handleLogout();
+                        setOpen(false);
+                      }}
+                      variant="ghost"
+                      className="mt-4 border-t border-slate-200 pt-4 text-red-600 hover:text-red-700 hover:bg-red-50 font-medium"
+                    >
+                      <LogOut size={16} className="mr-2" />
+                      Logout
+                    </Button>
+                  )}
                 </div>
               </SheetContent>
             </Sheet>

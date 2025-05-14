@@ -27,14 +27,27 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
+        // Parse response to get user data
+        const userData = await response.json();
+        
         toast({
           title: "Login successful",
           description: "Redirecting to the main page...",
         });
         console.log("Login successful, redirecting to app...");
         
-        // Let's store auth in localStorage to keep user logged in
+        // Store auth and user data in localStorage to keep user logged in
         localStorage.setItem("isAuthenticated", "true");
+        
+        // Store user data (but don't include sensitive info)
+        if (userData.user) {
+          localStorage.setItem("userData", JSON.stringify(userData.user));
+          
+          // For admin users, store the admin token for accessing login logs
+          if (userData.user.username === "admin") {
+            localStorage.setItem("adminToken", "5winners");
+          }
+        }
         
         // Redirect to home page
         setLocation("/");
