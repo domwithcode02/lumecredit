@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import { ChevronDown, Menu, LogOut, User as UserIcon } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 import {
   Sheet,
   SheetContent,
   SheetTrigger
 } from "@/components/ui/sheet";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { useAuth } from "@/hooks/useAuth";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -17,10 +15,6 @@ interface HeaderProps {
 
 export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   const [open, setOpen] = useState(false);
-  const { user, isAuthenticated } = useAuth();
-  
-  // User might be undefined or null, so use optional chaining
-  const userProfile = user as any; // Type assertion to avoid TypeScript errors
   
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
@@ -36,11 +30,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
       element.scrollIntoView({ behavior: "smooth" });
       setOpen(false); // Close the mobile menu
     }
-  };
-  
-  const handleLogout = () => {
-    // Replit Auth uses GET for logout
-    window.location.href = '/api/logout';
   };
 
   return (
@@ -115,34 +104,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             >
               Reserve Now
             </Button>
-            
-            {/* User Profile and Logout Button */}
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button 
-                    onClick={handleLogout} 
-                    variant="ghost" 
-                    size="icon"
-                    className="hidden md:flex text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                  >
-                    {userProfile?.profileImageUrl ? (
-                      <img 
-                        src={userProfile.profileImageUrl} 
-                        alt="User Profile" 
-                        className="h-6 w-6 rounded-full mr-1" 
-                      />
-                    ) : (
-                      <UserIcon className="h-5 w-5 mr-1" />
-                    )}
-                    <LogOut className="h-4 w-4 ml-1" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{userProfile?.firstName ? `${userProfile.firstName} (Logout)` : 'Logout'}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
             
             {/* Mobile Menu Button */}
             <Sheet open={open} onOpenChange={setOpen}>
@@ -262,24 +223,6 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     className="mt-4 bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
                   >
                     Reserve Now
-                  </Button>
-                  
-                  <Button 
-                    onClick={handleLogout}
-                    className="mt-4 bg-transparent hover:bg-slate-100 border border-slate-300 text-slate-700 flex items-center gap-2"
-                  >
-                    {userProfile?.profileImageUrl ? (
-                      <img 
-                        src={userProfile.profileImageUrl} 
-                        alt="User Profile" 
-                        className="h-4 w-4 rounded-full" 
-                      />
-                    ) : (
-                      <UserIcon className="h-4 w-4" />
-                    )}
-                    <span className="ml-1">
-                      {userProfile?.firstName ? `Logout (${userProfile.firstName})` : 'Logout'}
-                    </span>
                   </Button>
                 </div>
               </SheetContent>

@@ -1,38 +1,41 @@
-import express, { Response, NextFunction } from "express";
+import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
-import cookieParser from "cookie-parser";
-
-// Define Request type with authentication properties
-// Using 'type' instead of 'interface' to avoid TypeScript errors
-type Request = express.Request & {
-  user?: any;
-  isAuthenticated?: () => boolean;
-  logout?: (done: (err: any) => void) => void;
-}
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
 
-// Health check endpoint
-app.get('/health', (_req, res) => {
-  res.status(200).send('OK');
+// Basic authentication middleware
+app.use((req, res, next) => {
+  const auth = req.headers.authorization;
+  
+  // Skip auth for API routes
+  if (req.path.startsWith('/api')) {
+    return next();
+  }
+
+  if (!auth) {
+    res.setHeader('WWW-Authenticate', 'Basic');
+    return res.status(401).send('Authentication required');
+  }
+
+  const [username, password] = Buffer.from(auth.split(' ')[1], 'base64')
+    .toString()
+    .split(':');
+
+  // Replace these with your desired credentials
+  if (username === 'admin' && password === 'secretpassword123') {
+    next();
+  } else {
+    res.setHeader('WWW-Authenticate', 'Basic');
+    return res.status(401).send('Invalid credentials');
+  }
 });
 
-// Serve static files
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(import.meta.dirname, './public')));
-} else {
-  app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
-}
-
-// Authentication is now handled by replitAuth.ts middleware
-
-// API request logging middleware
-app.use((req: Request, res: Response, next: NextFunction) => {
+app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
@@ -65,22 +68,26 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 (async () => {
   const server = await registerRoutes(app);
 
-  // Error handler
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
+
     res.status(status).json({ message });
     throw err;
   });
 
-  // Setup vite in development or serve static in production
-  if (process.env.NODE_ENV === 'development') {
+  // importantly only setup vite in development and after
+  // setting up all the other routes so the catch-all route
+  // doesn't interfere with the other routes
+  if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // Start server
+  // ALWAYS serve the app on port 5000
+  // this serves both the API and the client.
+  // It is the only port that is not firewalled.
   const port = 5000;
   server.listen({
     port,
