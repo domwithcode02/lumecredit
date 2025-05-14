@@ -105,22 +105,22 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             
             {/* Products Dropdown - Using CSS hover */}
             <div className="relative group">
-              <a href="#products" className="text-slate-600 hover:text-slate-900 font-medium transition-colors flex items-center gap-1">
+              <a href="#tradelines" className="text-slate-600 hover:text-slate-900 font-medium transition-colors flex items-center gap-1">
                 Products <ChevronDown size={16} />
               </a>
               
               <div className="invisible absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
                 <div className="py-1">
-                  <a href="#totalboost" className="block px-4 py-2 text-sm text-[#003366] font-bold bg-[#F5C518]/10 hover:bg-[#F5C518]/20 border-l-2 border-[#F5C518]">
+                  <a href="#tradelines" className="block px-4 py-2 text-sm text-[#003366] font-bold bg-[#F5C518]/10 hover:bg-[#F5C518]/20 border-l-2 border-[#F5C518]">
                     TotalBoost+™ Bundle
                   </a>
-                  <a href="#flexcredit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                  <a href="#tradelines" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
                     FlexCredit™ Revolving
                   </a>
-                  <a href="#steadybuild" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                  <a href="#tradelines" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
                     SteadyBuild™ Installment
                   </a>
-                  <a href="#hometrack" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                  <a href="#tradelines" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
                     HomeTrack™ Rent Reporting
                   </a>
                   <a href="#families" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
@@ -221,33 +221,33 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                         TotalBoost+™ Bundle
                       </a>
                       <a 
-                        href="#flexcredit" 
+                        href="#tradelines" 
                         className="block text-sm text-slate-700"
                         onClick={(e) => { 
                           e.preventDefault(); 
-                          handleNavLinkClick('flexcredit');
+                          handleNavLinkClick('tradelines');
                           setOpen(false); // Close menu after click
                         }}
                       >
                         FlexCredit™ Revolving
                       </a>
                       <a 
-                        href="#steadybuild" 
+                        href="#tradelines" 
                         className="block text-sm text-slate-700"
                         onClick={(e) => { 
                           e.preventDefault(); 
-                          handleNavLinkClick('steadybuild');
+                          handleNavLinkClick('tradelines');
                           setOpen(false); // Close menu after click
                         }}
                       >
                         SteadyBuild™ Installment
                       </a>
                       <a 
-                        href="#hometrack" 
+                        href="#tradelines" 
                         className="block text-sm text-slate-700"
                         onClick={(e) => { 
                           e.preventDefault(); 
-                          handleNavLinkClick('hometrack');
+                          handleNavLinkClick('tradelines');
                           setOpen(false); // Close menu after click
                         }}
                       >
