@@ -1,6 +1,4 @@
 
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
 import {
   Card,

@@ -120,8 +120,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
           maxAge: 24 * 60 * 60 * 1000 // 24 hours
         });
         
-        // Always redirect to the homepage after login
-        return res.redirect('/');
+        // Check content type header to determine how to respond
+        const contentType = req.headers['content-type'] || '';
+        if (contentType.includes('application/json')) {
+          // For API clients, return JSON with redirect URL
+          return res.status(200).json({
+            success: true,
+            message: "Login successful",
+            redirectTo: '/',
+            user: { 
+              username: user.username,
+              role: user.role
+            }
+          });
+        } else {
+          // For regular form submission, do a redirect
+          return res.redirect('/');
+        }
       } else {
         res.status(401).json({
           success: false,
