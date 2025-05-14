@@ -1,127 +1,65 @@
-
-import { useState } from "react";
-import { useLocation } from "wouter";
-import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Lock, User } from "lucide-react";
-
 export default function LoginPage() {
-  const [, setLocation] = useLocation();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setIsLoading(true);
-    
-    try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-      
-      const data = await response.json();
-      
-      if (response.ok) {
-        console.log("Login successful, redirecting to app...");
-        // Force a client-side redirect
-        window.location.href = "/app";
-      } else {
-        setError(data.message || "Invalid credentials. Please try again.");
-      }
-    } catch (error) {
-      setError("An error occurred. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-4">
-      <div className="w-full max-w-md">
-        <div className="mb-8 text-center">
-          <img
-            src={lumeLogo}
-            alt="LumeCredit Logo"
-            className="h-20 mx-auto mb-4"
-          />
-          <h1 className="text-2xl font-bold text-slate-900">LumeCredit</h1>
-          <p className="text-slate-600">Access the exclusive credit building landing page</p>
-        </div>
-
-        <Card className="shadow-lg">
-          <CardHeader className="space-y-1 bg-[#003366] text-white rounded-t-lg">
-            <CardTitle className="text-xl">Secure Login</CardTitle>
-            <CardDescription className="text-slate-200">
-              Enter your credentials to access the system
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
-            {/* Show error message if present */}
-            {error && (
-              <div className="mb-4 p-3 text-sm text-red-600 bg-red-100 rounded-md">
-                {error}
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="username">Username</Label>
-                <div className="relative">
-                  <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
-                  <Input 
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    type="text"
-                    placeholder="Enter username"
-                    className="pl-10"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
-                  <Input 
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    placeholder="Enter password"
-                    className="pl-10"
-                    required
-                  />
-                </div>
-              </div>
-
-              <Button 
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
-              >
-                {isLoading ? "Signing in..." : "Sign in"}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+    <div style={{ 
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#f5f5f5'
+    }}>
+      <div style={{
+        padding: '20px',
+        backgroundColor: 'white',
+        borderRadius: '8px',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        width: '100%',
+        maxWidth: '400px'
+      }}>
+        <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Login</h1>
+        <form action="/api/login" method="POST">
+          <div style={{ marginBottom: '15px' }}>
+            <label style={{ display: 'block', marginBottom: '5px' }}>Username:</label>
+            <input 
+              type="text" 
+              name="username" 
+              required 
+              style={{
+                width: '100%',
+                padding: '8px',
+                border: '1px solid #ddd',
+                borderRadius: '4px'
+              }}
+            />
+          </div>
+          <div style={{ marginBottom: '15px' }}>
+            <label style={{ display: 'block', marginBottom: '5px' }}>Password:</label>
+            <input 
+              type="password" 
+              name="password" 
+              required 
+              style={{
+                width: '100%',
+                padding: '8px',
+                border: '1px solid #ddd',
+                borderRadius: '4px'
+              }}
+            />
+          </div>
+          <button 
+            type="submit"
+            style={{
+              width: '100%',
+              padding: '10px',
+              backgroundColor: '#003366',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Login
+          </button>
+        </form>
       </div>
     </div>
   );
