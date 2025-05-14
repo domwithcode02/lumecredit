@@ -17,20 +17,8 @@ function ProtectedRoute({ component: Component, ...rest }: any) {
   // While checking authentication, show a simple loading state
   if (isLoading) {
     return (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        height: '100vh' 
-      }}>
-        <div style={{ 
-          width: '40px', 
-          height: '40px',
-          border: '4px solid #f3f3f3',
-          borderTop: '4px solid #003366',
-          borderRadius: '50%',
-          animation: 'spin 1s linear infinite'
-        }} />
+      <div className="flex justify-center items-center h-screen">
+        <div className="loading-spinner" />
       </div>
     );
   }

@@ -19,6 +19,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const { user, isAuthenticated } = useAuth();
   
+  // User might be undefined or null, so use optional chaining
+  const userProfile = user as any; // Type assertion to avoid TypeScript errors
+  
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
     if (formSection) {
@@ -123,9 +126,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     size="icon"
                     className="hidden md:flex text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                   >
-                    {user?.profileImageUrl ? (
+                    {userProfile?.profileImageUrl ? (
                       <img 
-                        src={user.profileImageUrl} 
+                        src={userProfile.profileImageUrl} 
                         alt="User Profile" 
                         className="h-6 w-6 rounded-full mr-1" 
                       />
@@ -136,7 +139,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{user?.firstName ? `${user.firstName} (Logout)` : 'Logout'}</p>
+                  <p>{userProfile?.firstName ? `${userProfile.firstName} (Logout)` : 'Logout'}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -265,9 +268,9 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     onClick={handleLogout}
                     className="mt-4 bg-transparent hover:bg-slate-100 border border-slate-300 text-slate-700 flex items-center gap-2"
                   >
-                    {user?.profileImageUrl ? (
+                    {userProfile?.profileImageUrl ? (
                       <img 
-                        src={user.profileImageUrl} 
+                        src={userProfile.profileImageUrl} 
                         alt="User Profile" 
                         className="h-4 w-4 rounded-full" 
                       />
@@ -275,7 +278,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       <UserIcon className="h-4 w-4" />
                     )}
                     <span className="ml-1">
-                      {user?.firstName ? `Logout (${user.firstName})` : 'Logout'}
+                      {userProfile?.firstName ? `Logout (${userProfile.firstName})` : 'Logout'}
                     </span>
                   </Button>
                 </div>
