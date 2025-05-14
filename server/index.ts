@@ -59,17 +59,17 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "production") {
-    // Serve static files
-    app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
-    
-    // Health check endpoint at /api/health instead of root
+    // API routes first
     app.get("/api/health", (_req, res) => {
       res.status(200).json({ status: "ok" });
     });
     
+    // Then serve static files from the correct build directory
+    app.use(express.static(path.join(import.meta.dirname, '../dist')));
+    
     // SPA fallback for client-side routing
     app.get('*', (_req, res) => {
-      res.sendFile(path.join(import.meta.dirname, '../dist/public/index.html'));
+      res.sendFile(path.join(import.meta.dirname, '../dist/index.html'));
     });
   } else {
     await setupVite(app, server);
