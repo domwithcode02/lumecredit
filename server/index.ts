@@ -1,14 +1,14 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { setupVite, log } from "./vite";
 import path from "path";
 import fs from "fs";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Move static file serving to after route registration
 
+// Request logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -138,15 +138,37 @@ app.use((req, res, next) => {
       // Serve the fallback path
       app.use(express.static(fallbackPath));
     }
-    
-    // Always add the SPA fallback route for client-side routing
-    app.get('*', (req, res, next) => {
-      // Skip API routes
-      if (req.path.startsWith('/api')) {
-        return next();
-      }
-    });
   }
+  
+  // SPA fallback route for client-side routing
+  app.get('*', (req, res, next) => {
+    // Skip API routes and health check
+    if (req.path.startsWith('/api') || req.path === '/_health') {
+      return next();
+    }
+    
+    // Define possible paths for static files
+    const possiblePaths = [
+      path.join(import.meta.dirname, "../dist/public"),
+      path.join(import.meta.dirname, "../dist"),
+      path.join(import.meta.dirname, "../client/dist"),
+      path.join(import.meta.dirname, "../client/build"),
+      path.join(import.meta.dirname, "../public")
+    ];
+    
+    // Try to find and serve an index.html file from one of our possible paths
+    for (const staticPath of possiblePaths) {
+      const indexPath = path.join(staticPath, 'index.html');
+      if (fs.existsSync(indexPath)) {
+        log(`Serving SPA from: ${indexPath} for path: ${req.path}`);
+        return res.sendFile(indexPath);
+      }
+    }
+    
+    // If we get here, we couldn't find an index.html in any location
+    log(`Error: Could not find index.html in any location for path: ${req.path}`);
+    res.status(404).send('Application files not found. Please rebuild the application.');
+  });
 
   // Error handling middleware
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
