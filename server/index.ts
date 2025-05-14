@@ -53,41 +53,98 @@ app.use((req, res, next) => {
     // Setup Vite development server
     await setupVite(app, server);
   } else {
-    // Serve static files in production from multiple possible locations
+    // In production, serve static files from multiple potential build locations
     const possiblePaths = [
+      path.join(import.meta.dirname, "../dist/public"),
       path.join(import.meta.dirname, "../dist"),
-      path.join(import.meta.dirname, "../public"),
       path.join(import.meta.dirname, "../client/dist"),
-      path.join(import.meta.dirname, "../client/public")
+      path.join(import.meta.dirname, "../client/build"),
+      path.join(import.meta.dirname, "../public")
     ];
     
-    log("Looking for static files...");
+    log(`Looking for static files in production...`);
     
-    // Attempt to serve static files from each possible location
+    // Track whether we found static files
+    let foundStaticFiles = false;
+    
+    // Try to serve static files from each possible location
     for (const staticPath of possiblePaths) {
       if (fs.existsSync(staticPath)) {
         log(`Found static files at: ${staticPath}`);
-        // Serve static files
         app.use(express.static(staticPath));
+        foundStaticFiles = true;
       }
     }
     
-    // Always add the SPA fallback route at the end
-    app.get('*', (req, res) => {
-      // Skip API routes
-      if (req.path.startsWith('/api')) return;
+    if (!foundStaticFiles) {
+      log(`Warning: No static files found in any expected location`);
       
-      // Try to find index.html in one of the possible paths
-      for (const staticPath of possiblePaths) {
-        const indexPath = path.join(staticPath, 'index.html');
-        if (fs.existsSync(indexPath)) {
-          log(`Serving SPA from: ${indexPath}`);
-          return res.sendFile(indexPath);
-        }
+      // Create directory and fallback index.html in the first path
+      const fallbackPath = possiblePaths[0];
+      log(`Creating fallback static files at: ${fallbackPath}`);
+      
+      fs.mkdirSync(fallbackPath, { recursive: true });
+      
+      const indexPath = path.join(fallbackPath, 'index.html');
+      fs.writeFileSync(indexPath, `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LumeCredit</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
       }
+      h1 {
+        margin-bottom: 10px;
+        color: #003366;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      a {
+        display: inline-block;
+        background-color: #003366;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+      }
+      a:hover {
+        background-color: #002244;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to LumeCredit</h1>
+    <p>The application is loading, please wait...</p>
+    <a href="/" onclick="window.location.reload()">Refresh Page</a>
+  </body>
+</html>
+      `);
       
-      // If no index.html is found, send 404
-      res.status(404).send('Application files not found');
+      // Serve the fallback path
+      app.use(express.static(fallbackPath));
+    }
+    
+    // Always add the SPA fallback route for client-side routing
+    app.get('*', (req, res, next) => {
+      // Skip API routes
+      if (req.path.startsWith('/api')) {
+        return next();
+      }
     });
   }
 
