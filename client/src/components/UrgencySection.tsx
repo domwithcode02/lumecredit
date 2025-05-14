@@ -17,7 +17,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
     <section id="totalboost" className="py-16 bg-gradient-to-b from-white via-[#F5C518]/5 to-white">
       {/* Deal Section */}
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div id="totalboost-bundle" className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center rounded-full bg-[#F5C518]/20 px-4 py-2 mb-4 shadow-sm border border-[#F5C518]/30">
             <AlertTriangle className="h-4 w-4 text-[#F5C518] mr-2" />
             <span className="text-sm font-bold text-[#003366]">ONLY {spotsRemaining} SPOTS REMAINING!</span>
