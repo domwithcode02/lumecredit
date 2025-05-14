@@ -122,6 +122,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   </a>
                   <a href="#flexcredit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
+                    // This targets exactly the FlexCredit card with the green header
                     const element = document.getElementById('flexcredit');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth' });
@@ -131,6 +132,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   </a>
                   <a href="#steadybuild" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
+                    // This targets exactly the SteadyBuild card with the blue header
                     const element = document.getElementById('steadybuild');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth' });
@@ -140,6 +142,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   </a>
                   <a href="#hometrack" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
+                    // This targets exactly the HomeTrack card with the yellow header
                     const element = document.getElementById('hometrack');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth' });
@@ -274,6 +277,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
+                            // This targets exactly the SteadyBuild card with the blue header
                             const element = document.getElementById('steadybuild');
                             if (element) {
                               element.scrollIntoView({ behavior: 'smooth' });
@@ -290,6 +294,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
+                            // This targets exactly the HomeTrack card with the yellow header
                             const element = document.getElementById('hometrack');
                             if (element) {
                               element.scrollIntoView({ behavior: 'smooth' });
