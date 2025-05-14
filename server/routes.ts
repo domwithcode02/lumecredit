@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { ZodError } from "zod";
 import { insertSubscriberWithValidationSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { logLogin, getLoginLogs } from "./login-tracker";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Login route for authentication
@@ -12,6 +13,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     
     // Simple hardcoded authentication with test accounts
     if (username === "rebekah" && password === "virginia123") {
+      // Log successful login
+      logLogin(req, username, true, "Regular user login successful");
+      
       return res.status(200).json({ 
         success: true,
         user: { 
@@ -24,6 +28,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     
     // Admin user
     if (username === "admin" && password === "5winners") {
+      // Log successful admin login
+      logLogin(req, username, true, "Admin login successful");
+      
       return res.status(200).json({ 
         success: true,
         user: { 
@@ -33,6 +40,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       });
     }
+    
+    // Log failed login attempt
+    logLogin(req, username, false, "Invalid username or password");
     
     // Return error if credentials don't match
     return res.status(401).json({ 
@@ -57,6 +67,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Submit subscriber form
+  // Admin endpoint to view login logs
+  app.get("/api/admin/login-logs", async (req: Request, res: Response) => {
+    try {
+      // Get admin token from query or headers (basic authorization for this endpoint)
+      const token = req.query.token || req.headers.authorization?.split(" ")[1];
+      
+      // Only admin with correct token can access logs (using "5winners" as the token)
+      if (token !== "5winners") {
+        return res.status(401).json({
+          success: false,
+          message: "Unauthorized access"
+        });
+      }
+      
+      // Get login logs (default limit 100)
+      const limit = req.query.limit ? parseInt(req.query.limit as string) : 100;
+      const logs = await getLoginLogs(limit);
+      
+      res.json({
+        success: true,
+        count: logs.length,
+        logs
+      });
+    } catch (error) {
+      console.error("Error fetching login logs:", error);
+      res.status(500).json({
+        success: false,
+        message: "Failed to retrieve login logs"
+      });
+    }
+  });
+  
   app.post("/api/subscribe", async (req: Request, res: Response) => {
     try {
       // Check if honeypot field is filled (spam protection)

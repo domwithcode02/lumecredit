@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import FAQPage from "@/pages/FAQPage";
 import LoginPage from "@/pages/LoginPage";
+import AdminLoginLogs from "@/pages/AdminLoginLogs";
 import { useEffect, useState } from "react";
 
 // Protected route component
@@ -48,6 +49,9 @@ function Router() {
       </Route>
       <Route path="/faq">
         <ProtectedRoute component={FAQPage} />
+      </Route>
+      <Route path="/admin/login-logs">
+        <ProtectedRoute component={AdminLoginLogs} />
       </Route>
       <Route component={NotFound} />
     </Switch>
