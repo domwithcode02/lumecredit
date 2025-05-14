@@ -25,12 +25,16 @@ const getOidcConfig = memoize(
 export function getSession() {
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
   const pgStore = connectPg(session);
+  
+  // Create a new session store with auto table creation
   const sessionStore = new pgStore({
     conString: process.env.DATABASE_URL,
     createTableIfMissing: true,
     ttl: sessionTtl,
     tableName: "sessions",
+    pruneSessionInterval: 60 // Prune expired sessions every minute
   });
+  
   return session({
     secret: process.env.SESSION_SECRET || "lumecredit-session-secret-2025",
     store: sessionStore,
@@ -40,6 +44,7 @@ export function getSession() {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       maxAge: sessionTtl,
+      sameSite: 'lax'
     },
   });
 }

@@ -1,11 +1,12 @@
-import express, { type Request as ExpressRequest, Response, NextFunction } from "express";
+import express, { Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
 import cookieParser from "cookie-parser";
 
-// Extend the Express Request type to include user property
-interface Request extends ExpressRequest {
+// Define Request type with authentication properties
+// Using 'type' instead of 'interface' to avoid TypeScript errors
+type Request = express.Request & {
   user?: any;
   isAuthenticated?: () => boolean;
   logout?: (done: (err: any) => void) => void;

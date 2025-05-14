@@ -3,10 +3,11 @@ import postgres from "postgres";
 
 // Check if we have a database URL
 if (!process.env.DATABASE_URL) {
-  console.log("WARNING: No DATABASE_URL provided, some features may not work properly");
+  console.error("ERROR: No DATABASE_URL provided, database functionality will not work");
+  throw new Error("DATABASE_URL environment variable is required");
 }
 
 // Database connection
 const connectionString = process.env.DATABASE_URL;
-const client = connectionString ? postgres(connectionString) : null;
-export const db = client ? drizzle(client) : null;
+const client = postgres(connectionString);
+export const db = drizzle(client);
