@@ -88,16 +88,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { username, password } = req.body;
       
-      // Hardcoded credentials for demo purposes
-      // In a real application, you would check against a database
-      const validCredentials = [
-        { username: "admin", password: "secretpassword123", role: "admin" },
-        { username: "rebekah", password: "virginia123", role: "staff" }
-      ];
-      
-      const user = validCredentials.find(
-        cred => cred.username === username && cred.password === password
-      );
+      // Simple authentication check
+      if (username === "admin" && password === "admin123") {
+        // Create JWT token
+        const jwtSecret = process.env.JWT_SECRET || 'secure-jwt-secret-2025';
+        const token = jwt.sign(
+          { 
+            id: 'admin-user',
+            username: username,
+            role: 'admin'
+          },
+          jwtSecret,
+          { expiresIn: "24h" }
+        );
       
       if (user) {
         // Create JWT token

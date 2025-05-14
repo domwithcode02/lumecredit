@@ -24,30 +24,26 @@ export default function LoginPage() {
     setError('');
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    
     try {
+      const formData = new FormData(e.currentTarget);
       const response = await fetch('/api/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           username: formData.get('username'),
-          password: formData.get('password'),
-        }),
+          password: formData.get('password')
+        })
       });
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.message || 'Login failed');
+      const data = await response.json();
+      
+      if (response.ok) {
+        setLocation('/app');
+      } else {
+        setError(data.message || 'Login failed');
       }
-
-      // Successful login - redirect to app
-      setLocation('/app');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Invalid credentials');
-      console.error('Login error:', err);
+    } catch (error) {
+      setError('An error occurred during login');
     } finally {
       setIsSubmitting(false);
     }
