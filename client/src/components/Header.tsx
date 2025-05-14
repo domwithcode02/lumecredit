@@ -210,11 +210,11 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     <div className="text-slate-700 font-medium">Products</div>
                     <div className="pl-4 space-y-2">
                       <a 
-                        href="#totalboost" 
+                        href="#tradelines" 
                         className="block text-sm text-[#003366] font-bold"
                         onClick={(e) => { 
                           e.preventDefault(); 
-                          handleNavLinkClick('totalboost');
+                          handleNavLinkClick('tradelines');
                           setOpen(false); // Close menu after click
                         }}
                       >
