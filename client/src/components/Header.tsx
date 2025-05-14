@@ -225,7 +225,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
                         onClick={() => { 
-                          const element = document.getElementById('tradelines');
+                          const element = document.getElementById('flexcredit');
                           if (element) {
                             element.scrollIntoView({ behavior: 'smooth' });
                           }
@@ -237,7 +237,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
                         onClick={() => { 
-                          const element = document.getElementById('tradelines');
+                          const element = document.getElementById('steadybuild');
                           if (element) {
                             element.scrollIntoView({ behavior: 'smooth' });
                           }
@@ -249,7 +249,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
                         onClick={() => { 
-                          const element = document.getElementById('tradelines');
+                          const element = document.getElementById('hometrack');
                           if (element) {
                             element.scrollIntoView({ behavior: 'smooth' });
                           }
