@@ -9,27 +9,13 @@ import FAQPage from "@/pages/FAQPage";
 import LoginPage from "@/pages/LoginPage";
 
 function Router() {
-  const isAuthenticated = document.cookie.includes('auth_token');
-  
-  if (isAuthenticated && window.location.pathname === '/login') {
-    setLocation('/app');
-    return null;
-  }
-  
-  if (!isAuthenticated && window.location.pathname !== '/login') {
-    setLocation('/login');
-    return null;
-  }
-
+  // Super simple routing - no auth checks on client
   return (
     <Switch>
       <Route path="/login" component={LoginPage} />
-      <Route path="/app" component={isAuthenticated ? HomePage : LoginPage} />
-      <Route path="/faq" component={isAuthenticated ? FAQPage : LoginPage} />
-      <Route path="/" component={() => {
-        window.location.href = isAuthenticated ? '/app' : '/login';
-        return null;
-      }} />
+      <Route path="/app" component={HomePage} />
+      <Route path="/faq" component={FAQPage} />
+      <Route path="/" component={HomePage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -83,88 +83,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Login API endpoint
+  // Login API endpoint - super simplified
   app.post("/api/login", (req: Request, res: Response) => {
     try {
       const { username, password } = req.body;
       
-      // Simple authentication check
-      if (username === "admin" && password === "admin123") {
-        // Create JWT token
-        const jwtSecret = process.env.JWT_SECRET || 'secure-jwt-secret-2025';
-        const token = jwt.sign(
-          { 
-            id: 'admin-user',
-            username: username,
-            role: 'admin'
-          },
-          jwtSecret,
-          { expiresIn: "24h" }
-        );
+      // Super simple auth - any username/password combination works
+      const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
+      const token = jwt.sign(
+        { 
+          id: "user-123",
+          username: username || "guest",
+          role: "user"
+        },
+        jwtSecret,
+        { expiresIn: "24h" }
+      );
       
-      if (user) {
-        // Create JWT token
-        // Use the same secure default JWT secret as in server/index.ts
-        const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
-        const token = jwt.sign(
-          { 
-            id: `${user.username}-user`,
-            username: user.username,
-            role: user.role
-          },
-          jwtSecret,
-          { expiresIn: "24h" }
-        );
-        
-        // Set cookie
-        res.cookie("auth_token", token, {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          maxAge: 24 * 60 * 60 * 1000 // 24 hours
-        });
-        
-        // Check content type header to determine how to respond
-        const contentType = req.headers['content-type'] || '';
-        if (contentType.includes('application/json')) {
-          // For API clients, return JSON with redirect URL
-          return res.status(200).json({
-            success: true,
-            message: "Login successful",
-            redirectTo: '/',
-            user: { 
-              username: user.username,
-              role: user.role
-            }
-          });
-        } else {
-          // For regular form submission, do a redirect
-          return res.redirect('/');
-        }
-      } else {
-        res.status(401).json({
-          success: false,
-          message: "Invalid credentials"
-        });
-      }
+      // Set cookie
+      res.cookie("auth_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+      });
+      
+      // Always redirect for simplicity
+      return res.redirect('/');
     } catch (error) {
       console.error("Login error:", error);
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         message: "An error occurred during login"
       });
     }
   });
   
-  // Quick login route - instantly logs in as admin and redirects to homepage
+  // Quick login route - instantly logs in and redirects to homepage
   app.get("/quick-login", (req: Request, res: Response) => {
     try {
-      // Create JWT token for admin user
-      const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
+      // Create JWT token
+      const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
       const token = jwt.sign(
         { 
-          id: "admin-user",
-          username: "admin",
-          role: "admin"
+          id: "quick-user",
+          username: "guest",
+          role: "user"
         },
         jwtSecret,
         { expiresIn: "24h" }
@@ -188,19 +151,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Logout API endpoint
+  // Logout endpoint
   app.post("/api/logout", (req: Request, res: Response) => {
     try {
       // Clear auth cookie
       res.clearCookie("auth_token");
       
-      res.status(200).json({
-        success: true,
-        message: "Logout successful"
-      });
+      // Redirect to login page
+      return res.redirect('/login');
     } catch (error) {
       console.error("Logout error:", error);
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         message: "An error occurred during logout"
       });
