@@ -282,7 +282,7 @@ export default function TradelinesSection() {
           </div>
           
           {/* FlexCredit Product Section - with ID for anchor link */}
-          <div id="flexcredit" className="bg-gradient-to-b from-[#41c99e]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#41c99e]/30 mb-8">
+          <div id="flexcredit-product" className="bg-gradient-to-b from-[#41c99e]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#41c99e]/30 mb-8">
             <div className="bg-[#41c99e] text-white py-4 px-6">
               <h4 className="text-xl font-bold">FlexCredit™ Revolving Tradeline</h4>
             </div>
@@ -362,7 +362,7 @@ export default function TradelinesSection() {
           </div>
           
           {/* SteadyBuild Product Section - with ID for anchor link */}
-          <div id="steadybuild" className="bg-gradient-to-b from-[#4aade3]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#4aade3]/30 mb-8">
+          <div id="steadybuild-product" className="bg-gradient-to-b from-[#4aade3]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#4aade3]/30 mb-8">
             <div className="bg-[#4aade3] text-white py-4 px-6">
               <h4 className="text-xl font-bold">SteadyBuild™ Installment Tradeline</h4>
             </div>
@@ -442,7 +442,7 @@ export default function TradelinesSection() {
           </div>
           
           {/* HomeTrack Product Section - with ID for anchor link */}
-          <div id="hometrack" className="bg-gradient-to-b from-[#ffc829]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#ffc829]/30 mb-8">
+          <div id="hometrack-product" className="bg-gradient-to-b from-[#ffc829]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#ffc829]/30 mb-8">
             <div className="bg-[#ffc829] text-[#003366] py-4 px-6">
               <h4 className="text-xl font-bold">HomeTrack™ Rent Reporting</h4>
             </div>
