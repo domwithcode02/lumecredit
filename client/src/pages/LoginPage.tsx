@@ -72,55 +72,67 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 px-2">
-      {/* Login Form Column - extremely compact for mobile */}
-      <div className="w-full max-w-md relative z-10">
+    <div className="flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 py-4 px-2">
+      {/* Login Form Column */}
+      <div className="w-full max-w-md">
         <Card className="w-full border border-slate-100 bg-white shadow-md rounded-lg overflow-hidden">
-          <CardHeader className="relative z-10 py-2 px-3 md:p-6">
-            <div className="mx-auto w-28 md:w-48">
+          <CardHeader className="py-4 px-6">
+            <div className="mx-auto w-48">
               <img 
                 src={lumeLogo} 
                 alt="LumeCredit Logo" 
                 className="h-full w-auto object-contain"
               />
             </div>
-            <CardTitle className="text-lg md:text-2xl font-bold text-slate-800 mt-1">Welcome Back</CardTitle>
-            <CardDescription className="text-slate-600 text-xs md:text-sm">
+            <CardTitle className="text-2xl font-bold text-slate-800 mt-2 text-center">Welcome Back</CardTitle>
+            <CardDescription className="text-slate-600 text-sm text-center">
               Sign in to access LumeCredit
             </CardDescription>
           </CardHeader>
-          <CardContent className="relative z-10 p-2 md:p-6">
-            <form onSubmit={handleLogin} className="space-y-2">
-              <div>
+          <CardContent className="p-6">
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div className="space-y-2">
+                <label htmlFor="username" className="text-sm font-medium text-slate-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  Username
+                </label>
                 <Input 
                   id="username"
                   type="text" 
-                  placeholder="Username" 
+                  placeholder="Enter your username" 
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="bg-white border-slate-200 h-8 md:h-10 text-sm"
+                  className="bg-white border-slate-200 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
                   required
                 />
               </div>
-              <div>
+              <div className="space-y-2">
+                <label htmlFor="password" className="text-sm font-medium text-slate-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  Password
+                </label>
                 <Input 
                   id="password"
                   type="password" 
-                  placeholder="Password" 
+                  placeholder="Enter your password" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-white border-slate-200 h-8 md:h-10 text-sm"
+                  className="bg-white border-slate-200 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
                   required
                 />
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-slate-800 hover:bg-slate-700 text-white transition-colors h-8 md:h-10 text-xs md:text-sm"
+                className="w-full bg-slate-800 hover:bg-slate-700 text-white transition-colors"
                 disabled={loading}
               >
                 {loading ? (
                   <span className="flex items-center justify-center">
-                    <svg className="animate-spin mr-1 h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -130,9 +142,12 @@ export default function LoginPage() {
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex flex-col text-center border-t border-slate-100 py-1 relative z-10">
-            <div className="flex items-center justify-center">
-              <p className="text-[10px] md:text-xs text-slate-500">Launching September 01, 2025</p>
+          <CardFooter className="flex flex-col text-center text-sm text-slate-500 border-t border-slate-100 pt-4 mt-2">
+            <div className="flex items-center justify-center space-x-1">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <p className="text-xs font-medium">Launching September 01, 2025</p>
             </div>
           </CardFooter>
         </Card>
