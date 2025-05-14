@@ -59,11 +59,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-white">
-      {/* Login Form Column - Now full width */}
-      <div className="w-full max-w-md p-4">
-        <Card className="w-full border border-slate-200 shadow-lg">
-          <CardHeader className="space-y-2 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 opacity-40"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-gradient-to-tr from-slate-50 to-slate-100 opacity-60"></div>
+      </div>
+      
+      {/* Login Form Column */}
+      <div className="w-full max-w-md p-6 relative z-10">
+        <Card className="w-full border border-slate-100 bg-white/90 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-white to-slate-50 opacity-90"></div>
+          <CardHeader className="space-y-2 text-center relative z-10">
             <div className="mx-auto w-48 mb-4">
               <img 
                 src={lumeLogo} 
@@ -71,15 +78,18 @@ export default function LoginPage() {
                 className="h-full w-auto object-contain"
               />
             </div>
-            <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-2xl font-bold text-slate-800">Welcome Back</CardTitle>
+            <CardDescription className="text-slate-600">
               Sign in to access the LumeCredit exclusive offer
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={handleLogin} className="space-y-4">
+          <CardContent className="relative z-10">
+            <form onSubmit={handleLogin} className="space-y-5">
               <div className="space-y-2">
-                <label htmlFor="username" className="text-sm font-medium">
+                <label htmlFor="username" className="text-sm font-medium text-slate-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
                   Username
                 </label>
                 <Input 
@@ -88,11 +98,15 @@ export default function LoginPage() {
                   placeholder="Enter your username" 
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
+                  className="bg-white border-slate-200 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium">
+                <label htmlFor="password" className="text-sm font-medium text-slate-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
                   Password
                 </label>
                 <Input 
@@ -101,20 +115,34 @@ export default function LoginPage() {
                   placeholder="Enter your password" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  className="bg-white border-slate-200 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
                   required
                 />
               </div>
               <Button 
                 type="submit" 
-                className="w-full transition-colors"
+                className="w-full bg-slate-800 hover:bg-slate-700 text-white transition-colors"
                 disabled={loading}
               >
-                {loading ? "Signing in..." : "Sign in"}
+                {loading ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Signing in...
+                  </span>
+                ) : "Sign in"}
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex flex-col text-center text-sm text-slate-600 border-t border-slate-100 pt-4 mt-2">
-            <p className="text-xs font-medium">Launching September 01, 2025</p>
+          <CardFooter className="flex flex-col text-center text-sm text-slate-500 border-t border-slate-100 pt-4 mt-2 relative z-10">
+            <div className="flex items-center justify-center space-x-1">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <p className="text-xs font-medium">Launching September 01, 2025</p>
+            </div>
           </CardFooter>
         </Card>
       </div>
