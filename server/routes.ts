@@ -10,7 +10,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/login", (req: Request, res: Response) => {
     const { username, password } = req.body;
     
-    // Simple hardcoded authentication with the one account for testing
+    // Simple hardcoded authentication with test accounts
     if (username === "rebekah" && password === "virginia123") {
       return res.status(200).json({ 
         success: true,
@@ -18,6 +18,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
           id: 1, 
           username: "rebekah",
           name: "Rebekah Johnson"
+        }
+      });
+    }
+    
+    // Admin user
+    if (username === "admin" && password === "5winners") {
+      return res.status(200).json({ 
+        success: true,
+        user: { 
+          id: 2, 
+          username: "admin",
+          name: "Administrator"
         }
       });
     }

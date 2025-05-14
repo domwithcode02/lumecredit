@@ -59,10 +59,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
-      {/* Login Form Column */}
-      <div className="flex-1 flex items-center justify-center p-4 md:p-8">
-        <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-white">
+      {/* Login Form Column - Now full width */}
+      <div className="w-full max-w-md p-4">
+        <Card className="w-full border border-slate-200 shadow-lg">
           <CardHeader className="space-y-2 text-center">
             <div className="mx-auto w-48 mb-4">
               <img 
@@ -106,34 +106,24 @@ export default function LoginPage() {
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-[#003366] hover:bg-[#002347]"
+                className="w-full bg-[#4aade3] hover:bg-[#3089b7] transition-colors"
                 disabled={loading}
               >
                 {loading ? "Signing in..." : "Sign in"}
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex flex-col text-center text-sm text-slate-600">
-            <p>Accessing LumeCredit's exclusive credit-building offer</p>
-            <p className="mt-2 text-xs">Launching September 01, 2025</p>
+          <CardFooter className="flex flex-col text-center text-sm text-slate-600 border-t border-slate-100 pt-4 mt-2">
+            <p>Build perfect credit with our revolutionary TotalBoost+ bundle</p>
+            <p>Limited to only 250 members</p>
+            <div className="mt-4 bg-[#4aade3]/10 rounded-lg p-3 text-[#003366] text-sm">
+              <p className="font-semibold">Special Early Access Offer:</p>
+              <p>$200 one-time payment for 5 years of service</p>
+              <p className="text-xs opacity-80 mt-1">That's just $3.33 per month!</p>
+            </div>
+            <p className="mt-4 text-xs font-medium">Launching September 01, 2025</p>
           </CardFooter>
         </Card>
-      </div>
-      
-      {/* Hero Image/Content Column - Only visible on larger screens */}
-      <div className="hidden md:flex flex-1 bg-[#003366] text-white flex-col justify-center p-8">
-        <div className="max-w-lg mx-auto">
-          <h1 className="text-4xl font-bold mb-6">Exclusive Access to LumeCredit</h1>
-          <p className="text-xl mb-8">
-            Build perfect credit with our revolutionary TotalBoost+ bundle featuring all three
-            essential tradeline types. Limited to only 250 members.
-          </p>
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
-            <p className="text-lg font-semibold mb-2">Special Early Access Offer:</p>
-            <p className="mb-4">$200 one-time payment for 5 years of service</p>
-            <p className="text-sm opacity-80">That's just $3.33 per month!</p>
-          </div>
-        </div>
       </div>
     </div>
   );
