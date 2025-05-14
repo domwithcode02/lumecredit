@@ -116,7 +116,7 @@ export default function LoginPage() {
           <CardFooter className="flex flex-col text-center text-sm text-slate-600 border-t border-slate-100 pt-4 mt-2">
             <p>Build perfect credit with our revolutionary TotalBoost+ bundle</p>
             <p>Limited to only 250 members</p>
-            <div className="mt-4 bg-[#4aade3]/10 rounded-lg p-3 text-[#003366] text-sm">
+            <div className="mt-4 bg-slate-100 rounded-lg p-3 text-slate-700 text-sm">
               <p className="font-semibold">Special Early Access Offer:</p>
               <p>$200 one-time payment for 5 years of service</p>
               <p className="text-xs opacity-80 mt-1">That's just $3.33 per month!</p>
