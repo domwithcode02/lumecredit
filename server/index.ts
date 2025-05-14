@@ -2,11 +2,15 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
+import fs from "fs";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
+// We need to ensure the static files are properly served for production deployment
+app.use(express.static(path.join(import.meta.dirname, '../dist')));
+app.use(express.static(path.join(import.meta.dirname, '../client/dist')));
+app.use(express.static(path.join(import.meta.dirname, '../public')));
 
 // No Basic Auth middleware - we're using our custom login page instead
 
