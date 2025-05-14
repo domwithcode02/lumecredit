@@ -21,7 +21,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         user: { 
           id: 1, 
           username: "rebekah",
-          name: "Rebekah Johnson"
+          name: "rebekah"
         }
       });
     }

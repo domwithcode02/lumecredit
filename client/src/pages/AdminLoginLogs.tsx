@@ -77,8 +77,13 @@ export default function AdminLoginLogs() {
 
   // Handle logout
   const handleLogout = () => {
+    // Clear all authentication data
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userData');
     localStorage.removeItem('adminToken');
-    setLocation('/auth');
+    
+    // Redirect to login page
+    setLocation('/login');
   };
 
   if (loading) {
