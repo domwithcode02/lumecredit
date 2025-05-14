@@ -72,7 +72,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-[90vh] flex items-start sm:items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 px-2 py-1 sm:py-2">
+    <div className="min-h-screen flex items-start sm:items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 px-2 py-2 sm:py-4">
       {/* Login Form Column */}
       <div className="w-full max-w-md">
         <Card className="w-full border border-slate-100 bg-white shadow-md rounded-lg overflow-hidden">
