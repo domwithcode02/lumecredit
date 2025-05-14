@@ -59,15 +59,15 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "production") {
-    // API routes first
-    await registerRoutes(app);
+    // Serve static files first
+    app.use(express.static(path.join(import.meta.dirname, '../client/dist')));
     
-    // Then serve static files
-    app.use(express.static(path.join(import.meta.dirname, '../dist')));
+    // Register API routes
+    await registerRoutes(app);
     
     // SPA fallback for client-side routing
     app.get('*', (_req, res) => {
-      res.sendFile(path.join(import.meta.dirname, '../dist/index.html'));
+      res.sendFile(path.join(import.meta.dirname, '../client/dist/index.html'));
     });
   } else {
     await setupVite(app, server);
