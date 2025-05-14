@@ -8,9 +8,24 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // We need to ensure the static files are properly served for production deployment
-app.use(express.static(path.join(import.meta.dirname, '../dist')));
-app.use(express.static(path.join(import.meta.dirname, '../client/dist')));
-app.use(express.static(path.join(import.meta.dirname, '../public')));
+// Try all possible locations for static files
+const possibleStaticPaths = [
+  path.join(import.meta.dirname, '../dist/public'),
+  path.join(import.meta.dirname, '../dist'),
+  path.join(import.meta.dirname, '../client/dist'),
+  path.join(import.meta.dirname, 'public'),
+  path.join(import.meta.dirname, '../public')
+];
+
+// Log which paths exist for debugging
+possibleStaticPaths.forEach(staticPath => {
+  if (fs.existsSync(staticPath)) {
+    log(`Static path exists: ${staticPath}`, "static");
+    app.use(express.static(staticPath));
+  } else {
+    log(`Static path does NOT exist: ${staticPath}`, "static");
+  }
+});
 
 // No Basic Auth middleware - we're using our custom login page instead
 
@@ -87,8 +102,34 @@ app.use((req, res, next) => {
         // In development, let Vite handle it (already configured above)
         res.status(404).send('Not found');
       } else {
-        // In production, serve the index.html for client-side routing
-        res.sendFile(path.resolve(import.meta.dirname, '../client/dist/index.html'));
+        // In production, try to find index.html in several possible locations
+        const possibleIndexPaths = [
+          path.resolve(import.meta.dirname, '../client/dist/index.html'),
+          path.resolve(import.meta.dirname, '../dist/public/index.html'),
+          path.resolve(import.meta.dirname, '../dist/index.html')
+        ];
+        
+        let indexFound = false;
+        for (const indexPath of possibleIndexPaths) {
+          if (fs.existsSync(indexPath)) {
+            res.sendFile(indexPath);
+            indexFound = true;
+            break;
+          }
+        }
+        
+        if (!indexFound) {
+          log(`WARNING: No index.html found in any of the expected locations`, "static");
+          res.status(500).send(`
+            <html>
+              <head><title>LumeCredit - Build Error</title></head>
+              <body>
+                <h1>Application Error</h1>
+                <p>The application has not been properly built. Please contact support.</p>
+              </body>
+            </html>
+          `);
+        }
       }
     } else {
       // For API requests, return 404
