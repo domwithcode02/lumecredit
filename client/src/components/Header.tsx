@@ -257,6 +257,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
+                            // This targets exactly the FlexCredit card with the green header
                             const element = document.getElementById('flexcredit');
                             if (element) {
                               element.scrollIntoView({ behavior: 'smooth' });
