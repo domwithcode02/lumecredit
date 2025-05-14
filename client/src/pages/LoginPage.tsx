@@ -106,7 +106,7 @@ export default function LoginPage() {
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-[#4aade3] hover:bg-[#3089b7] transition-colors"
+                className="w-full transition-colors"
                 disabled={loading}
               >
                 {loading ? "Signing in..." : "Sign in"}
@@ -114,14 +114,7 @@ export default function LoginPage() {
             </form>
           </CardContent>
           <CardFooter className="flex flex-col text-center text-sm text-slate-600 border-t border-slate-100 pt-4 mt-2">
-            <p>Build perfect credit with our revolutionary TotalBoost+ bundle</p>
-            <p>Limited to only 250 members</p>
-            <div className="mt-4 bg-slate-100 rounded-lg p-3 text-slate-700 text-sm">
-              <p className="font-semibold">Special Early Access Offer:</p>
-              <p>$200 one-time payment for 5 years of service</p>
-              <p className="text-xs opacity-80 mt-1">That's just $3.33 per month!</p>
-            </div>
-            <p className="mt-4 text-xs font-medium">Launching September 01, 2025</p>
+            <p className="text-xs font-medium">Launching September 01, 2025</p>
           </CardFooter>
         </Card>
       </div>
