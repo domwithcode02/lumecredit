@@ -6,6 +6,28 @@ import { insertSubscriberWithValidationSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Login route for authentication
+  app.post("/api/login", (req: Request, res: Response) => {
+    const { username, password } = req.body;
+    
+    // Simple hardcoded authentication with the one account for testing
+    if (username === "rebekah" && password === "virginia123") {
+      return res.status(200).json({ 
+        success: true,
+        user: { 
+          id: 1, 
+          username: "rebekah",
+          name: "Rebekah Johnson"
+        }
+      });
+    }
+    
+    // Return error if credentials don't match
+    return res.status(401).json({ 
+      success: false, 
+      message: "Invalid username or password" 
+    });
+  });
   // Get spots remaining count
   app.get("/api/spots-remaining", async (_req: Request, res: Response) => {
     try {
