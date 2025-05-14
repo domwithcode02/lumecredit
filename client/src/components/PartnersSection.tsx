@@ -9,36 +9,36 @@ export default function PartnersSection() {
         <div className="flex flex-col items-center">
           <p className="text-sm text-slate-500 mb-4 text-center">Powered by industry-leading partners</p>
           
-          <div className="flex flex-wrap justify-center items-center gap-x-8 md:gap-x-16 gap-y-8">
+          <div className="flex flex-wrap justify-center items-center gap-x-12 md:gap-x-24 gap-y-12">
             {/* Galileo */}
             <div className="flex items-center">
-              <div className="w-32 h-10 flex items-center justify-center">
+              <div className="w-64 h-20 flex items-center justify-center">
                 <img 
                   src={galileoLogo} 
                   alt="Galileo" 
-                  className="h-6 opacity-85 hover:opacity-100 transition-all" 
+                  className="h-24 hover:opacity-90 transition-all" 
                 />
               </div>
             </div>
             
             {/* Stripe */}
             <div className="flex items-center">
-              <div className="w-32 h-10 flex items-center justify-center">
+              <div className="w-64 h-20 flex items-center justify-center">
                 <img 
                   src={stripeLogo} 
                   alt="Stripe" 
-                  className="h-6 opacity-85 hover:opacity-100 transition-all" 
+                  className="h-24 hover:opacity-90 transition-all" 
                 />
               </div>
             </div>
             
             {/* Plaid */}
             <div className="flex items-center">
-              <div className="w-32 h-10 flex items-center justify-center">
+              <div className="w-64 h-20 flex items-center justify-center">
                 <img 
                   src={plaidLogo} 
                   alt="Plaid" 
-                  className="h-6 opacity-85 hover:opacity-100 transition-all" 
+                  className="h-24 hover:opacity-90 transition-all" 
                 />
               </div>
             </div>
