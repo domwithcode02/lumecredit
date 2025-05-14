@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
-import { ChevronDown, Menu, LogOut } from "lucide-react";
+import { ChevronDown, Menu, LogOut, User as UserIcon } from "lucide-react";
 import { useState } from "react";
 import {
   Sheet,
@@ -8,6 +8,7 @@ import {
   SheetTrigger
 } from "@/components/ui/sheet";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useAuth } from "@/hooks/useAuth";
 
 interface HeaderProps {
   spotsRemaining: number;
@@ -16,6 +17,7 @@ interface HeaderProps {
 
 export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   const [open, setOpen] = useState(false);
+  const { user, isAuthenticated } = useAuth();
   
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
@@ -34,16 +36,8 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
   };
   
   const handleLogout = () => {
-    fetch('/api/logout', {
-      method: 'POST',
-      credentials: 'include'
-    })
-    .then(() => {
-      window.location.href = '/login';
-    })
-    .catch(error => {
-      console.error('Logout error:', error);
-    });
+    // Replit Auth uses GET for logout
+    window.location.href = '/api/logout';
   };
 
   return (
@@ -119,7 +113,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
               Reserve Now
             </Button>
             
-            {/* Logout Button */}
+            {/* User Profile and Logout Button */}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -129,11 +123,20 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     size="icon"
                     className="hidden md:flex text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                   >
-                    <LogOut className="h-5 w-5" />
+                    {user?.profileImageUrl ? (
+                      <img 
+                        src={user.profileImageUrl} 
+                        alt="User Profile" 
+                        className="h-6 w-6 rounded-full mr-1" 
+                      />
+                    ) : (
+                      <UserIcon className="h-5 w-5 mr-1" />
+                    )}
+                    <LogOut className="h-4 w-4 ml-1" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Logout</p>
+                  <p>{user?.firstName ? `${user.firstName} (Logout)` : 'Logout'}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -262,8 +265,18 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                     onClick={handleLogout}
                     className="mt-4 bg-transparent hover:bg-slate-100 border border-slate-300 text-slate-700 flex items-center gap-2"
                   >
-                    <LogOut className="h-4 w-4" />
-                    Logout
+                    {user?.profileImageUrl ? (
+                      <img 
+                        src={user.profileImageUrl} 
+                        alt="User Profile" 
+                        className="h-4 w-4 rounded-full" 
+                      />
+                    ) : (
+                      <UserIcon className="h-4 w-4" />
+                    )}
+                    <span className="ml-1">
+                      {user?.firstName ? `Logout (${user.firstName})` : 'Logout'}
+                    </span>
                   </Button>
                 </div>
               </SheetContent>
