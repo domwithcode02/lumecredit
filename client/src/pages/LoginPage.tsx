@@ -72,26 +72,26 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 py-4 px-2">
+    <div className="min-h-screen flex items-start sm:items-center justify-center bg-gradient-to-br from-slate-100 via-white to-slate-50 px-2 py-2 sm:py-4">
       {/* Login Form Column */}
       <div className="w-full max-w-md">
         <Card className="w-full border border-slate-100 bg-white shadow-md rounded-lg overflow-hidden">
-          <CardHeader className="py-4 px-6">
-            <div className="mx-auto w-48">
+          <CardHeader className="py-3 px-4 sm:p-6 space-y-0.5 sm:space-y-2">
+            <div className="mx-auto w-36 sm:w-48">
               <img 
                 src={lumeLogo} 
                 alt="LumeCredit Logo" 
                 className="h-full w-auto object-contain"
               />
             </div>
-            <CardTitle className="text-2xl font-bold text-slate-800 mt-2 text-center">Welcome Back</CardTitle>
-            <CardDescription className="text-slate-600 text-sm text-center">
+            <CardTitle className="text-xl sm:text-2xl font-bold text-slate-800 text-center mt-0.5 sm:mt-2">Welcome Back</CardTitle>
+            <CardDescription className="text-slate-600 text-xs sm:text-sm text-center">
               Sign in to access LumeCredit
             </CardDescription>
           </CardHeader>
-          <CardContent className="p-6">
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div className="space-y-2">
+          <CardContent className="p-4 sm:p-6">
+            <form onSubmit={handleLogin} className="space-y-3 sm:space-y-4">
+              <div className="space-y-1 sm:space-y-2">
                 <label htmlFor="username" className="text-sm font-medium text-slate-700 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -108,7 +108,7 @@ export default function LoginPage() {
                   required
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <label htmlFor="password" className="text-sm font-medium text-slate-700 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -127,7 +127,7 @@ export default function LoginPage() {
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-slate-800 hover:bg-slate-700 text-white transition-colors"
+                className="w-full bg-slate-800 hover:bg-slate-700 text-white transition-colors mt-1"
                 disabled={loading}
               >
                 {loading ? (
@@ -142,7 +142,7 @@ export default function LoginPage() {
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex flex-col text-center text-sm text-slate-500 border-t border-slate-100 pt-4 mt-2">
+          <CardFooter className="flex flex-col text-center text-sm text-slate-500 border-t border-slate-100 py-2 sm:pt-4">
             <div className="flex items-center justify-center space-x-1">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
