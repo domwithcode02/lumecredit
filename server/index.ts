@@ -2,7 +2,6 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
-import fs from "fs";
 
 const app = express();
 app.use(express.json());
@@ -40,22 +39,21 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = createServer(app);
+  // Add health check endpoint for deployment
+  app.get("/", (_req: Request, res: Response) => {
+    res.status(200).json({ status: "ok", message: "LumeCredit API is running" });
+  });
 
-  // Set up routes based on environment
-  if (app.get("env") === "production") {
-    // Register API routes first
-    await registerRoutes(app);
-    
-    // Then serve static files
-    app.use(express.static(path.join(import.meta.dirname, '../dist')));
-    
-    // SPA fallback for client-side routing must be last
-    app.get('*', (_req, res) => {
-      res.sendFile(path.join(import.meta.dirname, '../dist/index.html'));
-    });
-  } else {
+  // Register API routes and get HTTP server
+  const server = await registerRoutes(app);
+
+  // Dev or prod setup
+  if (app.get("env") === "development") {
+    // Setup Vite development server
     await setupVite(app, server);
+  } else {
+    // Serve static files in production
+    serveStatic(app);
   }
 
   // Error handling middleware
@@ -63,18 +61,14 @@ app.use((req, res, next) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
     res.status(status).json({ message });
-    throw err;
+    console.error(err);
   });
 
   // ALWAYS serve the app on port 5000
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
+  server.listen(port, "0.0.0.0", () => {
     log(`serving on port ${port}`);
   });
 })();
