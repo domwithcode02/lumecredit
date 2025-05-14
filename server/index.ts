@@ -58,13 +58,11 @@ app.use((req, res, next) => {
     await registerRoutes(app);
     
     // Then serve static files
-    app.use(express.static(path.join(import.meta.dirname, '../client/dist')));
+    app.use(express.static(path.join(import.meta.dirname, '../dist')));
     
     // SPA fallback for client-side routing must be last
     app.get('*', (_req, res) => {
-      res.sendFile(path.join(import.meta.dirname, '../client/dist/index.html'), {
-        root: path.join(import.meta.dirname, '../client/dist')
-      });
+      res.sendFile(path.join(import.meta.dirname, '../dist/index.html'));
     });
   } else {
     await setupVite(app, server);
