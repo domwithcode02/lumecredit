@@ -1,6 +1,6 @@
-import galileoLogo from "../assets/partners/galileo-logo.png";
-import stripeLogo from "../assets/partners/stripe-logo.png";
-import plaidLogo from "../assets/partners/plaid-logo.png";
+import galileoLogo from "@assets/galileo_logo_inverted_transparent.png";
+// Use SVG icons from lucide-react for the other partners since we don't have their logos
+import { CreditCard, BarChart } from "lucide-react";
 
 export default function PartnersSection() {
   return (
@@ -23,23 +23,21 @@ export default function PartnersSection() {
             
             {/* Stripe */}
             <div className="flex items-center">
-              <div className="w-32 h-10 flex items-center justify-center">
-                <img 
-                  src={stripeLogo} 
-                  alt="Stripe" 
-                  className="h-8 opacity-85 hover:opacity-100 transition-all" 
-                />
+              <div className="w-32 h-10 flex items-center justify-center bg-slate-100 rounded-md">
+                <div className="flex items-center gap-1">
+                  <CreditCard size={16} className="text-slate-700" />
+                  <span className="font-semibold text-sm text-slate-700">Stripe</span>
+                </div>
               </div>
             </div>
             
             {/* Plaid */}
             <div className="flex items-center">
-              <div className="w-32 h-10 flex items-center justify-center">
-                <img 
-                  src={plaidLogo} 
-                  alt="Plaid" 
-                  className="h-8 opacity-85 hover:opacity-100 transition-all" 
-                />
+              <div className="w-32 h-10 flex items-center justify-center bg-slate-100 rounded-md">
+                <div className="flex items-center gap-1">
+                  <BarChart size={16} className="text-slate-700" />
+                  <span className="font-semibold text-sm text-slate-700">Plaid</span>
+                </div>
               </div>
             </div>
           </div>

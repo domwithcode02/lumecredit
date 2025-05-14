@@ -8,32 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
 
-// Basic authentication middleware
-app.use((req, res, next) => {
-  const auth = req.headers.authorization;
-  
-  // Skip auth for API routes
-  if (req.path.startsWith('/api')) {
-    return next();
-  }
-
-  if (!auth) {
-    res.setHeader('WWW-Authenticate', 'Basic');
-    return res.status(401).send('Authentication required');
-  }
-
-  const [username, password] = Buffer.from(auth.split(' ')[1], 'base64')
-    .toString()
-    .split(':');
-
-  // Replace these with your desired credentials
-  if (username === 'admin' && password === 'secretpassword123') {
-    next();
-  } else {
-    res.setHeader('WWW-Authenticate', 'Basic');
-    return res.status(401).send('Invalid credentials');
-  }
-});
+// No Basic Auth middleware - we're using our custom login page instead
 
 app.use((req, res, next) => {
   const start = Date.now();
