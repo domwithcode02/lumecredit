@@ -2,12 +2,13 @@ import express, { type Request as ExpressRequest, Response, NextFunction } from 
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
-import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
 // Extend the Express Request type to include user property
 interface Request extends ExpressRequest {
   user?: any;
+  isAuthenticated?: () => boolean;
+  logout?: (done: (err: any) => void) => void;
 }
 
 const app = express();
@@ -27,36 +28,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(import.meta.dirname, '../dist/public')));
 }
 
-// JWT authentication middleware
-app.use((req: Request, res: Response, next: NextFunction) => {
-  // Skip auth for API routes, login page, and static assets
-  if (
-    req.path.startsWith('/api') || 
-    req.path === '/login' || 
-    req.path.includes('.') || 
-    req.path.startsWith('/@') || 
-    req.path.startsWith('/node_modules') || 
-    req.path.startsWith('/src/')
-  ) {
-    return next();
-  }
-
-  const token = req.cookies.auth_token;
-  if (!token) {
-    return res.redirect('/login');
-  }
-
-  try {
-    // Use a secure default JWT secret if none is provided
-    const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
-    const decoded = jwt.verify(token, jwtSecret);
-    req.user = decoded;
-    next();
-  } catch (err) {
-    res.clearCookie('auth_token');
-    return res.redirect('/login');
-  }
-});
+// Authentication is now handled by replitAuth.ts middleware
 
 // API request logging middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
