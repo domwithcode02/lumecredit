@@ -83,71 +83,43 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Login API endpoint - super simplified
+  // Login API endpoint - with credential checking
   app.post("/api/login", (req: Request, res: Response) => {
     try {
       const { username, password } = req.body;
       
-      // Super simple auth - any username/password combination works
-      const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
-      const token = jwt.sign(
-        { 
-          id: "user-123",
-          username: username || "guest",
-          role: "user"
-        },
-        jwtSecret,
-        { expiresIn: "24h" }
-      );
-      
-      // Set cookie
-      res.cookie("auth_token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 24 * 60 * 60 * 1000 // 24 hours
-      });
-      
-      // Always redirect for simplicity
-      return res.redirect('/');
+      // Simple credential check - only specific credentials work
+      if ((username === "admin" && password === "admin123") || 
+          (username === "demo" && password === "demo123")) {
+        
+        // Create a JWT token
+        const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
+        const token = jwt.sign(
+          { 
+            id: `${username}-user`,
+            username: username,
+            role: "admin"
+          },
+          jwtSecret,
+          { expiresIn: "24h" }
+        );
+        
+        // Set cookie with token
+        res.cookie("auth_token", token, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          maxAge: 24 * 60 * 60 * 1000 // 24 hours
+        });
+        
+        // Redirect to home page after successful login
+        return res.redirect('/app');
+      } else {
+        // Invalid credentials
+        return res.status(401).redirect('/login?error=invalid');
+      }
     } catch (error) {
       console.error("Login error:", error);
-      return res.status(500).json({
-        success: false,
-        message: "An error occurred during login"
-      });
-    }
-  });
-  
-  // Quick login route - instantly logs in and redirects to homepage
-  app.get("/quick-login", (req: Request, res: Response) => {
-    try {
-      // Create JWT token
-      const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
-      const token = jwt.sign(
-        { 
-          id: "quick-user",
-          username: "guest",
-          role: "user"
-        },
-        jwtSecret,
-        { expiresIn: "24h" }
-      );
-      
-      // Set cookie
-      res.cookie("auth_token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 24 * 60 * 60 * 1000 // 24 hours
-      });
-      
-      // Redirect to home page
-      return res.redirect('/');
-    } catch (error) {
-      console.error("Quick login error:", error);
-      res.status(500).json({
-        success: false,
-        message: "An error occurred during login"
-      });
+      return res.status(500).redirect('/login?error=server');
     }
   });
   

@@ -9,15 +9,6 @@ import FAQPage from "@/pages/FAQPage";
 import LoginPage from "@/pages/LoginPage";
 
 function Router() {
-  // Routing with direct navigation to home page
-  const currentLocation = window.location.pathname;
-  
-  // Directly redirect to home page from root
-  if (currentLocation === '/') {
-    window.location.href = '/app';
-    return <div>Redirecting...</div>;
-  }
-
   return (
     <Switch>
       <Route path="/login" component={LoginPage} />
