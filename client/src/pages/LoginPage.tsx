@@ -1,4 +1,6 @@
 
+import { useState } from "react";
+import { useLocation } from "wouter";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
 import {
   Card,
@@ -13,16 +15,41 @@ import { Label } from "@/components/ui/label";
 import { Lock, User } from "lucide-react";
 
 export default function LoginPage() {
-  // Check URL for error parameters
-  const urlParams = new URLSearchParams(window.location.search);
-  const error = urlParams.get('error');
+  const [, setLocation] = useLocation();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   
-  let errorMessage = '';
-  if (error === 'invalid') {
-    errorMessage = 'Invalid username or password. Please try again.';
-  } else if (error === 'server') {
-    errorMessage = 'Server error occurred. Please try again.';
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        console.log("Login successful, redirecting to app...");
+        // Force a client-side redirect
+        window.location.href = "/app";
+      } else {
+        setError(data.message || "Invalid credentials. Please try again.");
+      }
+    } catch (error) {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
   
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-4">
@@ -46,23 +73,25 @@ export default function LoginPage() {
           </CardHeader>
           <CardContent className="pt-6">
             {/* Show error message if present */}
-            {errorMessage && (
+            {error && (
               <div className="mb-4 p-3 text-sm text-red-600 bg-red-100 rounded-md">
-                {errorMessage}
+                {error}
               </div>
             )}
             
-            <form action="/api/login" method="POST" className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="username"
-                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     type="text"
                     placeholder="Enter username"
                     className="pl-10"
+                    required
                   />
                 </div>
               </div>
@@ -73,19 +102,22 @@ export default function LoginPage() {
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <Input 
                     id="password"
-                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder="Enter password"
                     className="pl-10"
+                    required
                   />
                 </div>
               </div>
 
               <Button 
                 type="submit"
+                disabled={isLoading}
                 className="w-full bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold"
               >
-                Sign in
+                {isLoading ? "Signing in..." : "Sign in"}
               </Button>
             </form>
           </CardContent>

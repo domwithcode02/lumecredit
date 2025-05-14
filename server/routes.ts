@@ -111,8 +111,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
           maxAge: 24 * 60 * 60 * 1000 // 24 hours
         });
         
-        // Redirect to home page after successful login
-        return res.redirect('/app');
+        // For proper client-side routing, return JSON with token instead of redirect
+        return res.status(200).json({
+          success: true,
+          message: "Login successful",
+          token: token
+        });
       } else {
         // Invalid credentials
         return res.status(401).redirect('/login?error=invalid');
