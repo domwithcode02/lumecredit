@@ -194,90 +194,97 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                 </div>
                 
                 <div className="flex flex-col p-4 space-y-4">
-                  <a 
-                    href="#how-it-works" 
-                    className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
-                    onClick={(e) => { 
-                      e.preventDefault(); 
-                      handleNavLinkClick('how-it-works');
+                  <button 
+                    className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
+                    onClick={() => { 
+                      const element = document.getElementById('how-it-works');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
                       setOpen(false); // Close menu after click
                     }}
                   >
                     How It Works
-                  </a>
+                  </button>
                   
                   <div className="space-y-2">
                     <div className="text-slate-700 font-medium">Products</div>
                     <div className="pl-4 space-y-2">
-                      <a 
-                        href="#tradelines" 
-                        className="block text-sm text-[#003366] font-bold"
-                        onClick={(e) => { 
-                          e.preventDefault(); 
-                          handleNavLinkClick('tradelines');
+                      <button 
+                        className="text-left w-full block text-sm text-[#003366] font-bold"
+                        onClick={() => { 
+                          const element = document.getElementById('tradelines');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                           setOpen(false); // Close menu after click
                         }}
                       >
                         TotalBoost+™ Bundle
-                      </a>
-                      <a 
-                        href="#tradelines" 
-                        className="block text-sm text-slate-700"
-                        onClick={(e) => { 
-                          e.preventDefault(); 
-                          handleNavLinkClick('tradelines');
+                      </button>
+                      <button 
+                        className="text-left w-full block text-sm text-slate-700"
+                        onClick={() => { 
+                          const element = document.getElementById('tradelines');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                           setOpen(false); // Close menu after click
                         }}
                       >
                         FlexCredit™ Revolving
-                      </a>
-                      <a 
-                        href="#tradelines" 
-                        className="block text-sm text-slate-700"
-                        onClick={(e) => { 
-                          e.preventDefault(); 
-                          handleNavLinkClick('tradelines');
+                      </button>
+                      <button 
+                        className="text-left w-full block text-sm text-slate-700"
+                        onClick={() => { 
+                          const element = document.getElementById('tradelines');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                           setOpen(false); // Close menu after click
                         }}
                       >
                         SteadyBuild™ Installment
-                      </a>
-                      <a 
-                        href="#tradelines" 
-                        className="block text-sm text-slate-700"
-                        onClick={(e) => { 
-                          e.preventDefault(); 
-                          handleNavLinkClick('tradelines');
+                      </button>
+                      <button 
+                        className="text-left w-full block text-sm text-slate-700"
+                        onClick={() => { 
+                          const element = document.getElementById('tradelines');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                           setOpen(false); // Close menu after click
                         }}
                       >
                         HomeTrack™ Rent Reporting
-                      </a>
-                      <a 
-                        href="#families" 
-                        className="block text-sm text-slate-700"
-                        onClick={(e) => { 
-                          e.preventDefault(); 
-                          handleNavLinkClick('families');
+                      </button>
+                      <button 
+                        className="text-left w-full block text-sm text-slate-700"
+                        onClick={() => { 
+                          const element = document.getElementById('families');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                           setOpen(false); // Close menu after click
                         }}
                       >
                         LumeStart™ for Families
-                      </a>
+                      </button>
                     </div>
                   </div>
                   
-                  <a 
-                    href="#visa-card" 
-                    className="text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
-                    onClick={(e) => { 
-                      e.preventDefault(); 
-                      handleNavLinkClick('visa-card');
+                  <button 
+                    className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
+                    onClick={() => { 
+                      const element = document.getElementById('visa-card');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
                       setOpen(false); // Close menu after click
                     }}
                   >
                     Visa Card
-                  </a>
+                  </button>
                   
                   <a 
                     href="/faq" 
