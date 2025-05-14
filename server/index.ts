@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
+import fs from "fs";
 
 const app = express();
 app.use(express.json());
@@ -40,7 +41,7 @@ app.use((req, res, next) => {
 
 (async () => {
   // Add health check endpoint for deployment
-  app.get("/", (_req: Request, res: Response) => {
+  app.get("/_health", (_req: Request, res: Response) => {
     res.status(200).json({ status: "ok", message: "LumeCredit API is running" });
   });
 
@@ -52,8 +53,42 @@ app.use((req, res, next) => {
     // Setup Vite development server
     await setupVite(app, server);
   } else {
-    // Serve static files in production
-    serveStatic(app);
+    // Serve static files in production from multiple possible locations
+    const possiblePaths = [
+      path.join(import.meta.dirname, "../dist"),
+      path.join(import.meta.dirname, "../public"),
+      path.join(import.meta.dirname, "../client/dist"),
+      path.join(import.meta.dirname, "../client/public")
+    ];
+    
+    log("Looking for static files...");
+    
+    // Attempt to serve static files from each possible location
+    for (const staticPath of possiblePaths) {
+      if (fs.existsSync(staticPath)) {
+        log(`Found static files at: ${staticPath}`);
+        // Serve static files
+        app.use(express.static(staticPath));
+      }
+    }
+    
+    // Always add the SPA fallback route at the end
+    app.get('*', (req, res) => {
+      // Skip API routes
+      if (req.path.startsWith('/api')) return;
+      
+      // Try to find index.html in one of the possible paths
+      for (const staticPath of possiblePaths) {
+        const indexPath = path.join(staticPath, 'index.html');
+        if (fs.existsSync(indexPath)) {
+          log(`Serving SPA from: ${indexPath}`);
+          return res.sendFile(indexPath);
+        }
+      }
+      
+      // If no index.html is found, send 404
+      res.status(404).send('Application files not found');
+    });
   }
 
   // Error handling middleware
