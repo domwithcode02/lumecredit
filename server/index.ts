@@ -8,9 +8,20 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // We need to ensure the static files are properly served for production deployment
-app.use(express.static(path.join(import.meta.dirname, '../dist')));
-app.use(express.static(path.join(import.meta.dirname, '../client/dist')));
-app.use(express.static(path.join(import.meta.dirname, '../public')));
+// Try multiple possible build locations
+const staticPaths = [
+  path.join(import.meta.dirname, '../dist'),
+  path.join(import.meta.dirname, '../client/dist'),
+  path.join(import.meta.dirname, '../public'),
+  path.join(import.meta.dirname, '../dist/public'),
+  path.join(import.meta.dirname, 'public')
+];
+
+// Serve static files from all possible locations
+staticPaths.forEach(staticPath => {
+  app.use(express.static(staticPath));
+  log(`Configured static path: ${staticPath}`, "express");
+});
 
 // No Basic Auth middleware - we're using our custom login page instead
 
@@ -58,19 +69,52 @@ app.use((req, res, next) => {
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (app.get("env") === "production") {
-    // API routes first
-    await registerRoutes(app);
-    
-    // Then serve static files
-    app.use(express.static(path.join(import.meta.dirname, '../dist')));
-    
-    // SPA fallback for client-side routing
-    app.get('*', (_req, res) => {
-      res.sendFile(path.join(import.meta.dirname, '../dist/index.html'));
-    });
-  } else {
+  if (app.get("env") === "development") {
     await setupVite(app, server);
+  } else {
+    // Production mode - serve static files from all potential build locations
+    const prodStaticPaths = [
+      path.join(import.meta.dirname, '../dist'),
+      path.join(import.meta.dirname, '../client/dist'),
+      path.join(import.meta.dirname, '../public'),
+      path.join(import.meta.dirname, '../dist/public'),
+      path.join(import.meta.dirname, 'public')
+    ];
+    
+    prodStaticPaths.forEach(staticPath => {
+      if (fs.existsSync(staticPath)) {
+        app.use(express.static(staticPath));
+        log(`Serving static files in production from: ${staticPath}`, "express");
+      }
+    });
+    
+    // SPA fallback for client-side routing, but only for non-API routes
+    app.get('*', (req, res, next) => {
+      // Skip API routes
+      if (req.path.startsWith('/api/')) {
+        return next();
+      }
+      
+      // For all other routes, serve the React app's index.html
+      // Try multiple possible index.html locations
+      const indexPaths = [
+        path.join(import.meta.dirname, '../dist/index.html'),
+        path.join(import.meta.dirname, '../client/dist/index.html'),
+        path.join(import.meta.dirname, '../public/index.html')
+      ];
+      
+      // Try each possible path
+      for (const indexPath of indexPaths) {
+        if (fs.existsSync(indexPath)) {
+          log(`Serving SPA from: ${indexPath}`, "express");
+          return res.sendFile(indexPath);
+        }
+      }
+      
+      // If no index.html found
+      console.error('Error: Could not find index.html in any location');
+      return res.status(404).send('Application not found. Please contact support.');
+    });
   }
 
   // ALWAYS serve the app on port 5000
