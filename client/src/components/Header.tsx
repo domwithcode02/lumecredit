@@ -111,16 +111,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
               
               <div className="invisible absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
                 <div className="py-1">
-                  <a href="#totalboost" className="block px-4 py-2 text-sm text-[#003366] font-bold bg-[#F5C518]/10 hover:bg-[#F5C518]/20 border-l-2 border-[#F5C518]" onClick={(e) => {
+                  <a href="#tradelines" className="block px-4 py-2 text-sm text-[#003366] font-bold bg-[#F5C518]/10 hover:bg-[#F5C518]/20 border-l-2 border-[#F5C518]" onClick={(e) => {
                     e.preventDefault();
-                    const element = document.getElementById('totalboost');
+                    const element = document.getElementById('tradelines');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}>
                     TotalBoost+™ Bundle
                   </a>
-                  <a href="#totalboost" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
+                  <a href="#flexcredit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
                     const element = document.getElementById('flexcredit');
                     if (element) {
@@ -129,7 +129,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   }}>
                     FlexCredit™ Revolving
                   </a>
-                  <a href="#totalboost" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
+                  <a href="#steadybuild" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
                     const element = document.getElementById('steadybuild');
                     if (element) {
@@ -138,7 +138,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   }}>
                     SteadyBuild™ Installment
                   </a>
-                  <a href="#totalboost" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
+                  <a href="#hometrack" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
                     const element = document.getElementById('hometrack');
                     if (element) {
@@ -241,7 +241,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slight delay to ensure menu is closed
                           setTimeout(() => {
-                            const element = document.getElementById('totalboost');
+                            const element = document.getElementById('tradelines');
                             if (element) {
                               element.scrollIntoView({ behavior: 'smooth' });
                             }
