@@ -89,8 +89,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { username, password } = req.body;
       
       // Simple credential check - only specific credentials work
-      if ((username === "admin" && password === "admin123") || 
-          (username === "demo" && password === "demo123")) {
+      if (username === "admin" && password === "secretpassword123") {
         
         // Create a JWT token
         const jwtSecret = process.env.JWT_SECRET || 'lumecredit-secure-jwt-secret-key-2025';
