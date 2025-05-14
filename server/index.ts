@@ -10,11 +10,15 @@ app.use(express.urlencoded({ extended: false }));
 // We need to ensure the static files are properly served for production deployment
 // Try all possible locations for static files
 const possibleStaticPaths = [
+  // The most common build output locations
   path.join(import.meta.dirname, '../dist/public'),
+  path.join(import.meta.dirname, '../dist/client'),
   path.join(import.meta.dirname, '../dist'),
   path.join(import.meta.dirname, '../client/dist'),
+  // Fallback locations
   path.join(import.meta.dirname, 'public'),
-  path.join(import.meta.dirname, '../public')
+  path.join(import.meta.dirname, '../public'),
+  path.join(import.meta.dirname, '../client')
 ];
 
 // Log which paths exist for debugging
@@ -72,17 +76,19 @@ app.use((req, res, next) => {
 
   // Root path handler to ensure it serves the frontend
   app.get("/", (req, res, next) => {
-    // If the request accepts HTML, serve the frontend
-    if (req.accepts('html')) {
-      if (app.get("env") === "development") {
-        next(); // Let Vite handle it in development
-      } else {
-        // In production, serve the index.html
-        res.sendFile(path.resolve(import.meta.dirname, '../client/dist/index.html'));
-      }
-    } else {
-      // For API requests not accepting HTML, pass through to the next handler
+    // For API requests with specific Accept headers that don't want HTML, pass through
+    if (req.accepts('json') && !req.accepts('html')) {
       next();
+      return;
+    }
+    
+    // For everything else, serve the frontend
+    // In development, let Vite handle it
+    if (app.get("env") === "development") {
+      next();
+    } else {
+      // In production, we need to serve our frontend based on where it was built
+      res.sendFile(path.resolve(import.meta.dirname, '../client/index.html'));
     }
   });
 
@@ -95,45 +101,50 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Add a fallback route handler to serve the frontend for any routes not handled
+  // Add a catch-all handler for any routes not handled by anything else
   app.use("*", (req, res) => {
-    if (req.accepts('html')) {
-      if (app.get("env") === "development") {
-        // In development, let Vite handle it (already configured above)
-        res.status(404).send('Not found');
-      } else {
-        // In production, try to find index.html in several possible locations
-        const possibleIndexPaths = [
-          path.resolve(import.meta.dirname, '../client/dist/index.html'),
-          path.resolve(import.meta.dirname, '../dist/public/index.html'),
-          path.resolve(import.meta.dirname, '../dist/index.html')
-        ];
-        
-        let indexFound = false;
-        for (const indexPath of possibleIndexPaths) {
-          if (fs.existsSync(indexPath)) {
-            res.sendFile(indexPath);
-            indexFound = true;
-            break;
-          }
-        }
-        
-        if (!indexFound) {
-          log(`WARNING: No index.html found in any of the expected locations`, "static");
+    // For API requests, return a 404 JSON response
+    if (req.path.startsWith("/api") || 
+        (req.accepts('json') && !req.accepts('html'))) {
+      return res.status(404).json({ message: "API endpoint not found" });
+    }
+    
+    // For all other requests (frontend routes), serve the app
+    if (app.get("env") === "development") {
+      // Let Vite handle the frontend in development
+      // This shouldn't happen because Vite middleware would have already caught it
+      res.status(404).send('Not found - check your Vite configuration');
+    } else {
+      // In production, serve the main HTML file for all frontend routes
+      // This is crucial for client-side routing (React Router, etc.)
+      res.sendFile(path.resolve(import.meta.dirname, '../client/index.html'), err => {
+        if (err) {
+          // If we can't find the index.html, display a helpful error
+          log(`ERROR: Could not serve index.html: ${err.message}`, "static");
+          
+          // Send a more helpful error response
           res.status(500).send(`
+            <!DOCTYPE html>
             <html>
-              <head><title>LumeCredit - Build Error</title></head>
+              <head>
+                <title>LumeCredit - Site Maintenance</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>
+                  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+                        padding: 40px; max-width: 600px; margin: 0 auto; text-align: center; }
+                  h1 { color: #003366; }
+                  p { line-height: 1.6; color: #333; }
+                </style>
+              </head>
               <body>
-                <h1>Application Error</h1>
-                <p>The application has not been properly built. Please contact support.</p>
+                <h1>Temporarily Unavailable</h1>
+                <p>The LumeCredit site is currently undergoing maintenance. Please check back soon.</p>
+                <p><small>Error: ${err.message}</small></p>
               </body>
             </html>
           `);
         }
-      }
-    } else {
-      // For API requests, return 404
-      res.status(404).json({ message: "Not found" });
+      });
     }
   });
 
