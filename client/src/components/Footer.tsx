@@ -30,37 +30,37 @@ export default function Footer() {
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="text-white font-medium text-lg mb-5">Company</h3>
+            <h3 className="text-white font-medium text-lg mb-5">Products</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">About Us</a>
+                <a href="#totalboost" className="text-slate-400 hover:text-white transition">TotalBoost+™ Bundle</a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">Careers</a>
+                <a href="#flexcredit" className="text-slate-400 hover:text-white transition">FlexCredit™ Revolving</a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">Press</a>
+                <a href="#steadybuild" className="text-slate-400 hover:text-white transition">SteadyBuild™ Installment</a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">Blog</a>
+                <a href="#hometrack" className="text-slate-400 hover:text-white transition">HomeTrack™ Rent Reporting</a>
               </li>
             </ul>
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="text-white font-medium text-lg mb-5">Resources</h3>
+            <h3 className="text-white font-medium text-lg mb-5">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">Help Center</a>
+                <a href="#how-it-works" className="text-slate-400 hover:text-white transition">How It Works</a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">Credit Tips</a>
+                <a href="#visa-card" className="text-slate-400 hover:text-white transition">Visa Card</a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">FAQ</a>
+                <a href="/faq" className="text-slate-400 hover:text-white transition">FAQ</a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition">Community</a>
+                <a href="#reserve-form" className="text-slate-400 hover:text-white transition">Reserve Now</a>
               </li>
             </ul>
           </div>
@@ -70,15 +70,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-slate-400 mr-3 mt-0.5" />
-                <span className="text-slate-400">support@lumecredit.com</span>
-              </li>
-              <li className="flex items-start">
-                <Phone className="h-5 w-5 text-slate-400 mr-3 mt-0.5" />
-                <span className="text-slate-400">(555) 123-4567</span>
-              </li>
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-slate-400 mr-3 mt-0.5" />
-                <span className="text-slate-400">123 Credit Lane<br/>Financeville, FC 98765</span>
+                <a href="mailto:tech@creditbro.credit" className="text-slate-400 hover:text-white transition">tech@creditbro.credit</a>
               </li>
             </ul>
           </div>
@@ -93,9 +85,8 @@ export default function Footer() {
             </div>
             
             <div className="flex flex-wrap justify-center md:justify-end gap-6">
-              <a href="#" className="text-sm text-slate-500 hover:text-slate-300 transition">Privacy Policy</a>
-              <a href="#" className="text-sm text-slate-500 hover:text-slate-300 transition">Terms of Service</a>
-              <a href="#" className="text-sm text-slate-500 hover:text-slate-300 transition">Cookies</a>
+              <a href="/privacy" className="text-sm text-slate-500 hover:text-slate-300 transition">Privacy Policy</a>
+              <a href="/terms" className="text-sm text-slate-500 hover:text-slate-300 transition">Terms of Service</a>
             </div>
           </div>
           
