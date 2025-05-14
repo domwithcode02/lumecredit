@@ -7,8 +7,8 @@ import { fromZodError } from "zod-validation-error";
 import { logLogin, getLoginLogs } from "./login-tracker";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Health check endpoint for deployment
-  app.get("/", (_req: Request, res: Response) => {
+  // Health check endpoint for deployment - use a specific path instead of root
+  app.get("/api/health", (_req: Request, res: Response) => {
     res.status(200).json({ status: "ok", message: "LumeCredit API is running" });
   });
   

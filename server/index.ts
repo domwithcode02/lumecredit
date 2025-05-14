@@ -55,6 +55,22 @@ app.use((req, res, next) => {
     throw err;
   });
 
+  // Root path handler to ensure it serves the frontend
+  app.get("/", (req, res, next) => {
+    // If the request accepts HTML, serve the frontend
+    if (req.accepts('html')) {
+      if (app.get("env") === "development") {
+        next(); // Let Vite handle it in development
+      } else {
+        // In production, serve the index.html
+        res.sendFile(path.resolve(import.meta.dirname, '../client/dist/index.html'));
+      }
+    } else {
+      // For API requests not accepting HTML, pass through to the next handler
+      next();
+    }
+  });
+
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
@@ -63,6 +79,22 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
+
+  // Add a fallback route handler to serve the frontend for any routes not handled
+  app.use("*", (req, res) => {
+    if (req.accepts('html')) {
+      if (app.get("env") === "development") {
+        // In development, let Vite handle it (already configured above)
+        res.status(404).send('Not found');
+      } else {
+        // In production, serve the index.html for client-side routing
+        res.sendFile(path.resolve(import.meta.dirname, '../client/dist/index.html'));
+      }
+    } else {
+      // For API requests, return 404
+      res.status(404).json({ message: "Not found" });
+    }
+  });
 
   // ALWAYS serve the app on port 5000
   // this serves both the API and the client.
