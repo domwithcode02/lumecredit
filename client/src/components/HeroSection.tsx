@@ -51,6 +51,24 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </div>
             </div>
             
+            {/* Mobile-only Credit Bro image - placed below benefit options */}
+            {isMobile && (
+              <div className="credit-bro-mobile mb-6 flex justify-center">
+                <div className="relative">
+                  <img 
+                    src="/credit_bro.png" 
+                    alt="Credit Bro" 
+                    className="w-52 mx-auto drop-shadow-xl"
+                  />
+                  <div className="absolute -bottom-2 right-0 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-3 max-w-[90%] shadow-lg border border-[#F5C518]/30 rotate-1">
+                    <p className="font-medium text-sm">
+                      "You gotta have credit bro!"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+            
             {/* Special Bundle Offer */}
             <div className="mb-8 bg-gradient-to-r from-[#003366]/15 via-[#F5C518]/10 to-[#003366]/15 p-8 rounded-xl border-2 border-[#F5C518]/30 relative shadow-lg transform transition-all duration-300 hover:shadow-xl hover:scale-[1.01] -mx-2 sm:mx-0 sm:w-[110%]">
               <div className="absolute -top-4 -right-2">
