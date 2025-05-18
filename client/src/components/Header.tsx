@@ -197,7 +197,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             
             <Button 
               onClick={scrollToForm}
-              className="hidden md:flex bg-black hover:bg-slate-800 text-white font-medium rounded-lg px-5 py-2.5"
+              className="hidden md:flex bg-[#F5C518] hover:bg-[#e5b616] text-[#003366] font-bold rounded-lg px-5 py-2.5"
             >
               Reserve Now
             </Button>
