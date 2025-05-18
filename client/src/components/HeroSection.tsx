@@ -60,11 +60,6 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                     alt="Credit Bro" 
                     className="w-52 mx-auto drop-shadow-xl"
                   />
-                  <div className="absolute -bottom-2 right-0 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-3 max-w-[90%] shadow-lg border border-[#F5C518]/30 rotate-1">
-                    <p className="font-medium text-sm">
-                      "You gotta have credit bro!"
-                    </p>
-                  </div>
                 </div>
               </div>
             )}
