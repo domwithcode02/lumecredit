@@ -224,11 +224,24 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   <button 
                     className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
                     onClick={() => { 
-                      const element = document.getElementById('how-it-works');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                      setOpen(false); // Close menu after click
+                      // Close menu first
+                      setOpen(false);
+                      // Scroll with delay for mobile
+                      setTimeout(() => {
+                        const element = document.getElementById('how-it-works');
+                        if (element) {
+                          // Scroll with a fallback mechanism
+                          try {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          } catch (e) {
+                            // Fallback to simpler scrolling if needed
+                            window.scrollTo({
+                              top: element.offsetTop - 100,
+                              behavior: 'smooth'
+                            });
+                          }
+                        }
+                      }, 300); // Increased delay for mobile
                     }}
                   >
                     How It Works
@@ -242,13 +255,22 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                         onClick={() => {
                           // Close the menu first
                           setOpen(false);
-                          // Then scroll to the element with a slight delay to ensure menu is closed
+                          // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
                             const element = document.getElementById('totalboost-bundle');
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              // Scroll with a fallback mechanism
+                              try {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              } catch (e) {
+                                // Fallback to simpler scrolling if needed
+                                window.scrollTo({
+                                  top: element.offsetTop - 100,
+                                  behavior: 'smooth'
+                                });
+                              }
                             }
-                          }, 100);
+                          }, 300); // Increased delay for mobile
                         }}
                       >
                         TotalBoost+™ Bundle
@@ -258,14 +280,23 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                         onClick={() => {
                           // Close the menu first
                           setOpen(false);
-                          // Then scroll to the element with a slight delay to ensure menu is closed
+                          // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product section
+                            // Direct scroll to the specific product section 
                             const element = document.getElementById('flexcredit-product');
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              // Scroll with a fallback mechanism
+                              try {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              } catch (e) {
+                                // Fallback to simpler scrolling if needed
+                                window.scrollTo({
+                                  top: element.offsetTop - 100,
+                                  behavior: 'smooth'
+                                });
+                              }
                             }
-                          }, 100);
+                          }, 300); // Increased delay for mobile
                         }}
                       >
                         FlexCredit™ Revolving
@@ -275,14 +306,23 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                         onClick={() => {
                           // Close the menu first
                           setOpen(false);
-                          // Then scroll to the element with a slight delay to ensure menu is closed
+                          // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
                             // Direct scroll to the specific product section
                             const element = document.getElementById('steadybuild-product');
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              // Scroll with a fallback mechanism
+                              try {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              } catch (e) {
+                                // Fallback to simpler scrolling if needed
+                                window.scrollTo({
+                                  top: element.offsetTop - 100,
+                                  behavior: 'smooth'
+                                });
+                              }
                             }
-                          }, 100);
+                          }, 300); // Increased delay for mobile
                         }}
                       >
                         SteadyBuild™ Installment
@@ -292,14 +332,23 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                         onClick={() => {
                           // Close the menu first
                           setOpen(false);
-                          // Then scroll to the element with a slight delay to ensure menu is closed
+                          // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
                             // Direct scroll to the specific product section
                             const element = document.getElementById('hometrack-product');
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              // Scroll with a fallback mechanism
+                              try {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              } catch (e) {
+                                // Fallback to simpler scrolling if needed
+                                window.scrollTo({
+                                  top: element.offsetTop - 100,
+                                  behavior: 'smooth'
+                                });
+                              }
                             }
-                          }, 100);
+                          }, 300); // Increased delay for mobile
                         }}
                       >
                         HomeTrack™ Rent Reporting
@@ -309,13 +358,22 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                         onClick={() => {
                           // Close the menu first
                           setOpen(false);
-                          // Then scroll to the element with a slight delay to ensure menu is closed
+                          // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
                             const element = document.getElementById('families');
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth' });
+                              // Scroll with a fallback mechanism
+                              try {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                              } catch (e) {
+                                // Fallback to simpler scrolling if needed
+                                window.scrollTo({
+                                  top: element.offsetTop - 100,
+                                  behavior: 'smooth'
+                                });
+                              }
                             }
-                          }, 100);
+                          }, 300); // Increased delay for mobile
                         }}
                       >
                         LumeStart™ for Families
