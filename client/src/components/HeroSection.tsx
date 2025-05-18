@@ -16,23 +16,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            {/* Mobile-only Credit Bro image */}
-            {isMobile && (
-              <div className="credit-bro-mobile mb-6 flex justify-center">
-                <div className="relative">
-                  <img 
-                    src="/credit_bro.png" 
-                    alt="Credit Bro" 
-                    className="w-52 mx-auto drop-shadow-xl"
-                  />
-                  <div className="absolute -bottom-2 right-0 bg-white/90 backdrop-blur-sm text-slate-800 rounded-xl p-3 max-w-[90%] shadow-lg border border-[#F5C518]/30 rotate-1">
-                    <p className="font-medium text-sm">
-                      "You gotta have credit bro!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
+            
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
