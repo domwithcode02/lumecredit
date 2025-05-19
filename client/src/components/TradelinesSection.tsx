@@ -109,7 +109,7 @@ export default function TradelinesSection() {
           
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {/* Revolving Credit */}
-            <div id="flexcredit" className="bg-gradient-to-br from-[#41c99e]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow relative group">
+            <div id="flexcredit-product" className="bg-gradient-to-br from-[#41c99e]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow relative group">
               <div className="absolute top-0 h-1 w-full bg-[#41c99e]"></div>
               <div className="p-4 sm:p-6 md:p-8">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#41c99e]/20 rounded-lg flex items-center justify-center mb-4 sm:mb-6 mx-auto">
@@ -160,7 +160,7 @@ export default function TradelinesSection() {
             </div>
             
             {/* Installment Credit */}
-            <div id="steadybuild" className="bg-gradient-to-br from-[#4aade3]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow relative group">
+            <div id="steadybuild-product" className="bg-gradient-to-br from-[#4aade3]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow relative group">
               <div className="absolute top-0 h-1 w-full bg-[#4aade3]"></div>
               <div className="p-4 sm:p-6 md:p-8">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#4aade3]/20 rounded-lg flex items-center justify-center mb-4 sm:mb-6 mx-auto">
@@ -215,7 +215,7 @@ export default function TradelinesSection() {
             </div>
             
             {/* Payment History Credit */}
-            <div id="hometrack" className="bg-gradient-to-br from-[#ffc829]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow relative group">
+            <div id="hometrack-product" className="bg-gradient-to-br from-[#ffc829]/10 to-white rounded-xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow relative group">
               <div className="absolute top-0 h-1 w-full bg-[#ffc829]"></div>
               <div className="p-4 sm:p-6 md:p-8">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#ffc829]/20 rounded-lg flex items-center justify-center mb-4 sm:mb-6 mx-auto">
