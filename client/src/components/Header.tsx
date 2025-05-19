@@ -384,11 +384,24 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   <button 
                     className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 border-b border-slate-100"
                     onClick={() => { 
-                      const element = document.getElementById('visa-card');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                      setOpen(false); // Close menu after click
+                      // Close menu first
+                      setOpen(false);
+                      // Scroll with delay for mobile
+                      setTimeout(() => {
+                        const element = document.getElementById('visa-card');
+                        if (element) {
+                          // Scroll with a fallback mechanism
+                          try {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          } catch (e) {
+                            // Fallback to simpler scrolling if needed
+                            window.scrollTo({
+                              top: element.offsetTop - 100,
+                              behavior: 'smooth'
+                            });
+                          }
+                        }
+                      }, 300); // Increased delay for mobile
                     }}
                   >
                     Visa Card
@@ -408,8 +421,32 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   
                   <Button 
                     onClick={() => {
-                      scrollToForm();
-                      setOpen(false); // Make sure to close the menu
+                      // Close menu first
+                      setOpen(false);
+                      // Scroll with delay for mobile
+                      setTimeout(() => {
+                        // Try to scroll to the form with enhanced mobile compatibility
+                        try {
+                          const element = document.getElementById('reservation-form');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          } else {
+                            // Fallback to original function if element not found
+                            scrollToForm();
+                          }
+                        } catch (e) {
+                          // Further fallback if scrollIntoView fails
+                          const element = document.getElementById('reservation-form');
+                          if (element) {
+                            window.scrollTo({
+                              top: element.offsetTop - 100,
+                              behavior: 'smooth'
+                            });
+                          } else {
+                            scrollToForm();
+                          }
+                        }
+                      }, 300); // Increased delay for mobile
                     }}
                     className="mt-4 bg-black hover:bg-slate-800 text-white font-bold"
                   >

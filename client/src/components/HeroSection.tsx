@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check, CreditCard, TrendingUp, Shield } from "lucide-react";
 import mascotImage from "@assets/ChatGPT Image Apr 12, 2025, 10_10_34 PM.png";
 import creditMixImage from "@assets/161df62e-8ed6-42dc-9cac-0568d4c47b82.png";
+import creditBroImage from "@assets/Credit_Bro_1-removebg-preview.png";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface HeroSectionProps {
@@ -56,7 +57,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               <div className="credit-bro-mobile mb-6 flex justify-center">
                 <div className="relative">
                   <img 
-                    src="/credit_bro.png" 
+                    src={creditBroImage} 
                     alt="Credit Bro" 
                     className="w-52 mx-auto drop-shadow-xl"
                   />
