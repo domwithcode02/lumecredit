@@ -259,13 +259,13 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setTimeout(() => {
                             const element = document.getElementById('totalboost-bundle');
                             if (element) {
-                              // Scroll with a fallback mechanism - scroll to top of section
+                              // Scroll with a fallback mechanism
                               try {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: element.offsetTop - 80,
+                                  top: element.offsetTop - 100,
                                   behavior: 'smooth'
                                 });
                               }
@@ -282,17 +282,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product card with title
-                            const element = document.getElementById('products');
-                            const flexCreditElement = document.getElementById('flexcredit-product');
-                            if (flexCreditElement) {
-                              // Scroll with a fallback mechanism - scroll to the exact product card
+                            // Direct scroll to the specific product section 
+                            const element = document.getElementById('flexcredit-product');
+                            if (element) {
+                              // Scroll with a fallback mechanism
                               try {
-                                flexCreditElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: flexCreditElement.offsetTop - 80,
+                                  top: element.offsetTop - 100,
                                   behavior: 'smooth'
                                 });
                               }
@@ -309,16 +308,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product card with title
-                            const steadyBuildElement = document.getElementById('steadybuild-product');
-                            if (steadyBuildElement) {
-                              // Scroll with a fallback mechanism - scroll to the exact product card
+                            // Direct scroll to the specific product section
+                            const element = document.getElementById('steadybuild-product');
+                            if (element) {
+                              // Scroll with a fallback mechanism
                               try {
-                                steadyBuildElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: steadyBuildElement.offsetTop - 80,
+                                  top: element.offsetTop - 100,
                                   behavior: 'smooth'
                                 });
                               }
@@ -335,16 +334,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product card with title
-                            const homeTrackElement = document.getElementById('hometrack-product');
-                            if (homeTrackElement) {
-                              // Scroll with a fallback mechanism - scroll to the exact product card
+                            // Direct scroll to the specific product section
+                            const element = document.getElementById('hometrack-product');
+                            if (element) {
+                              // Scroll with a fallback mechanism
                               try {
-                                homeTrackElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: homeTrackElement.offsetTop - 80,
+                                  top: element.offsetTop - 100,
                                   behavior: 'smooth'
                                 });
                               }
@@ -363,13 +362,13 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setTimeout(() => {
                             const element = document.getElementById('families');
                             if (element) {
-                              // Scroll with a fallback mechanism - scroll to top of section
+                              // Scroll with a fallback mechanism
                               try {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: element.offsetTop - 80,
+                                  top: element.offsetTop - 100,
                                   behavior: 'smooth'
                                 });
                               }
@@ -391,13 +390,13 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       setTimeout(() => {
                         const element = document.getElementById('visa-card');
                         if (element) {
-                          // Scroll with a fallback mechanism - scroll to top of section
+                          // Scroll with a fallback mechanism
                           try {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                           } catch (e) {
                             // Fallback to simpler scrolling if needed
                             window.scrollTo({
-                              top: element.offsetTop - 80,
+                              top: element.offsetTop - 100,
                               behavior: 'smooth'
                             });
                           }
