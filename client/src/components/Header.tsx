@@ -282,16 +282,17 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product section 
-                            const element = document.getElementById('flexcredit-product');
-                            if (element) {
-                              // Scroll with a fallback mechanism - scroll to top of section
+                            // Direct scroll to the specific product card with title
+                            const element = document.getElementById('products');
+                            const flexCreditElement = document.getElementById('flexcredit-product');
+                            if (flexCreditElement) {
+                              // Scroll with a fallback mechanism - scroll to the exact product card
                               try {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                flexCreditElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: element.offsetTop - 80,
+                                  top: flexCreditElement.offsetTop - 80,
                                   behavior: 'smooth'
                                 });
                               }
@@ -308,16 +309,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product section
-                            const element = document.getElementById('steadybuild-product');
-                            if (element) {
-                              // Scroll with a fallback mechanism - scroll to top of section
+                            // Direct scroll to the specific product card with title
+                            const steadyBuildElement = document.getElementById('steadybuild-product');
+                            if (steadyBuildElement) {
+                              // Scroll with a fallback mechanism - scroll to the exact product card
                               try {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                steadyBuildElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: element.offsetTop - 80,
+                                  top: steadyBuildElement.offsetTop - 80,
                                   behavior: 'smooth'
                                 });
                               }
@@ -334,16 +335,16 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            // Direct scroll to the specific product section
-                            const element = document.getElementById('hometrack-product');
-                            if (element) {
-                              // Scroll with a fallback mechanism - scroll to top of section
+                            // Direct scroll to the specific product card with title
+                            const homeTrackElement = document.getElementById('hometrack-product');
+                            if (homeTrackElement) {
+                              // Scroll with a fallback mechanism - scroll to the exact product card
                               try {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                homeTrackElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: element.offsetTop - 80,
+                                  top: homeTrackElement.offsetTop - 80,
                                   behavior: 'smooth'
                                 });
                               }
