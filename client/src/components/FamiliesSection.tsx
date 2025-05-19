@@ -7,8 +7,13 @@ export default function FamiliesSection() {
     <section id="families" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
         <div className="flex flex-col items-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 text-center relative">
             <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
+            <div className="absolute -top-6 right-0 md:right-1/4">
+              <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-lg">
+                COMING SOON
+              </div>
+            </div>
           </h2>
           <div className="relative mb-6 max-w-xl mx-auto">
             <p className="text-lg md:text-xl text-center font-medium text-slate-600 italic px-6 py-2 bg-gradient-to-r from-transparent via-[#F5C518]/10 to-transparent">
@@ -39,11 +44,6 @@ export default function FamiliesSection() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <div className="bg-[#F5C518]/10 px-6 py-4 rounded-lg border-l-4 border-r-4 border-[#F5C518] mb-6 relative inline-block mx-auto">
-              <div className="absolute -top-4 right-4">
-                <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-lg">
-                  COMING SOON
-                </div>
-              </div>
               <p className="text-slate-700 font-medium">
                 Give your children the gift of excellent credit the moment they turn 18
               </p>
