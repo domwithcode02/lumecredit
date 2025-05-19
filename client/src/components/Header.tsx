@@ -150,7 +150,14 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                   }}>
                     HomeTrack™ Rent Reporting
                   </a>
-                  <a href="#families" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                  <a href="#lumestart-section" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
+                    e.preventDefault();
+                    // Direct scroll to the specific LumeStart section
+                    const element = document.getElementById('lumestart-section');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}>
                     LumeStart™ for Families
                   </a>
                 </div>
@@ -360,15 +367,15 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           setOpen(false);
                           // Then scroll to the element with a slightly longer delay on mobile
                           setTimeout(() => {
-                            const element = document.getElementById('families');
+                            const element = document.getElementById('lumestart-section');
                             if (element) {
                               // Scroll with a fallback mechanism
                               try {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               } catch (e) {
                                 // Fallback to simpler scrolling if needed
                                 window.scrollTo({
-                                  top: element.offsetTop - 100,
+                                  top: element.offsetTop - 80,
                                   behavior: 'smooth'
                                 });
                               }
