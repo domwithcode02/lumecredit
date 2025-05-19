@@ -129,28 +129,6 @@ export default function FamiliesSection() {
           </div>
           
           <div className="order-1 md:order-2">
-            <div className="bg-gradient-to-b from-[#F5C51810] to-[#00336610] py-8 px-4 rounded-xl">
-              <p className="text-center text-slate-700 font-medium mb-6">
-                Join thousands of satisfied parents who have secured their children's financial future
-              </p>
-              
-              <div className="flex flex-wrap gap-4 justify-center">
-                <div className="bg-white p-4 rounded-lg shadow-md max-w-[180px]">
-                  <div className="font-bold text-3xl text-[#003366] mb-2">94%</div>
-                  <div className="text-slate-600 text-sm">of parents report improved financial conversations</div>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-md max-w-[180px]">
-                  <div className="font-bold text-3xl text-[#003366] mb-2">720+</div>
-                  <div className="text-slate-600 text-sm">average credit score for LumeStart graduates</div>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-md max-w-[180px]">
-                  <div className="font-bold text-3xl text-[#003366] mb-2">100%</div>
-                  <div className="text-slate-600 text-sm">legal and bureau-compliant methodology</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
