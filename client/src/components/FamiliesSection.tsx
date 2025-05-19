@@ -7,9 +7,17 @@ export default function FamiliesSection() {
     <section id="families" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
         <div className="flex flex-col items-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 text-center">
             <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
           </h2>
+          <div className="relative mb-6 max-w-xl mx-auto">
+            <p className="text-lg md:text-xl text-center font-medium text-slate-600 italic px-6 py-2 bg-gradient-to-r from-transparent via-[#F5C518]/10 to-transparent">
+              Mom and Dad! Give your teen a head start in life <span className="relative inline-block">
+                for real!!
+                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#F5C518]/50 rounded-full"></span>
+              </span>
+            </p>
+          </div>
           
           <div className="relative max-w-md mx-auto mb-8">
             <img 
