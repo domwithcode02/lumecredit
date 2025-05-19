@@ -7,7 +7,7 @@ export default function FamiliesSection() {
     <section id="families" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
         <div className="flex flex-col items-center mb-8">
-          <div className="flex flex-col items-center mb-2 relative">
+          <div className="flex flex-col items-center mb-2 relative" id="lumestart-section">
             <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-lg mb-2">
               COMING SOON
             </div>
