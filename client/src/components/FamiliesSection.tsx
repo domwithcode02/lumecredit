@@ -6,12 +6,33 @@ export default function FamiliesSection() {
   return (
     <section id="families" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
+        <div className="flex flex-col items-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
+            <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
+          </h2>
+          
+          <div className="relative max-w-md mx-auto mb-8">
+            <img 
+              src={familyImage} 
+              alt="Family with LumeCredit" 
+              className="w-full drop-shadow-xl rounded-lg"
+            />
+            
+            <div className="absolute -bottom-10 right-0 bg-white py-3 px-5 rounded-2xl shadow-xl border border-[#F5C518]/20 max-w-xs">
+              <div className="flex gap-3 items-center">
+                <div className="w-12 h-12 bg-[#F5C518]/20 rounded-full flex items-center justify-center shrink-0">
+                  <span className="text-xl font-bold text-[#003366]">18</span>
+                </div>
+                <p className="text-slate-700 font-medium">
+                  "My daughter started college with a 720 credit score - thank you LumeCredit!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
-            </h2>
-            
             <div className="bg-[#F5C518]/10 px-4 py-3 rounded-lg border-l-4 border-[#F5C518] mb-6 relative">
               <div className="absolute -top-4 -right-4">
                 <div className="bg-[#F5C518] text-[#003366] text-xs font-bold py-1 px-3 rounded-lg">
@@ -107,24 +128,26 @@ export default function FamiliesSection() {
             </div>
           </div>
           
-          <div className="relative order-1 md:order-2">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#F5C51810] to-[#00336610] w-[450px] h-[450px] rounded-full -z-10"></div>
-            
-            <div className="relative">              
-              <img 
-                src={familyImage} 
-                alt="Family with LumeCredit" 
-                className="w-full max-w-md mx-auto drop-shadow-xl"
-              />
+          <div className="order-1 md:order-2">
+            <div className="bg-gradient-to-b from-[#F5C51810] to-[#00336610] py-8 px-4 rounded-xl">
+              <p className="text-center text-slate-700 font-medium mb-6">
+                Join thousands of satisfied parents who have secured their children's financial future
+              </p>
               
-              <div className="absolute -bottom-10 md:bottom-0 md:right-0 bg-white py-3 px-5 rounded-2xl shadow-xl border border-[#F5C518]/20 max-w-xs">
-                <div className="flex gap-3 items-center">
-                  <div className="w-12 h-12 bg-[#F5C518]/20 rounded-full flex items-center justify-center shrink-0">
-                    <span className="text-xl font-bold text-[#003366]">18</span>
-                  </div>
-                  <p className="text-slate-700 font-medium">
-                    "My daughter started college with a 720 credit score - thank you LumeCredit!"
-                  </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <div className="bg-white p-4 rounded-lg shadow-md max-w-[180px]">
+                  <div className="font-bold text-3xl text-[#003366] mb-2">94%</div>
+                  <div className="text-slate-600 text-sm">of parents report improved financial conversations</div>
+                </div>
+                
+                <div className="bg-white p-4 rounded-lg shadow-md max-w-[180px]">
+                  <div className="font-bold text-3xl text-[#003366] mb-2">720+</div>
+                  <div className="text-slate-600 text-sm">average credit score for LumeStart graduates</div>
+                </div>
+                
+                <div className="bg-white p-4 rounded-lg shadow-md max-w-[180px]">
+                  <div className="font-bold text-3xl text-[#003366] mb-2">100%</div>
+                  <div className="text-slate-600 text-sm">legal and bureau-compliant methodology</div>
                 </div>
               </div>
             </div>
