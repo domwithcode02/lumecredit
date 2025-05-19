@@ -20,9 +20,6 @@ export default function FamiliesSection() {
             
             <div className="absolute -bottom-10 right-0 bg-white py-3 px-5 rounded-2xl shadow-xl border border-[#F5C518]/20 max-w-xs">
               <div className="flex gap-3 items-center">
-                <div className="w-12 h-12 bg-[#F5C518]/20 rounded-full flex items-center justify-center shrink-0">
-                  <span className="text-xl font-bold text-[#003366]">18</span>
-                </div>
                 <p className="text-slate-700 font-medium">
                   "My daughter started college with a 720 credit score - thank you LumeCredit!"
                 </p>
