@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import cardImage from "@assets/lumecredit_card_in_hand_transparent.png";
+import cardImage from "@assets/Credit_Bro_1-removebg-preview.png";
 
 export default function VisaCardSection() {
   const scrollToForm = () => {
