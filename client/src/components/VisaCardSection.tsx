@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import debitCardImage from "@assets/ChatGPT Image May 27, 2025, 10_05_44 AM_1749679518402.png";
+import debitCardImage from "@assets/ChatGPT Image Jun 11, 2025, 03_10_29 PM_1749679905794.png";
 
 export default function VisaCardSection() {
   const scrollToForm = () => {
