@@ -89,7 +89,7 @@ export default function VisaCardSection() {
           
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75 pt-[16px] pb-[16px] pl-[16px] pr-[16px]"></div>
               <img 
                 src={debitCardImage} 
                 alt="LumeCredit Visa Debit Card" 
