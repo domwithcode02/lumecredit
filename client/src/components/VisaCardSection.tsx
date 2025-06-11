@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import cardImage from "@assets/credit_bro.png";
 
 export default function VisaCardSection() {
   const scrollToForm = () => {
@@ -90,11 +89,29 @@ export default function VisaCardSection() {
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75"></div>
-              <img 
-                src={cardImage} 
-                alt="LumeCredit Visa Card" 
-                className="relative w-full max-w-md object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out"
-              />
+              <div className="relative w-full max-w-md transform hover:scale-105 transition-transform duration-500 ease-in-out">
+                <svg 
+                  viewBox="0 0 320 200" 
+                  className="w-full drop-shadow-xl"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#003366" />
+                      <stop offset="100%" stopColor="#F5C518" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="320" height="200" rx="16" fill="url(#cardGradient)" />
+                  <text x="20" y="40" fill="white" fontSize="18" fontWeight="bold">LumeCredit</text>
+                  <text x="20" y="60" fill="white" fontSize="12">Secured Visa Card</text>
+                  <rect x="20" y="80" width="50" height="30" rx="4" fill="white" opacity="0.9" />
+                  <text x="30" y="100" fill="#003366" fontSize="8" fontWeight="bold">CHIP</text>
+                  <text x="20" y="140" fill="white" fontSize="16" fontFamily="monospace">•••• •••• •••• 1234</text>
+                  <text x="20" y="170" fill="white" fontSize="10">VALID THRU</text>
+                  <text x="20" y="185" fill="white" fontSize="12">12/28</text>
+                  <text x="250" y="185" fill="white" fontSize="14" fontWeight="bold">VISA</text>
+                </svg>
+              </div>
               <div className="absolute bottom-0 right-0 bg-white/80 backdrop-blur-sm px-3 py-1 rounded text-xs text-slate-500 shadow-sm border border-slate-200">
                 Card design subject to change
               </div>
