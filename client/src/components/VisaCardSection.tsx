@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import cardImage from "@assets/lumecredit_card_in_hand_transparent.png";
 
+import ChatGPT_Image_May_27__2025__10_05_44_AM from "@assets/ChatGPT Image May 27, 2025, 10_05_44 AM.png";
+
 export default function VisaCardSection() {
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
@@ -91,7 +93,7 @@ export default function VisaCardSection() {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75"></div>
               <img 
-                src={cardImage} 
+                src={ChatGPT_Image_May_27__2025__10_05_44_AM} 
                 alt="LumeCredit Visa Card" 
                 className="relative w-full max-w-md object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out"
               />
