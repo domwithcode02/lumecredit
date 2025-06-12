@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import debitCardImage from "@assets/ChatGPT Image Jun 11, 2025, 03_10_29 PM_1749679905794.png";
+import cardImage from "@assets/lumecredit_card_in_hand_transparent.png";
 
 export default function VisaCardSection() {
   const scrollToForm = () => {
@@ -89,10 +89,10 @@ export default function VisaCardSection() {
           
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75 pt-[16px] pb-[16px] pl-[16px] pr-[16px]"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75"></div>
               <img 
-                src={debitCardImage} 
-                alt="LumeCredit Visa Debit Card" 
+                src={cardImage} 
+                alt="LumeCredit Visa Card" 
                 className="relative w-full max-w-md object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute bottom-0 right-0 bg-white/80 backdrop-blur-sm px-3 py-1 rounded text-xs text-slate-500 shadow-sm border border-slate-200">
