@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { CreditCard, Wallet, Building2 } from "lucide-react";
 import debitCardImage from "../assets/lume-debit-card.png";
 
+import ChatGPT_Image_Jun_20__2025__04_36_54_PM from "@assets/ChatGPT Image Jun 20, 2025, 04_36_54 PM.png";
+
 export default function DebitCardSection() {
   const scrollToForm = () => {
     const formSection = document.getElementById("reserve-form");
@@ -88,7 +90,7 @@ export default function DebitCardSection() {
               <div className="rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out bg-gradient-to-br from-[#003366] to-[#002347] p-0.5">
                 <div className="bg-gradient-to-br from-[#003366] to-[#001a35] rounded-2xl p-4">
                   <img 
-                    src={debitCardImage} 
+                    src={ChatGPT_Image_Jun_20__2025__04_36_54_PM} 
                     alt="LumeCredit Visa Debit Card" 
                     className="w-full h-auto drop-shadow-xl"
                   />
