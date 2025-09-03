@@ -92,7 +92,7 @@ export default function TradelinesSection() {
               <div className="bg-[#003366]/5 rounded-lg p-4 flex items-start gap-3">
                 <CheckCircle2 className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
                 <p className="text-slate-700 text-sm">
-                  <span className="font-semibold">LumeCredit breaks this cycle</span> by providing you with tradelines that report to credit bureaus without requiring a credit check or existing credit history.
+                  <span className="font-semibold">Credit Bro breaks this cycle</span> by providing you with tradelines that report to credit bureaus without requiring a credit check or existing credit history.
                 </p>
               </div>
             </div>
