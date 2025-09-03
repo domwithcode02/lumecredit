@@ -1,8 +1,8 @@
-# LumeCredit Landing Page Application
+# Credit Bro Landing Page Application
 
 ## Overview
 
-LumeCredit is a React-based web application that serves as a landing page for a fintech credit-building platform. The application is designed to capture early user interest through a limited-time offer (first 250 users) for lifetime access to credit-building services at a discounted price of $200. The platform targets underserved communities, students, immigrants, and individuals seeking to build or repair their credit history through various tradeline products including revolving credit lines, installment loans, and rent reporting services.
+Credit Bro is a React-based web application that serves as a landing page for a fintech credit-building platform. The application is designed to capture early user interest through a limited-time offer (first 250 users) for lifetime access to credit-building services at a discounted price of $200. The platform targets underserved communities, students, immigrants, and individuals seeking to build or repair their credit history through various tradeline products including revolving credit lines, installment loans, and rent reporting services.
 
 ## User Preferences
 

@@ -23,7 +23,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
             <span className="text-sm font-bold text-[#003366]">ONLY {spotsRemaining} SPOTS REMAINING!</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-            <span className="text-[#F5C518]">TotalBoost+</span> 5-Year Credit Tradeline Bundle
+            <span className="text-[#F5C518]">Credit Bro Pro</span> 5-Year Credit Tradeline Bundle
           </h2>
           <div className="max-w-2xl mx-auto p-4 bg-gradient-to-r from-[#003366]/10 to-[#F5C518]/10 rounded-lg mb-6">
             <p className="text-slate-700 text-lg">
@@ -65,7 +65,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
         </div>
 
         <div className="grid md:grid-cols-12 gap-8 mb-12">
-          {/* FlexCredit Revolving Tradeline Card */}
+          {/* Credit Bro Flex Revolving Tradeline Card */}
           <div id="flexcredit" className="md:col-span-4 bg-gradient-to-b from-[#41c99e]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#41c99e]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-5 sm:p-6 md:p-8">
@@ -74,7 +74,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
-                  FlexCredit™ Revolving
+                  Credit Bro Flex™ Revolving
                 </h3>
                 
                 <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 text-center mx-auto">
@@ -113,7 +113,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
             </div>
           </div>
           
-          {/* SteadyBuild Installment Tradeline Card */}
+          {/* Credit Bro Build Installment Tradeline Card */}
           <div id="steadybuild" className="md:col-span-4 bg-gradient-to-b from-[#4aade3]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#4aade3]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-5 sm:p-6 md:p-8">
@@ -126,7 +126,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
-                  SteadyBuild™ Installment
+                  Credit Bro Build™ Installment
                 </h3>
                 
                 <div className="mb-4 bg-[#F5C518]/10 rounded-lg p-3 text-center mx-auto">
@@ -165,7 +165,7 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
             </div>
           </div>
           
-          {/* HomeTrack Rent Reporting Card */}
+          {/* Credit Bro Track Rent Reporting Card */}
           <div id="hometrack" className="md:col-span-4 bg-gradient-to-b from-[#ffc829]/10 to-white rounded-2xl overflow-hidden shadow-md border border-[#ffc829]/30 hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="p-5 sm:p-6 md:p-8">
@@ -177,11 +177,11 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
-                  HomeTrack™ Rent Reporting
+                  Credit Bro Track™ Rent Reporting
                 </h3>
                 
                 <div className="mb-4 bg-green-100 rounded-lg p-3 text-center mx-auto">
-                  <span className="font-medium text-green-700">FREE with TotalBoost+ Bundle!</span>
+                  <span className="font-medium text-green-700">FREE with Credit Bro Pro Bundle!</span>
                 </div>
                 
                 <ul className="space-y-4 mb-6">
@@ -255,14 +255,14 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   <div className="mb-6 space-y-2 flex flex-col items-center">
                     <div className="flex flex-wrap justify-center gap-2">
                       <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
-                        <span className="text-xs font-bold text-white">FlexCredit™: $25/mo</span>
+                        <span className="text-xs font-bold text-white">Credit Bro Flex™: $25/mo</span>
                       </div>
                       <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
-                        <span className="text-xs font-bold text-white">SteadyBuild™: $25/mo</span>
+                        <span className="text-xs font-bold text-white">Credit Bro Build™: $25/mo</span>
                       </div>
                     </div>
                     <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
-                      <span className="text-xs font-bold text-green-300">HomeTrack™: Included Free</span>
+                      <span className="text-xs font-bold text-green-300">Credit Bro Track™: Included Free</span>
                     </div>
                   </div>
                   
@@ -316,21 +316,21 @@ export default function UrgencySection({ spotsRemaining }: UrgencySectionProps) 
                   <div className="mb-6 space-y-2 flex flex-col items-center">
                     <div className="flex flex-wrap justify-center gap-2">
                       <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
-                        <span className="text-xs font-bold text-white">FlexCredit™ Included</span>
+                        <span className="text-xs font-bold text-white">Credit Bro Flex™ Included</span>
                       </div>
                       <div className="inline-flex items-center bg-white/10 px-3 py-1.5 rounded-full">
-                        <span className="text-xs font-bold text-white">SteadyBuild™ Included</span>
+                        <span className="text-xs font-bold text-white">Credit Bro Build™ Included</span>
                       </div>
                     </div>
                     <div className="inline-flex items-center bg-green-400/20 px-3 py-1.5 rounded-full">
-                      <span className="text-xs font-bold text-green-300">HomeTrack™ Included Free</span>
+                      <span className="text-xs font-bold text-green-300">Credit Bro Track™ Included Free</span>
                     </div>
                   </div>
                   
                   <ul className="mb-6 text-white/80 text-sm space-y-3 text-left">
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />
-                      <span className="text-left"><span className="font-bold text-white">Perfect Credit Mix</span> including FlexCredit, SteadyBuild, HomeTrack...</span>
+                      <span className="text-left"><span className="font-bold text-white">Perfect Credit Mix</span> including Credit Bro Flex, Credit Bro Build, Credit Bro Track...</span>
                     </li>
                     <li className="flex items-start">
                       <Check size={16} className="text-[#F5C518] mr-2 mt-1 shrink-0" />

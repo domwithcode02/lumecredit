@@ -12,7 +12,7 @@ export default function FamiliesSection() {
               COMING SOON
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center">
-              <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
+              <span className="text-[#003366]">Credit Bro Start™</span>: Credit Before 18
             </h2>
           </div>
           <div className="relative mb-6 max-w-xl mx-auto">
@@ -27,14 +27,14 @@ export default function FamiliesSection() {
           <div className="relative max-w-md mx-auto mb-8">
             <img 
               src={familyImage} 
-              alt="Family with LumeCredit" 
+              alt="Family with Credit Bro" 
               className="w-full drop-shadow-xl rounded-lg"
             />
             
             <div className="absolute -bottom-10 right-0 bg-white py-3 px-5 rounded-2xl shadow-xl border border-[#F5C518]/20 max-w-xs">
               <div className="flex gap-3 items-center">
                 <p className="text-slate-700 font-medium">
-                  "My daughter started college with a 720 credit score - thank you LumeCredit!"
+                  "My daughter started college with a 720 credit score - thank you Credit Bro!"
                 </p>
               </div>
             </div>
@@ -51,7 +51,7 @@ export default function FamiliesSection() {
             
             <p className="text-slate-600 mb-6 text-lg max-w-3xl mx-auto">
               Most young adults start with zero credit history, forcing them to struggle for years to build their score. 
-              With <span className="font-semibold text-[#003366]">LumeStart™</span>, we change the game through 
+              With <span className="font-semibold text-[#003366]">Credit Bro Start™</span>, we change the game through 
               authorized backdated credit reporting that builds history <span className="italic">before</span> they turn 18.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function FamiliesSection() {
             
           <div className="bg-[#003366]/5 p-6 rounded-xl border border-[#003366]/10 mb-8 max-w-3xl mx-auto">
             <h3 className="text-xl font-bold text-[#003366] mb-3 text-center">
-              LumeStart™ Advantage 
+              Credit Bro Start™ Advantage 
             </h3>
             <p className="text-md text-slate-700 mb-4 text-center">
               Give your child a 700+ credit score the moment they turn 18 - no other program offers this level of advantage.
