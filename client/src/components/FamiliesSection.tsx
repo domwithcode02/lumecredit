@@ -61,7 +61,7 @@ export default function FamiliesSection() {
                   <Check size={20} className="text-[#003366]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Backdated Credit Reporting</h3>
+                  <h3 className="font-bold text-slate-900 text-lg">5 Years of Future Credit Reporting</h3>
                   <p className="text-slate-600">
                     Special reporting to all 3 major bureaus creates up to 3 years of positive payment history that 
                     activates the moment they turn 18.
