@@ -119,7 +119,7 @@ export default function FamiliesSection() {
               </div>
               <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                 <Check size={14} className="text-[#003366] mr-1.5" />
-                <span>Up to 5 years backdated</span>
+                <span>Up to 5 years future credit</span>
               </div>
               <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                 <Check size={14} className="text-[#003366] mr-1.5" />
