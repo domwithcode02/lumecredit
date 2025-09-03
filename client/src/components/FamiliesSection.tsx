@@ -12,7 +12,7 @@ export default function FamiliesSection() {
               COMING SOON
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center">
-              <span className="text-[#003366]">LumeStart™</span>: Credit Before 18
+              <span className="text-[#003366]">Lil' CreditBro™</span>: Credit Before 18
             </h2>
           </div>
           <div className="relative mb-6 max-w-xl mx-auto">
