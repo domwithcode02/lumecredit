@@ -91,7 +91,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
               <img 
                 src={lumeLogo} 
                 alt="CreditBro Logo" 
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain ml-[10px] mr-[10px]"
                 style={{ maxHeight: '100%' }}
               />
             </a>
