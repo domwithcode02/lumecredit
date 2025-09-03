@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
+import creditBroLogo from "attached_assets/credibro.jpeg";
 import { ChevronDown, Menu, LogOut, User } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
@@ -89,8 +89,8 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           <div className="flex items-center">
             <a href="/" className="h-20 w-auto">
               <img 
-                src={lumeLogo} 
-                alt="LumeCredit Logo" 
+                src={creditBroLogo} 
+                alt="CreditBro Logo" 
                 className="h-full w-auto object-contain"
                 style={{ maxHeight: '100%' }}
               />
