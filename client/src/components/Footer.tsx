@@ -80,7 +80,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center md:text-left">
               <p className="text-slate-500 text-sm">
-                &copy; {new Date().getFullYear()} CreditBro. All rights reserved.
+                &copy; {new Date().getFullYear()} Credit Bro. All rights reserved.
               </p>
             </div>
             
