@@ -33,9 +33,7 @@ export default function FamiliesSection() {
             
             <div className="absolute -bottom-10 right-0 bg-white py-3 px-5 rounded-2xl shadow-xl border border-[#F5C518]/20 max-w-xs">
               <div className="flex gap-3 items-center">
-                <p className="text-slate-700 font-medium">
-                  "My daughter started college with a 720 credit score - thank you LumeCredit!"
-                </p>
+                <p className="text-slate-700 font-medium">"My daughter started college with a 720 credit score - thank you Credit Bro!"</p>
               </div>
             </div>
           </div>
