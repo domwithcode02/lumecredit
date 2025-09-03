@@ -17,6 +17,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import credibro from "@assets/credibro.jpeg";
+
 interface HeaderProps {
   spotsRemaining: number;
   totalSpots: number;
@@ -89,7 +91,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           <div className="flex items-center">
             <a href="/" className="h-28 w-auto">
               <img 
-                src={lumeLogo} 
+                src={credibro} 
                 alt="CreditBro Logo" 
                 className="h-full w-auto object-contain ml-[10px] mr-[10px]"
                 style={{ maxHeight: '100%' }}
