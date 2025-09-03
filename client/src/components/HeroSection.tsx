@@ -23,7 +23,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">Get Credit Bros Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!</p>
+            <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">Get the Credit Bro Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!</p>
             
             {/* Limited Time Offer Benefits */}
             <div className="mb-6">
