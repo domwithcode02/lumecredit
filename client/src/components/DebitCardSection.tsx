@@ -75,9 +75,7 @@ export default function DebitCardSection() {
               <p>
                 Card issued by Sutton Bank, Member FDIC, pursuant to license from Visa® U.S.A. Inc.
               </p>
-              <p>
-                Funds in your LumeCredit account are FDIC-insured through our partner bank up to $250,000 per depositor.
-              </p>
+              <p>Funds in your CreditBro account are FDIC-insured through our partner bank up to $250,000 per depositor.</p>
               <p className="text-[10px] italic">
                 The LumeCredit Visa® Debit Card is available with a LumeCredit Checking Account. Terms and conditions apply.
               </p>
