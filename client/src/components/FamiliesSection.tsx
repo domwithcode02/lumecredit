@@ -62,10 +62,7 @@ export default function FamiliesSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 text-lg">5 Years of Future Credit Reporting</h3>
-                  <p className="text-slate-600">
-                    Special reporting to all 3 major bureaus creates up to 3 years of positive payment history that 
-                    activates the moment they turn 18.
-                  </p>
+                  <p className="text-slate-600">Special reporting to all 3 major bureaus creates up to 5 years of positive payment history that activates the moment they turn 18.</p>
                 </div>
               </div>
             </div>
