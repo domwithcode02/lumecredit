@@ -85,7 +85,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
           <span className="text-sm font-semibold">LAUNCHING NOVEMBER 01, 2025</span>
         </div>
       </div>
-      <header className="fixed top-7 left-0 right-0 z-40 bg-white border-b border-slate-100 py-4 shadow-sm">
+      <header className="fixed top-7 left-0 right-0 z-40 bg-white border-b border-slate-100 py-4 shadow-sm pt-[0px] pb-[0px]">
         <div className="container-custom flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
