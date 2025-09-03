@@ -22,7 +22,7 @@ export default function VisaCardSection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-              The <span className="text-[#003366]">CreditBro</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
+              The <span className="text-[#003366]">Credit Bro</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 max-w-xl">
@@ -76,7 +76,7 @@ export default function VisaCardSection() {
               <p>
                 Card issued by Sutton Bank, Member FDIC, pursuant to license from Visa® U.S.A. Inc.
               </p>
-              <p>Funds in your CreditBro account are FDIC-insured through our partner bank up to $250,000 per depositor.</p>
+              <p>Funds in your Credit Bro account are FDIC-insured through our partner bank up to $250,000 per depositor.</p>
               <p>
                 <span className="font-medium text-slate-600">Fee Disclosure:</span> <span className="font-bold text-[#003366]">No annual fees...ever</span>. No monthly fees. No overdraft charges. No minimum balance requirements. See full terms for details.
               </p>
