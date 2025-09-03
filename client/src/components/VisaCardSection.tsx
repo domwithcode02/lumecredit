@@ -82,10 +82,7 @@ export default function VisaCardSection() {
               <p>
                 <span className="font-medium text-slate-600">Fee Disclosure:</span> <span className="font-bold text-[#003366]">No annual fees...ever</span>. No monthly fees. No overdraft charges. No minimum balance requirements. See full terms for details.
               </p>
-              <p className="text-[10px] italic">
-                The LumeCredit Visa® Card is subject to application and approval. Terms and conditions apply. 
-                See cardholder agreement for complete details including pricing and fees.
-              </p>
+              <p className="text-[10px] italic">The CreditBro Visa® Card is subject to application and approval. Terms and conditions apply. See cardholder agreement for complete details including pricing and fees.</p>
             </div>
           </div>
           
