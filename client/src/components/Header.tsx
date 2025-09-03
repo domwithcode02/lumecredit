@@ -93,7 +93,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
               <img 
                 src={credibro} 
                 alt="CreditBro Logo" 
-                className="h-20 w-auto object-contain ml-[0px] mr-[0px]"
+                className="h-20 w-auto object-contain ml-[0px] mr-[0px] mt-[12px] mb-[12px]"
                 style={{ maxHeight: '100%' }}
               />
             </a>
