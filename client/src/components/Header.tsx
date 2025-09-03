@@ -80,7 +80,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
       <div className="bg-[#003366] text-white py-1.5 text-center fixed top-0 left-0 right-0 z-50">
         <div className="container-custom flex items-center justify-center">
           <span className="h-2 w-2 rounded-full bg-[#F5C518] mr-2"></span>
-          <span className="text-sm font-semibold">LAUNCHING SEPTEMBER 01, 2025</span>
+          <span className="text-sm font-semibold">LAUNCHING NOVEMBER 01, 2025</span>
         </div>
       </div>
       <header className="fixed top-7 left-0 right-0 z-40 bg-white border-b border-slate-100 py-4 shadow-sm">
