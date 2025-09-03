@@ -22,7 +22,7 @@ export default function VisaCardSection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-              The <span className="text-[#003366]">LumeCredit</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
+              The <span className="text-[#003366]">CreditBro</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 max-w-xl">
