@@ -27,7 +27,7 @@ export default function FAQPage() {
                 Frequently Asked Questions
               </h1>
               <p className="text-lg text-slate-600">
-                Find answers to the most common questions about Credit Bro products and services.
+                Find answers to the most common questions about LumeCredit products and services.
               </p>
             </div>
 
@@ -46,12 +46,12 @@ export default function FAQPage() {
 
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-lg font-medium text-slate-900">
-                  How much can my credit score improve with Credit Bro?
+                  How much can my credit score improve with LumeCredit?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-600">
                   While results vary by individual, our customers typically see a 40-70 point improvement in their 
                   credit scores within the first 60-90 days. Factors that affect improvement include your current credit 
-                  history, existing tradelines, and overall credit profile. Our Credit Bro Pro bundle is designed to maximize 
+                  history, existing tradelines, and overall credit profile. Our TotalBoost+ bundle is designed to maximize 
                   your potential improvement by addressing multiple scoring factors simultaneously.
                 </AccordionContent>
               </AccordionItem>
@@ -61,7 +61,7 @@ export default function FAQPage() {
                   Do you report to all three major credit bureaus?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-600">
-                  Yes, all Credit Bro tradelines report to all three major credit bureaus: Experian, Equifax, and 
+                  Yes, all LumeCredit tradelines report to all three major credit bureaus: Experian, Equifax, and 
                   TransUnion. This ensures that your credit improvement efforts are recognized across all platforms that 
                   lenders might check.
                 </AccordionContent>
@@ -69,11 +69,11 @@ export default function FAQPage() {
 
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-lg font-medium text-slate-900">
-                  What's the difference between Credit Bro Flex and Credit Bro Build?
+                  What's the difference between FlexCredit and SteadyBuild?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-600">
-                  Credit Bro Flex is our revolving tradeline, similar to a credit card, which improves your credit utilization 
-                  ratio and revolving account history. Credit Bro Build is our installment tradeline, similar to a fixed loan, 
+                  FlexCredit is our revolving tradeline, similar to a credit card, which improves your credit utilization 
+                  ratio and revolving account history. SteadyBuild is our installment tradeline, similar to a fixed loan, 
                   which diversifies your credit mix and demonstrates your ability to manage different types of credit. 
                   Together, they provide a balanced approach to credit building.
                 </AccordionContent>

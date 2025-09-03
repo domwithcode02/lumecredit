@@ -23,7 +23,7 @@ export default function DebitCardSection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-              The <span className="text-[#003366]">Credit Bro</span> <span className="text-[#F5C518]">Visa® Debit</span> Card
+              The <span className="text-[#003366]">LumeCredit</span> <span className="text-[#F5C518]">Visa® Debit</span> Card
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 max-w-xl">
@@ -76,10 +76,10 @@ export default function DebitCardSection() {
                 Card issued by Sutton Bank, Member FDIC, pursuant to license from Visa® U.S.A. Inc.
               </p>
               <p>
-                Funds in your Credit Bro account are FDIC-insured through our partner bank up to $250,000 per depositor.
+                Funds in your LumeCredit account are FDIC-insured through our partner bank up to $250,000 per depositor.
               </p>
               <p className="text-[10px] italic">
-                The Credit Bro Visa® Debit Card is available with a Credit Bro Checking Account. Terms and conditions apply.
+                The LumeCredit Visa® Debit Card is available with a LumeCredit Checking Account. Terms and conditions apply.
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function DebitCardSection() {
                 <div className="bg-gradient-to-br from-[#003366] to-[#001a35] rounded-2xl p-4">
                   <img 
                     src={ChatGPT_Image_Jun_20__2025__04_36_54_PM} 
-                    alt="Credit Bro Visa Debit Card" 
+                    alt="LumeCredit Visa Debit Card" 
                     className="w-full h-auto drop-shadow-xl"
                   />
                   

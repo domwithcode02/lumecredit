@@ -22,7 +22,7 @@ export default function VisaCardSection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-              The <span className="text-[#003366]">Credit Bro</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
+              The <span className="text-[#003366]">LumeCredit</span> <span className="text-[#F5C518]">Secured Visa®</span> Card
             </h2>
             
             <p className="text-lg text-slate-600 mb-6 max-w-xl">
@@ -77,13 +77,13 @@ export default function VisaCardSection() {
                 Card issued by Sutton Bank, Member FDIC, pursuant to license from Visa® U.S.A. Inc.
               </p>
               <p>
-                Funds in your Credit Bro account are FDIC-insured through our partner bank up to $250,000 per depositor.
+                Funds in your LumeCredit account are FDIC-insured through our partner bank up to $250,000 per depositor.
               </p>
               <p>
                 <span className="font-medium text-slate-600">Fee Disclosure:</span> <span className="font-bold text-[#003366]">No annual fees...ever</span>. No monthly fees. No overdraft charges. No minimum balance requirements. See full terms for details.
               </p>
               <p className="text-[10px] italic">
-                The Credit Bro Visa® Card is subject to application and approval. Terms and conditions apply. 
+                The LumeCredit Visa® Card is subject to application and approval. Terms and conditions apply. 
                 See cardholder agreement for complete details including pricing and fees.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function VisaCardSection() {
               <div className="absolute -inset-4 from-[#00336610] to-[#F5C51810] rounded-lg blur-lg opacity-75 bg-[#d7d3c8] mt-[0px] mb-[0px] pl-[16px] pr-[16px] pt-[16px] pb-[16px]"></div>
               <img 
                 src={ChatGPT_Image_May_27__2025__10_05_44_AM} 
-                alt="Credit Bro Visa Card" 
+                alt="LumeCredit Visa Card" 
                 className="relative w-full max-w-md object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute bottom-0 right-0 bg-white/80 backdrop-blur-sm px-3 py-1 rounded text-xs text-slate-500 shadow-sm border border-slate-200">

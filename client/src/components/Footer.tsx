@@ -10,11 +10,11 @@ export default function Footer() {
             <div className="mb-5 h-28 w-auto">
               <img 
                 src={lumeLogo} 
-                alt="Credit Bro Logo" 
+                alt="LumeCredit Logo" 
                 className="h-full w-auto object-contain"
               />
             </div>
-            <p className="text-slate-400 mb-6">Your credit bro is here. Building stronger credit futures for everyone, bro.</p>
+            <p className="text-slate-400 mb-6">Illuminate your credit journey. Building brighter credit futures for everyone.</p>
             
             <div className="flex space-x-4">
               <a href="#" className="text-slate-400 hover:text-[#F5C518] transition">
@@ -33,16 +33,16 @@ export default function Footer() {
             <h3 className="text-white font-medium text-lg mb-5">Products</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#totalboost" className="text-slate-400 hover:text-white transition">Credit Bro Pro™ Bundle</a>
+                <a href="#totalboost" className="text-slate-400 hover:text-white transition">TotalBoost+™ Bundle</a>
               </li>
               <li>
-                <a href="#flexcredit" className="text-slate-400 hover:text-white transition">Credit Bro Flex™ Revolving</a>
+                <a href="#flexcredit" className="text-slate-400 hover:text-white transition">FlexCredit™ Revolving</a>
               </li>
               <li>
-                <a href="#steadybuild" className="text-slate-400 hover:text-white transition">Credit Bro Build™ Installment</a>
+                <a href="#steadybuild" className="text-slate-400 hover:text-white transition">SteadyBuild™ Installment</a>
               </li>
               <li>
-                <a href="#hometrack" className="text-slate-400 hover:text-white transition">Credit Bro Track™ Rent Reporting</a>
+                <a href="#hometrack" className="text-slate-400 hover:text-white transition">HomeTrack™ Rent Reporting</a>
               </li>
             </ul>
           </div>
@@ -80,7 +80,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center md:text-left">
               <p className="text-slate-500 text-sm">
-                &copy; {new Date().getFullYear()} Credit Bro. All rights reserved.
+                &copy; {new Date().getFullYear()} LumeCredit. All rights reserved.
               </p>
             </div>
             

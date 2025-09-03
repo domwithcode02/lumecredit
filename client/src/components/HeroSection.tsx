@@ -20,11 +20,11 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
             
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-              <span className="text-[#F5C518]">Credit Bro Pro</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
+              <span className="text-[#F5C518]">TotalBoost+</span>, the Perfect <span className="text-[#003366]">Credit</span> Mix for only $50/month
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-xl">
-              Get Credit Bro's Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!
+              Get Lume Credit's Premium Bundle with both essential tradeline types to build your credit history - a revolving and an installment line for $25 each, plus free rent reporting when bundled!
             </p>
             
             {/* Limited Time Offer Benefits */}
@@ -35,19 +35,19 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
                   <div className="w-8 h-8 bg-[#41c99e]/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <CreditCard size={16} className="text-[#41c99e]" />
                   </div>
-                  <span><b>Credit Bro Flex™</b> Revolving</span>
+                  <span><b>FlexCredit™</b> Revolving</span>
                 </div>
                 <div className="flex items-center text-sm text-slate-700 bg-slate-50 p-3 rounded-lg">
                   <div className="w-8 h-8 bg-[#4aade3]/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <Shield size={16} className="text-[#4aade3]" />
                   </div>
-                  <span><b>Credit Bro Build™</b> Installment</span>
+                  <span><b>SteadyBuild™</b> Installment</span>
                 </div>
                 <div className="flex items-center text-sm text-slate-700 bg-slate-50 p-3 rounded-lg">
                   <div className="w-8 h-8 bg-[#ffc829]/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <TrendingUp size={16} className="text-[#ffc829]" />
                   </div>
-                  <span><b>Credit Bro Track™</b> Rent Reporting</span>
+                  <span><b>HomeTrack™</b> Rent Reporting</span>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               </div>
               <h3 className="text-2xl font-bold text-[#003366] mb-4">Special Offer - 5 Year Credit Bundle</h3>
               <p className="text-md text-slate-700 mb-5">
-                <span className="font-semibold">For the first 250 users only:</span> Get the full Credit Bro Pro bundle for 5 full years with just one payment of $200 instead of $3,000+ over the same period!
+                <span className="font-semibold">For the first 250 users only:</span> Get the full TotalBoost+ bundle for 5 full years with just one payment of $200 instead of $3,000+ over the same period!
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
                 <div className="flex items-center bg-white px-4 py-2 rounded-lg text-sm text-slate-700 shadow-sm">
@@ -114,7 +114,7 @@ export default function HeroSection({ onButtonClick }: HeroSectionProps) {
               <div className="mascot-container relative z-0">
                 <img 
                   src={mascotImage} 
-                  alt="Credit Bro Mascot" 
+                  alt="LumeCredit Mascot" 
                   className="w-full max-w-md mx-auto object-contain drop-shadow-2xl"
                 />
                 

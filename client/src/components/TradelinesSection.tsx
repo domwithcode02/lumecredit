@@ -83,7 +83,7 @@ export default function TradelinesSection() {
                 </div>
                 <div className="w-32 h-32 rounded-full bg-green-50 border-2 border-green-100 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-green-500 font-bold">Credit Bro</div>
+                    <div className="text-green-500 font-bold">LumeCredit</div>
                     <div className="w-16 h-0.5 bg-green-200 my-2 mx-auto"></div>
                     <div className="text-green-500 font-bold">Solution</div>
                   </div>
@@ -92,7 +92,7 @@ export default function TradelinesSection() {
               <div className="bg-[#003366]/5 rounded-lg p-4 flex items-start gap-3">
                 <CheckCircle2 className="text-green-500 flex-shrink-0 mt-0.5" size={18} />
                 <p className="text-slate-700 text-sm">
-                  <span className="font-semibold">Credit Bro breaks this cycle</span> by providing you with tradelines that report to credit bureaus without requiring a credit check or existing credit history.
+                  <span className="font-semibold">LumeCredit breaks this cycle</span> by providing you with tradelines that report to credit bureaus without requiring a credit check or existing credit history.
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function TradelinesSection() {
                       <ArrowUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Our Solution:</span> Credit Bro Flex™ Revolving Tradeline
+                      <span className="font-semibold">Our Solution:</span> FlexCredit™ Revolving Tradeline
                     </p>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function TradelinesSection() {
                       <ArrowUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Our Solution:</span> Credit Bro Build™ Installment Tradeline
+                      <span className="font-semibold">Our Solution:</span> SteadyBuild™ Installment Tradeline
                     </p>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function TradelinesSection() {
                       <ArrowUp size={14} className="text-[#003366]" />
                     </div>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-semibold">Our Solution:</span> Credit Bro Track™ Rent Reporting
+                      <span className="font-semibold">Our Solution:</span> HomeTrack™ Rent Reporting
                     </p>
                   </div>
                 </div>
@@ -270,21 +270,21 @@ export default function TradelinesSection() {
           </div>
         </div>
         
-        {/* Credit Bro Products Section */}
+        {/* LumeCredit Products Section */}
         <div id="products" className="mb-12">
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold text-slate-900">
-              <span className="text-[#F5C518]">Credit Bro</span> Products
+              <span className="text-[#F5C518]">LumeCredit</span> Products
             </h3>
             <p className="text-slate-600 mt-2 max-w-2xl mx-auto">
               Choose the right credit building products to match your needs and budget
             </p>
           </div>
           
-          {/* Credit Bro Flex Product Section - with ID for anchor link */}
+          {/* FlexCredit Product Section - with ID for anchor link */}
           <div id="flexcredit-product" className="bg-gradient-to-b from-[#41c99e]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#41c99e]/30 mb-8">
             <div className="bg-[#41c99e] text-white py-4 px-6">
-              <h4 className="text-xl font-bold">Credit Bro Flex™ Revolving Tradeline</h4>
+              <h4 className="text-xl font-bold">FlexCredit™ Revolving Tradeline</h4>
             </div>
             <div className="p-6">
               <p className="text-slate-600 mb-6">
@@ -361,10 +361,10 @@ export default function TradelinesSection() {
             </div>
           </div>
           
-          {/* Credit Bro Build Product Section - with ID for anchor link */}
+          {/* SteadyBuild Product Section - with ID for anchor link */}
           <div id="steadybuild-product" className="bg-gradient-to-b from-[#4aade3]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#4aade3]/30 mb-8">
             <div className="bg-[#4aade3] text-white py-4 px-6">
-              <h4 className="text-xl font-bold">Credit Bro Build™ Installment Tradeline</h4>
+              <h4 className="text-xl font-bold">SteadyBuild™ Installment Tradeline</h4>
             </div>
             <div className="p-6">
               <p className="text-slate-600 mb-6">
@@ -441,10 +441,10 @@ export default function TradelinesSection() {
             </div>
           </div>
           
-          {/* Credit Bro Track Product Section - with ID for anchor link */}
+          {/* HomeTrack Product Section - with ID for anchor link */}
           <div id="hometrack-product" className="bg-gradient-to-b from-[#ffc829]/5 to-white rounded-xl shadow-lg overflow-hidden border border-[#ffc829]/30 mb-8">
             <div className="bg-[#ffc829] text-[#003366] py-4 px-6">
-              <h4 className="text-xl font-bold">Credit Bro Track™ Rent Reporting</h4>
+              <h4 className="text-xl font-bold">HomeTrack™ Rent Reporting</h4>
             </div>
             <div className="p-6">
               <p className="text-slate-600 mb-6">
@@ -453,7 +453,7 @@ export default function TradelinesSection() {
               
               <div className="border border-slate-200 rounded-lg p-5 hover:shadow-md transition-shadow max-w-md mx-auto">
                 <div className="flex justify-between items-center mb-4">
-                  <h5 className="text-lg font-bold text-slate-900">Credit Bro Track™ Plan</h5>
+                  <h5 className="text-lg font-bold text-slate-900">HomeTrack™ Plan</h5>
                   <div className="text-green-600 bg-green-50 rounded-full px-3 py-1 text-sm font-semibold">Best Value</div>
                 </div>
                 <div className="text-center mb-4">

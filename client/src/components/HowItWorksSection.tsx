@@ -9,7 +9,7 @@ export default function HowItWorksSection() {
             How It <span className="text-[#003366]">Works</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Getting started with Credit Bro is simple - just three easy steps to better credit
+            Getting started with LumeCredit is simple - just three easy steps to better credit
           </p>
         </div>
         
@@ -52,8 +52,8 @@ export default function HowItWorksSection() {
               <h3 className="text-xl font-bold text-slate-900 mb-3">Get Your Perfect Credit Mix</h3>
               
               <p className="text-slate-600">
-                You'll be added to all three essential tradelines: Credit Bro Flex™ revolving, 
-                Credit Bro Build™ installment, and Credit Bro Track™ rent reporting.
+                You'll be added to all three essential tradelines: FlexCredit™ revolving, 
+                SteadyBuild™ installment, and HomeTrack™ rent reporting.
               </p>
             </div>
           </div>

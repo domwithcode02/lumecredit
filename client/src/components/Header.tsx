@@ -90,7 +90,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
             <a href="/" className="h-20 w-auto">
               <img 
                 src={lumeLogo} 
-                alt="Credit Bro Logo" 
+                alt="LumeCredit Logo" 
                 className="h-full w-auto object-contain"
                 style={{ maxHeight: '100%' }}
               />
@@ -118,7 +118,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                   }}>
-                    Credit Bro Pro™ Bundle
+                    TotalBoost+™ Bundle
                   </a>
                   <a href="#flexcredit-product" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
@@ -128,7 +128,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                   }}>
-                    Credit Bro Flex™ Revolving
+                    FlexCredit™ Revolving
                   </a>
                   <a href="#steadybuild-product" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
@@ -138,7 +138,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                   }}>
-                    Credit Bro Build™ Installment
+                    SteadyBuild™ Installment
                   </a>
                   <a href="#hometrack-product" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
@@ -148,7 +148,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                   }}>
-                    Credit Bro Track™ Rent Reporting
+                    HomeTrack™ Rent Reporting
                   </a>
                   <a href="#lumestart-section" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" onClick={(e) => {
                     e.preventDefault();
@@ -158,7 +158,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                   }}>
-                    Credit Bro Start™ for Families
+                    LumeStart™ for Families
                   </a>
                 </div>
               </div>
@@ -280,7 +280,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           }, 300); // Increased delay for mobile
                         }}
                       >
-                        Credit Bro Pro™ Bundle
+                        TotalBoost+™ Bundle
                       </button>
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
@@ -306,7 +306,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           }, 300); // Increased delay for mobile
                         }}
                       >
-                        Credit Bro Flex™ Revolving
+                        FlexCredit™ Revolving
                       </button>
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
@@ -332,7 +332,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           }, 300); // Increased delay for mobile
                         }}
                       >
-                        Credit Bro Build™ Installment
+                        SteadyBuild™ Installment
                       </button>
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
@@ -358,7 +358,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           }, 300); // Increased delay for mobile
                         }}
                       >
-                        Credit Bro Track™ Rent Reporting
+                        HomeTrack™ Rent Reporting
                       </button>
                       <button 
                         className="text-left w-full block text-sm text-slate-700"
@@ -383,7 +383,7 @@ export default function Header({ spotsRemaining, totalSpots }: HeaderProps) {
                           }, 300); // Increased delay for mobile
                         }}
                       >
-                        Credit Bro Start™ for Families
+                        LumeStart™ for Families
                       </button>
                     </div>
                   </div>

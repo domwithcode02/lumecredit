@@ -93,13 +93,13 @@ export default function TrustSignalsSection() {
             name="Michael Johnson"
             initials="MJ"
             achievement="Credit score increased by 85 points"
-            text="I was struggling with a poor credit score for years. Credit Bro helped me establish positive credit history and significantly improve my score in just a few months. The guidance and tools they provide are invaluable."
+            text="I was struggling with a poor credit score for years. LumeCredit helped me establish positive credit history and significantly improve my score in just a few months. The guidance and tools they provide are invaluable."
           />
           <Testimonial 
             name="Sarah Williams"
             initials="SW"
             achievement="Approved for mortgage after 6 months"
-            text="Credit Bro's platform made it easy to build my credit score systematically. Their tools helped me qualify for a mortgage with a great rate, something I thought was impossible just months earlier."
+            text="LumeCredit's platform made it easy to build my credit score systematically. Their tools helped me qualify for a mortgage with a great rate, something I thought was impossible just months earlier."
           />
         </div>
       </div>
