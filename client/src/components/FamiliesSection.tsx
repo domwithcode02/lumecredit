@@ -49,7 +49,7 @@ export default function FamiliesSection() {
             
             <p className="text-slate-600 mb-6 text-lg max-w-3xl mx-auto">
               Most young adults start with zero credit history, forcing them to struggle for years to build their score. 
-              With <span className="font-semibold text-[#003366]">Lil' CreditBro™</span>, we change the game through 
+              With <span className="font-semibold text-[#003366]">Lil' Credit Bro™</span>, we change the game through 
               authorized backdated credit reporting that builds history <span className="italic">before</span> they turn 18.
             </p>
           </div>
