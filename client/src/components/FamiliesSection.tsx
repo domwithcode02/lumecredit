@@ -98,7 +98,7 @@ export default function FamiliesSection() {
           </div>
             
           <div className="bg-[#003366]/5 p-6 rounded-xl border border-[#003366]/10 mb-8 max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold text-[#003366] mb-3 text-center">Lil' CreditBro™ Advantage</h3>
+            <h3 className="text-xl font-bold text-[#003366] mb-3 text-center">Lil' Credit Bro™ Advantage</h3>
             <p className="text-md text-slate-700 mb-4 text-center">
               Give your child a 700+ credit score the moment they turn 18 - no other program offers this level of advantage.
             </p>
@@ -119,7 +119,7 @@ export default function FamiliesSection() {
               </div>
               <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                 <Check size={14} className="text-[#003366] mr-1.5" />
-                <span>Up to 3 years backdated</span>
+                <span>Up to 5 years backdated</span>
               </div>
               <div className="flex items-center bg-white px-3 py-1.5 rounded-full text-sm text-slate-700">
                 <Check size={14} className="text-[#003366] mr-1.5" />
