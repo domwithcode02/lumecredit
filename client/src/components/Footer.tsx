@@ -13,7 +13,7 @@ export default function Footer() {
               <img 
                 src={Credit_Bro_1_removebg_preview__1_} 
                 alt="LumeCredit Logo" 
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain ml-[35px] mr-[35px]"
               />
             </div>
             <p className="text-slate-400 mb-6">Illuminate your credit journey. Building brighter credit futures for everyone.</p>
