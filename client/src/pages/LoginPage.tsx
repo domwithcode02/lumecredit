@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { useToast } from "@/hooks/use-toast";
 import { useIsMobile } from "@/hooks/use-mobile";
-import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
+import creditBroLogo from "@assets/Credit_Bro_1-removebg-preview (1)_1756964834357.png";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -79,8 +79,8 @@ export default function LoginPage() {
       <div className="bg-white">
         <div className="flex flex-col items-center pt-4 px-4">
           <img 
-            src={lumeLogo} 
-            alt="LumeCredit Logo"
+            src={creditBroLogo} 
+            alt="Credit Bro Logo"
             className="w-32 h-auto mb-2"
           />
           
@@ -161,14 +161,14 @@ export default function LoginPage() {
           <CardHeader className="space-y-2 text-center relative z-10">
             <div className="mx-auto w-48 mb-4">
               <img 
-                src={lumeLogo} 
-                alt="LumeCredit Logo" 
+                src={creditBroLogo} 
+                alt="Credit Bro Logo" 
                 className="h-full w-auto object-contain"
               />
             </div>
             <CardTitle className="text-2xl font-bold text-slate-800">Welcome Back</CardTitle>
             <CardDescription className="text-slate-600">
-              Sign in to access the LumeCredit exclusive offer
+              Sign in to access the Credit Bro exclusive offer
             </CardDescription>
           </CardHeader>
           <CardContent className="p-6 relative z-10">
