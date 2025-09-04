@@ -1,6 +1,8 @@
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import lumeLogo from "@assets/lume_credit_transparent_optimized.png";
 
+import Credit_Bro_1_removebg_preview__1_ from "@assets/Credit_Bro_1-removebg-preview (1).png";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 pt-16 pb-8">
@@ -9,7 +11,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-5 h-28 w-auto">
               <img 
-                src={lumeLogo} 
+                src={Credit_Bro_1_removebg_preview__1_} 
                 alt="LumeCredit Logo" 
                 className="h-full w-auto object-contain"
               />
