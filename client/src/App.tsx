@@ -8,6 +8,7 @@ import HomePage from "@/pages/HomePage";
 import FAQPage from "@/pages/FAQPage";
 import LoginPage from "@/pages/LoginPage";
 import AdminLoginLogs from "@/pages/AdminLoginLogs";
+import ConstructionPage from "@/pages/ConstructionPage";
 import { useEffect, useState } from "react";
 
 // Protected route component
@@ -43,17 +44,8 @@ function Router() {
 
   return (
     <Switch>
-      <Route path="/login" component={LoginPage} />
-      <Route path="/">
-        <ProtectedRoute component={HomePage} />
-      </Route>
-      <Route path="/faq">
-        <ProtectedRoute component={FAQPage} />
-      </Route>
-      <Route path="/admin/login-logs">
-        <ProtectedRoute component={AdminLoginLogs} />
-      </Route>
-      <Route component={NotFound} />
+      <Route path="/" component={ConstructionPage} />
+      <Route component={ConstructionPage} />
     </Switch>
   );
 }

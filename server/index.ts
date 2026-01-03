@@ -1,11 +1,20 @@
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
+import helmet from "helmet";
+import cors from "cors";
 import { registerRoutes } from "./routes";
 import { setupVite, log } from "./vite";
 import path from "path";
 import fs from "fs";
 
 const app = express();
-app.use(express.json());
+
+// Security middleware
+app.use(helmet({
+  contentSecurityPolicy: false, // Disabled for simplicity to avoid breaking external scripts
+}));
+app.use(cors());
+app.use(express.json({ limit: "10kb" })); // Limit payload size to prevent DoS
 app.use(express.urlencoded({ extended: false }));
 
 // Request logging middleware

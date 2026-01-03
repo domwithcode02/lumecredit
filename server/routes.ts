@@ -10,8 +10,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/login", (req: Request, res: Response) => {
     const { username, password } = req.body;
 
-    // Simple hardcoded authentication with test accounts
-    if (username === "rebekah" && password === "virginia123") {
+    const userUser = process.env.USER_USERNAME;
+    const userPass = process.env.USER_PASSWORD;
+    const adminUser = process.env.ADMIN_USERNAME;
+    const adminPass = process.env.ADMIN_PASSWORD;
+
+    // Simple authentication with environment variables
+    if (userUser && userPass && username === userUser && password === userPass) {
       // Log successful login
       logLogin(req, username, true, "Regular user login successful");
 
@@ -19,14 +24,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         success: true,
         user: { 
           id: 1, 
-          username: "rebekah",
-          name: "rebekah"
+          username: userUser,
+          name: userUser
         }
       });
     }
 
     // Admin user
-    if (username === "admin" && password === "5winners") {
+    if (adminUser && adminPass && username === adminUser && password === adminPass) {
       // Log successful admin login
       logLogin(req, username, true, "Admin login successful");
 
@@ -34,7 +39,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         success: true,
         user: { 
           id: 2, 
-          username: "admin",
+          username: adminUser,
           name: "Administrator"
         }
       });
@@ -72,8 +77,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Get admin token from query or headers (basic authorization for this endpoint)
       const token = req.query.token || req.headers.authorization?.split(" ")[1];
 
-      // Only admin with correct token can access logs (using "5winners" as the token)
-      if (token !== "5winners") {
+      // Only admin with correct token can access logs
+      const adminToken = process.env.ADMIN_TOKEN;
+      if (!adminToken || token !== adminToken) {
         return res.status(401).json({
           success: false,
           message: "Unauthorized access"
